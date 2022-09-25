@@ -34,7 +34,7 @@ Luego dar clic en el botón azul, **Añadir a espacio de trabajo**.
 
 Finalmente deberás dar clic en **Añadir**.
 
-![](<../../.gitbook/assets/image (1).png>)
+![](<../../.gitbook/assets/image (1) (2).png>)
 
 {% hint style="info" %}
 La secuencia de comendas a insertar es el mismo el cual puedes obtener desde tu cuenta dashboard.
@@ -48,7 +48,7 @@ Ahora ya configurada la etiqueta debemos ingresar el token de nuestro widget.
 
 Para ello debemos ir a nuestra cuenta dashboard, luego en **Integraciones** y finalmente la pestaña **Integración**.
 
-![](<../../.gitbook/assets/image (22).png>)
+![](<../../.gitbook/assets/image (22) (1).png>)
 
 Deberás dar clic en el segundo botón de **Copiar**, y luego pegarlo en el campo **Public Token**.
 

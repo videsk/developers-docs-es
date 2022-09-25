@@ -28,7 +28,7 @@ Para realizar la conexión utilizaremos la API de Power BI llamada [Real-time st
 
 Debes ir al menú lateral, seleccionar **Examinar > Recientes**, y luego selecciona el espacio de trabajo que desees añadir el conjunto de datos.
 
-![](<../../.gitbook/assets/image (12).png>)
+![](<../../.gitbook/assets/image (12) (1).png>)
 
 Luego en tu espacio de trabajo deberás dar clic en Nuevo y seleccionar la opción **Conjunto de datos de streaming**.
 
@@ -140,7 +140,7 @@ Ya con los datos de integración que nos proporciona PowerBI, iremos a la config
 
 ![](<../../.gitbook/assets/image (39).png>)
 
-![](<../../.gitbook/assets/image (8).png>)
+![](<../../.gitbook/assets/image (8) (1).png>)
 
 Ahora falta el último y más importante paso que corresponde a extraer los datos dinámicos mediante nuestro lenguaje de marcado.
 

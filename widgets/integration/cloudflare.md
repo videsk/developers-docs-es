@@ -8,9 +8,9 @@ Puedes integrar Videsk mediante Cloudflare en menos de 5 minutos! A continuació
 
 Lo primero que debes hacer el seleccionar el sitio de tu cuenta Cloudflare, luego buscar en el panel lateral derecho **Aplicaciones**.
 
-![](<../../.gitbook/assets/image (3).png>)
+![](<../../.gitbook/assets/image (3) (1).png>)
 
-![](<../../.gitbook/assets/image (7).png>)
+![](<../../.gitbook/assets/image (7) (1).png>)
 
 Luego deberás buscar **Videsk** en la barra de búsqueda en la parte superior. Y posteriormente seleccionar la app **Videsk Widget**.
 
