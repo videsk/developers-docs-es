@@ -1,0 +1,6 @@
+[Unit]
+Description=Open Google Chrome after reboot
+
+[Service]
+Type=simple
+ExecStart=/bin/bash google-chrome --kiosk --fullscreen -tab https://example.com
