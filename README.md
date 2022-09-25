@@ -20,6 +20,10 @@ Si tienes dudas puedes escribirnos a [developers@videsk.io](mailto:developers@vi
 
 Esperamos que la siguiente documentación de nuestros recursos te permitan desarrollar de una manera amigable, limpia y rápida.
 
+{% hint style="info" %}
+Si detectas un error en esta documentación puedes sugerirnos en [nuestro repositorio](https://github.com/videsk/developers-docs-es).
+{% endhint %}
+
 **Nuestra programación está orientada a eventos** en su mayoría. Esto debido a que casi la totalidad de Videsk es en tiempo real, requerimos que las acciones se efectúen mediante eventos y además provee el control total del comportamiento del código.
 
 Parte de nuestro pila de tecnología base (stack) es:
