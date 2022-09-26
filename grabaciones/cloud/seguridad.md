@@ -22,12 +22,16 @@ Accedemos a las credenciales solo en tiempo de ejecución de forma aislada, perm
 
 El cifrado y descifrado utilizado para el almacenamiento de credenciales en reposo es AES-256-CBC.
 
+En el siguiente esquema explicamos como se realiza el proceso de almacenamiento y transacción de las credenciales.
+
+{% embed url="https://www.figma.com/file/0vs8s1P47jsMfMMA2Ktpgt/Recordings?node-id=101%3A2" %}
+
 {% hint style="info" %}
-Las credenciales tienen un límite de 2000 caracteres como máximo.
+Las credenciales tienen un límite de 5000 caracteres como máximo.
 
 
 
-Si necesitas aumentar este tamaño contáctanos a **support@videsk.io**.
+Si posees un certificado x509 o similar de mayor longitud, puedes aumentar este tamaño contáctanos a **support@videsk.io**.
 {% endhint %}
 
 ## Infraestructura
