@@ -58,9 +58,11 @@ Este evento permite escuchar cuando el cliente seleccionó un segmento.
 El evento retornará el nombre del segmento como `string`, la disponibilidad de agentes en el segmento como `boolean` y la fecha en el cual se realizó como `datetime`.
 
 {% hint style="info" %}
-Este evento puede ser utilizado para redirigir a un formulario de contacto, en caso que **no** se esté disponible.
+Este evento puede ser utilizado para redirigir a un mensaje por WhatsApp u otro canal, en caso que **no** se estén disponible.
+{% endhint %}
 
-Utilice como alternativa mientras lanzamos la características de formularios dinámicos incorporados.
+{% hint style="warning" %}
+Deberás escoger entre formulario de contacto o realizar una acción mediante este evento.
 {% endhint %}
 
 ```javascript
