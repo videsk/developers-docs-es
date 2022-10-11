@@ -7,7 +7,7 @@ description: >-
 # ⛔ Firewall
 
 {% hint style="warning" %}
-**Solo es necesario aplicar las siguientes reglas a tu firewall en caso que las políticas sean muy restrictivas**. Todo nuestro tráfico se realiza en los puertos 80 (UDP/TCP) y 443 (TCP/TLS), por lo que en general no deberías . En caso que las conexiones UDP estén bloqueadas nuestro sistema intentará automáticamente por TCP.
+**Solo es necesario aplicar las siguientes reglas a tu firewall en caso que las políticas sean muy restrictivas o por dominios**. Todo nuestro tráfico se realiza en los puertos 80 (UDP/TCP) y 443 (TCP/TLS). En caso que las conexiones UDP estén bloqueadas nuestro sistema intentará automáticamente por TCP.
 {% endhint %}
 
 Esta información te ayudará a configurar correctamente lo necesario para que Videsk logre operar en un entorno protegido por WAFs de tu negocio.
@@ -34,7 +34,7 @@ __[_Fuente original_](https://es.wikipedia.org/wiki/Traducci%C3%B3n\_de\_direcci
 ## 2. Tipo de firewall
 
 {% hint style="warning" %}
-**Solo es necesario aplicar las siguientes reglas a tu firewall en caso que las políticas sean muy restrictivas**. Todo nuestro tráfico se realiza en los puertos 80 (UDP/TCP) y 443 (TCP/TLS), por lo que en general no deberías . En caso que las conexiones UDP estén bloqueadas nuestro sistema intentará automáticamente por TCP.
+**Solo es necesario aplicar las siguientes reglas a tu firewall en caso que las políticas sean muy restrictivas o por dominios**. Todo nuestro tráfico se realiza en los puertos 80 (UDP/TCP) y 443 (TCP/TLS). En caso que las conexiones UDP estén bloqueadas nuestro sistema intentará automáticamente por TCP.
 {% endhint %}
 
 
@@ -52,7 +52,7 @@ Debes considerar que si las reglas aplicadas sobre la red son sobre protocolos `
 ## 2. Listar servidores
 
 {% hint style="warning" %}
-**Solo es necesario aplicar las siguientes reglas a tu firewall en caso que las políticas sean muy restrictivas**. Todo nuestro tráfico se realiza en los puertos 80 (UDP/TCP) y 443 (TCP/TLS), por lo que en general no deberías . En caso que las conexiones UDP estén bloqueadas nuestro sistema intentará automáticamente por TCP.
+**Solo es necesario aplicar las siguientes reglas a tu firewall en caso que las políticas sean muy restrictivas o por dominios**. Todo nuestro tráfico se realiza en los puertos 80 (UDP/TCP) y 443 (TCP/TLS). En caso que las conexiones UDP estén bloqueadas nuestro sistema intentará automáticamente por TCP.
 {% endhint %}
 
 
@@ -120,7 +120,7 @@ Utilizamos un monitor de sesiones llamado LogRocket, actualmente no es posible l
 ### Puertos
 
 {% hint style="warning" %}
-**Solo es necesario aplicar las siguientes reglas a tu firewall en caso que las políticas sean muy restrictivas**. Todo nuestro tráfico se realiza en los puertos 80 (UDP/TCP) y 443 (TCP/TLS), por lo que en general no deberías . En caso que las conexiones UDP estén bloqueadas nuestro sistema intentará automáticamente por TCP.
+**Solo es necesario aplicar las siguientes reglas a tu firewall en caso que las políticas sean muy restrictivas o por dominios**. Todo nuestro tráfico se realiza en los puertos 80 (UDP/TCP) y 443 (TCP/TLS). En caso que las conexiones UDP estén bloqueadas nuestro sistema intentará automáticamente por TCP.
 {% endhint %}
 
 
