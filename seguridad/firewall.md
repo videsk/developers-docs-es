@@ -6,6 +6,10 @@ description: >-
 
 # ⛔ Firewall
 
+{% hint style="warning" %}
+**Solo es necesario aplicar las siguientes reglas a tu firewall en caso que las políticas sean muy restrictivas**. Todo nuestro tráfico se realiza en los puertos 80 (UDP/TCP) y 443 (TCP/TLS), por lo que en general no deberías . En caso que las conexiones UDP estén bloqueadas nuestro sistema intentará automáticamente por TCP.
+{% endhint %}
+
 Esta información te ayudará a configurar correctamente lo necesario para que Videsk logre operar en un entorno protegido por WAFs de tu negocio.
 
 Primero es necesario que conozcas ciertos conceptos, para ello te recomendamos dirigirte a la siguiente sección.
@@ -29,6 +33,12 @@ __[_Fuente original_](https://es.wikipedia.org/wiki/Traducci%C3%B3n\_de\_direcci
 
 ## 2. Tipo de firewall
 
+{% hint style="warning" %}
+**Solo es necesario aplicar las siguientes reglas a tu firewall en caso que las políticas sean muy restrictivas**. Todo nuestro tráfico se realiza en los puertos 80 (UDP/TCP) y 443 (TCP/TLS), por lo que en general no deberías . En caso que las conexiones UDP estén bloqueadas nuestro sistema intentará automáticamente por TCP.
+{% endhint %}
+
+
+
 {% hint style="info" %}
 Si posees un firewall de capa 3, contáctanos a [support@videsk.io](mailto:support@videsk.io), con el asunto: "**IPs turn servers list"**, para obtener el listado de IP de nuestros servidores. _Verificaremos tu identidad asociada a la organización._
 {% endhint %}
@@ -40,6 +50,12 @@ Debes considerar que si las reglas aplicadas sobre la red son sobre protocolos `
 {% endhint %}
 
 ## 2. Listar servidores
+
+{% hint style="warning" %}
+**Solo es necesario aplicar las siguientes reglas a tu firewall en caso que las políticas sean muy restrictivas**. Todo nuestro tráfico se realiza en los puertos 80 (UDP/TCP) y 443 (TCP/TLS), por lo que en general no deberías . En caso que las conexiones UDP estén bloqueadas nuestro sistema intentará automáticamente por TCP.
+{% endhint %}
+
+
 
 Si ya has reconocido el tipo de NAT y Firewall que posees, entonces procede a crear una regla de acceso a nuestros servidores con los siguientes datos:
 
@@ -56,7 +72,7 @@ Deberás añadir nuestro dominio `wilcard` de servidores TURN a una lista blanca
 ```
 
 {% hint style="danger" %}
-No utilices direcciones IP, ya que nuestra infraestructura varía dependiendo de la posición geográfica, por lo que podemos incrementar el número de servidores o disminuirlos según la demanda, **no recomendamos utilizar las IPs**.
+Sugerimos no utilizar direcciones IP, ya que nuestra infraestructura varía dependiendo de la posición geográfica, por lo que podemos incrementar el número de servidores o disminuirlos según la demanda, **no recomendamos utilizar las IPs**.
 {% endhint %}
 
 {% hint style="info" %}
@@ -71,8 +87,8 @@ console.videsk.io
 api.videsk.io
 assets.videsk.io
 cdn.videsk.io
-signaling.videsk.io
 agamotto.videsk.io
+exchange.videsk.io
 rt.videsk.io
 ```
 
@@ -97,11 +113,21 @@ La lista de IP de nuestro monitor de errores Sentry se encuentra en el siguiente
 Utilizamos un monitor de sesiones llamado LogRocket, actualmente no es posible listar por IP, por lo que sugerimos utilizar listas blancas por dominio base.
 {% endhint %}
 
+{% hint style="info" %}
+**Es importante para entregar el mejor servicio, que nuestros sistemas de monitoreo no sean bloqueados por extensiones del navegador, equipo o redes. De lo contrario dificulta a nuestro equipo identificar y resolver problemas de forma proactiva.**
+{% endhint %}
+
 ### Puertos
 
-Utilizamos puertos estándar HTTP como el `80` y `443`, tanto para comunicación con nuestra Rest API como nuestros servidores TURN.
+{% hint style="warning" %}
+**Solo es necesario aplicar las siguientes reglas a tu firewall en caso que las políticas sean muy restrictivas**. Todo nuestro tráfico se realiza en los puertos 80 (UDP/TCP) y 443 (TCP/TLS), por lo que en general no deberías . En caso que las conexiones UDP estén bloqueadas nuestro sistema intentará automáticamente por TCP.
+{% endhint %}
 
-Para el caso de nuestra red TURN utilizamos conexiones mediante puerto 80 sobre protocolo `UDP` y `TCP`, el cual se adaptará dependiendo de hay disponibilidad `UDP` de la red. Mientras que el puerto `443` sobre `TLS/TCP` para usar relé cifrado punto a punto de estar disponible sobre la red.
+
+
+Utilizamos puertos estándar como el `80` y `443`, tanto para comunicación con nuestra Rest API como nuestros servidores TURN.
+
+Para el caso de nuestra red TURN utilizamos conexiones mediante puerto 80 sobre protocolo `UDP` y `TCP`, el cual se adaptará dependiendo de la disponibilidad `UDP` de la red. Mientras que el puerto `443` sobre `TLS/TCP` para usar relé cifrado punto a punto de estar disponible sobre la red.
 
 {% hint style="info" %}
 Para el caso del puerto `80` en toda nuestra infraestructura realizará una redirección automática al puerto `443`.
