@@ -20,7 +20,7 @@
 * [🖌 Personalización](widgets/personalizacion/README.md)
   * [Posición del widget](widgets/personalizacion/posicion-del-widget.md)
   * [Burbuja personalizable](widgets/personalizacion/burbuja-personalizable.md)
-* [🔗 Activación por URL](widgets/activacion-por-url.md)
+* [🔗 Acciones por URL](widgets/acciones-por-url.md)
 * [🛰 API](widgets/api/README.md)
   * [Introducción](widgets/api/introduccion.md)
   * [Variables globales](widgets/api/variables-globales.md)
