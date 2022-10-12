@@ -35,18 +35,10 @@ A continuación se describe el uso de los eventos y funciones disponibles como A
 Antes de comenzar recuerda el uso de la variable global `videsk` como acceso a la Widget API.
 {% endhint %}
 
-{% content-ref url="variables-globales.md" %}
-[variables-globales.md](variables-globales.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
-{% content-ref url="metodos.md" %}
-[metodos.md](metodos.md)
-{% endcontent-ref %}
-
-{% content-ref url="eventos.md" %}
-[eventos.md](eventos.md)
-{% endcontent-ref %}
-
-{% content-ref url="diseno.md" %}
-[diseno.md](diseno.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}

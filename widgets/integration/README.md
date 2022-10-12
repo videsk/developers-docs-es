@@ -6,9 +6,13 @@ description: >-
 
 # 🔌 Instalación
 
-La forma base de integración es mediante un script.
+La forma base de integración es mediante un script. Este script carga recursos necesarios para renderizar el widget los cuales se componen de HTML, CSS y Javascript.
 
 ## Script de integración
+
+{% hint style="info" %}
+No somos compatibles con [SRI (Subresource Integrity)](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource\_Integrity), de lo contrario no podríamos ofrecer actualizaciones y mejoras de forma constante los cuales son cada semana.
+{% endhint %}
 
 {% tabs %}
 {% tab title="HTML" %}
@@ -27,8 +31,8 @@ document.body.appendChild(script);
 {% endtab %}
 {% endtabs %}
 
-{% hint style="warning" %}
-🚧 Estamos trabajando para mover nuestra documentación. 🚧
-{% endhint %}
+Puedes acceder a la documentación de nuestra API en el siguiente enlace:
 
-Puedes acceder a la [documentación de API de nuestro widget desde aquí](https://docs.videsk.io/dashboard/integration/api-widget).
+{% content-ref url="../api/" %}
+[api](../api/)
+{% endcontent-ref %}

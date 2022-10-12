@@ -4,7 +4,7 @@ description: >-
   parámetros en la URL.
 ---
 
-# 🔗 Acciones por URL
+# 🔗 URL Triggers
 
 ## Llamada a segmento
 
