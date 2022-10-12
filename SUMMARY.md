@@ -14,19 +14,19 @@
 
 ## Widgets
 
+* [🔌 Instalación](widgets/integration/README.md)
+  * [Google Tag Manager](widgets/integration/google-tag-manager.md)
+  * [Cloudflare](widgets/integration/cloudflare.md)
+* [🖌 Personalización](widgets/personalizacion/README.md)
+  * [Posición del widget](widgets/personalizacion/posicion-del-widget.md)
+  * [Burbuja personalizable](widgets/personalizacion/burbuja-personalizable.md)
+* [🔗 Activación por URL](widgets/activacion-por-url.md)
 * [🛰 API](widgets/api/README.md)
   * [Introducción](widgets/api/introduccion.md)
   * [Variables globales](widgets/api/variables-globales.md)
   * [Métodos](widgets/api/metodos.md)
   * [Eventos](widgets/api/eventos.md)
   * [Diseño](widgets/api/diseno.md)
-* [🔌 Instalación](widgets/integration/README.md)
-  * [Google Tag Manager](widgets/integration/google-tag-manager.md)
-  * [Cloudflare](widgets/integration/cloudflare.md)
-* [🔗 URL Triggers](widgets/url-triggers.md)
-* [🖌 Personalización](widgets/personalizacion/README.md)
-  * [Posición del widget](widgets/personalizacion/posicion-del-widget.md)
-  * [Burbuja personalizable](widgets/personalizacion/burbuja-personalizable.md)
 
 ## Seguridad
 
