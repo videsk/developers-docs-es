@@ -16,6 +16,7 @@
 
 * [🔌 Instalación](widgets/integration/README.md)
   * [Google Tag Manager](widgets/integration/google-tag-manager.md)
+  * [WordPress](widgets/integration/wordpress.md)
   * [Cloudflare](widgets/integration/cloudflare.md)
 * [🖌 Personalización](widgets/personalizacion/README.md)
   * [Posición del widget](widgets/personalizacion/posicion-del-widget.md)

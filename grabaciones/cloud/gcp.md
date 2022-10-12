@@ -57,7 +57,7 @@ Luego deberás buscar la cuenta de servicio, dando clic en el nombre. Posteriorm
 
 Finalmente haz clic en el tipo de clave **JSON**.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Generar clave privada</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (2).png" alt=""><figcaption><p>Generar clave privada</p></figcaption></figure>
 
 Como último paso deberás pegar el contenido del archivo JSON en nuestra interfaz de configuración y Probar las credenciales.
 

@@ -30,7 +30,7 @@ Deberás copiar y pegar el token en la casilla **Public Token**.
 
 ## 3. Seleccionar páginas
 
-En este paso deberás seleccionar si quieres que tu widget aparezca en todas las páginas de tu sitio o solo en algunas páginas. Para ello podrás dar clic en el botón ubicado en la parte superior donde está el texto Install Videsk Widget on ![](<../../.gitbook/assets/image (5).png>).
+En este paso deberás seleccionar si quieres que tu widget aparezca en todas las páginas de tu sitio o solo en algunas páginas. Para ello podrás dar clic en el botón ubicado en la parte superior donde está el texto Install Videsk Widget on ![](<../../.gitbook/assets/image (5) (1).png>).
 
 Allí podrás ingresar en qué dominio, subdominio o url aparecerá.
 

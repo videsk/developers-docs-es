@@ -50,7 +50,7 @@ Para ello dejaremos abierto PowerBI unos minutos, abriremos una nueva pestaña y
 
 ![](<../../.gitbook/assets/image (63).png>)
 
-Ya en Webhooks deberás dar clic en el botón azul ![](<../../.gitbook/assets/image (26).png>)ubicado en la parte superior derecha. Posteriormente, deberás seleccionar la opción **Personalizado**.
+Ya en Webhooks deberás dar clic en el botón azul ![](<../../.gitbook/assets/image (26) (1).png>)ubicado en la parte superior derecha. Posteriormente, deberás seleccionar la opción **Personalizado**.
 
 ![](<../../.gitbook/assets/image (40).png>)
 
@@ -122,7 +122,7 @@ Recuerda seleccionar correctamente el tipo de valor, de lo contrario los datos p
 
 Deberás activar la opción de **Análisis de historial de datos**. La cual permite almacenar los datos que enviemos generando un historial de datos.
 
-![](<../../.gitbook/assets/image (2).png>)
+![](<../../.gitbook/assets/image (2) (1).png>)
 
 Para finalizar das clic en el botón **Crear**. Posteriormente, nos mostrará datos de integración que usaremos en Videsk.
 

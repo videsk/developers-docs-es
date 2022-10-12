@@ -45,7 +45,7 @@ Para acceder a la vista desacoplada deberás hacer clic en los tres puntos ![](<
 
 Luego de esto la ventana quedará completamente desacoplada y podrás minimizarla.
 
-![Vista como ventana desacoplada](<../.gitbook/assets/image (57).png>)
+![Vista como ventana desacoplada](<../.gitbook/assets/image (57) (1).png>)
 
 ## Visualizar errores
 
