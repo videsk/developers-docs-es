@@ -1,15 +1,17 @@
 ---
-description: Almacena tus grabaciones en un entorno propio alojado en AWS S3
+description: Almacena tus grabaciones en un entorno propio alojado en Amazon AWS S3
 ---
 
 # AWS S3
+
+
 
 {% hint style="warning" %}
 Una vez ingresadas las credenciales no podrán ser vistas nuevamente, por lo que solo podrás sobrescribir.
 {% endhint %}
 
 {% hint style="info" %}
-Para integrar S3 deberás crear un punto de acceso desde la configuración de tu bucket en el menú de **Puntos de acceso**.
+Para integrar Amazon S3 deberás crear un punto de acceso desde la configuración de tu bucket en el menú de **Puntos de acceso**.
 {% endhint %}
 
 ## Sugerencias de configuración
