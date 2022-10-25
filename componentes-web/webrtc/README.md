@@ -25,6 +25,3 @@ Si defines el componente web, recuerda hacer [referencia en nuestro SDK](../../s
 {% endhint %}
 
 Puedes utilizar nuestro componente web independiente de nuestro SDK, pero deberás hacerte cargo de las conexiones `WebSocket` con nuestro servidor de señalización `wss://exchange.videsk.io`.
-
-## Slots
-
