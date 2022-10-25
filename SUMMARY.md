@@ -20,6 +20,7 @@
   * [Slots](componentes-web/webrtc/slots.md)
   * [Propiedades](componentes-web/webrtc/propiedades.md)
   * [Métodos](componentes-web/webrtc/metodos.md)
+  * [Eventos](componentes-web/webrtc/eventos.md)
 
 ## Widgets
 
