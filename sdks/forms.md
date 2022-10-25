@@ -69,7 +69,7 @@ form.on('submit', callback);
 
 Con este método renderizas los campos del formulario. Los dos argumentos que recibe son:
 
-* `form`: array de campos obtenido por [SDK](phone/#obtener-formulario) o API
+* `form`: array de campos obtenido por [SDK](phone.md#obtener-formulario) o API
 * `readonly`: define si son de lectura o escritura, por defecto `false`
 
 ```javascript

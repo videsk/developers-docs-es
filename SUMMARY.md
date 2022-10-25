@@ -6,11 +6,20 @@
 
 ## SDKs
 
-* [📞 Phone](sdks/phone/README.md)
-  * [Segmento como agente](sdks/phone/segment-as-agent.md)
-* [📹 WebRTC](sdks/webrtc.md)
+* [📞 Phone](sdks/phone.md)
+* [📹 WebRTC](sdks/webrtc/README.md)
+  * [Métodos](sdks/webrtc/metodos.md)
 * [📄 Forms](sdks/forms.md)
 * [🤖 Captcha](sdks/captcha.md)
+* [✨ Ejemplos](sdks/ejemplos/README.md)
+  * [Segmento como agente](sdks/ejemplos/segment-as-agent.md)
+
+## Componentes web
+
+* [📹 WebRTC](componentes-web/webrtc/README.md)
+  * [Slots](componentes-web/webrtc/slots.md)
+  * [Propiedades](componentes-web/webrtc/propiedades.md)
+  * [Métodos](componentes-web/webrtc/metodos.md)
 
 ## Widgets
 

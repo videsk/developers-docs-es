@@ -187,7 +187,7 @@ phone.hangup();
 ```
 
 {% hint style="warning" %}
-Deberás utilizar este método en conjunto con el [SDK de WebRTC](../webrtc.md), escuchando el evento de colgar.
+Deberás utilizar este método en conjunto con el [SDK de WebRTC](webrtc/), escuchando el evento de colgar.
 {% endhint %}
 
 ```javascript
@@ -219,7 +219,7 @@ phone.listen('queued', () => console.log('El cliente ha sido añadido a la fila'
 
 
 {% hint style="info" %}
-Para los siguientes métodos deberás usar nuestros dos SDKs [Forms](../forms.md) y [Captcha](../captcha.md), **solo si deseas usarlos**.
+Para los siguientes métodos deberás usar nuestros dos SDKs [Forms](forms.md) y [Captcha](captcha.md), **solo si deseas usarlos**.
 {% endhint %}
 
 ### Obtener formulario
@@ -277,7 +277,7 @@ Si activas un formulario base en un segmento **no podrás continuar a la llamada
 ### Enviar formulario
 
 {% hint style="warning" %}
-Deberás hacer uso de nuestro SDK de [formularios](../forms.md) y de [captcha](../captcha.md).
+Deberás hacer uso de nuestro SDK de [formularios](forms.md) y de [captcha](captcha.md).
 {% endhint %}
 
 Con este método podrás enviar un formulario. Recibe un argumento como `object`:
@@ -289,10 +289,10 @@ Con este método podrás enviar un formulario. Recibe un argumento como `object`
     token,
 }</code></pre>
 
-* `values` es un array obtenido mediante [Form SDK](../forms.md).
+* `values` es un array obtenido mediante [Form SDK](forms.md).
 * `type` es el tipo de formulario pudiendo ser `pre-call` o `contact`.
 * `segment` es el id del segmento a llamar.
-* `token` es un string obtenido mediante [Captcha SDK](../captcha.md).
+* `token` es un string obtenido mediante [Captcha SDK](captcha.md).
 
 ```javascript
 const response = await phone.sendForm(data);
@@ -313,7 +313,7 @@ Con este método podrás obtener una encuesta de un segmento. Recibe un solo arg
 ### Enviar encuesta
 
 {% hint style="warning" %}
-Deberás hacer uso de nuestro SDK de [formularios](../forms.md) y de [captcha](../captcha.md).
+Deberás hacer uso de nuestro SDK de [formularios](forms.md) y de [captcha](captcha.md).
 {% endhint %}
 
 Con este método podrás enviar una encuesta. Recibe un argumento como `object`:
@@ -324,7 +324,7 @@ Con este método podrás enviar una encuesta. Recibe un argumento como `object`:
     segment,
 }</code></pre>
 
-* `values` es un array obtenido mediante [Form SDK](../forms.md).
+* `values` es un array obtenido mediante [Form SDK](forms.md).
 * `call` es el id de la llamada.
 
 ```javascript
@@ -375,9 +375,11 @@ phone.on = { ... };
 {% endtab %}
 {% endtabs %}
 
+{% hint style="warning" %}
 Los siguientes **eventos con \* (asterisco) son requeridos y obligatorios**, si no los escuchas de forma apropiada el comportamiento del SDK no será el esperado.
+{% endhint %}
 
-### token-error
+### `token-error`
 
 Este evento se emitirá cuando el token proporcionado sea erróneo, mal formado o inválido. Esto podría eventualmente suceder si un administrador de cuenta, elimina la integración desde la cuenta.
 
@@ -391,7 +393,7 @@ phone.on['token-error'] = () => {
 };
 ```
 
-### no-agents\*
+### `no-agents`\*
 
 Este evento se emitirá cuando no existan agentes conectados en tu cuenta luego de haber intentado la llamada mediante el método `phone.call()`.
 
@@ -401,7 +403,7 @@ phone.on['no-agents'] = () => {
 };
 ```
 
-### queued\*
+### `queued`\*
 
 Este evento se emite cuando el cliente ha sido añadido a la fila de espera, luego de haber llamado al método `phone.call()`.
 
@@ -424,7 +426,7 @@ Ejemplo:
 Si el tiempo de espera retornado es 0.5 minutos, entonces nuestra librería devolverá 30 segundos.
 {% endhint %}
 
-### queue-updated\*
+### `queue-updated`\*
 
 Este evento se emitirá cuando se actualice la posición en la fila, solo posterior al evento `queued`. **Es de suma relevancia que escuches este evento.**
 
@@ -435,7 +437,7 @@ phone.on['queue-updated'] = (event) = {
 };
 ```
 
-### customer-leave\*
+### `customer-leave`\*
 
 Este evento se emitirá cuando se ejecuta el evento `phone.leave()` estando en la fila de espera.
 
@@ -445,7 +447,7 @@ phone.on['customer-leave'] = () => {
 };
 ```
 
-### dismissed\*
+### `dismissed`\*
 
 Este evento se emitirá cuando un agente rechace la llamada.
 
@@ -455,7 +457,7 @@ phone.on['dismissed'] = () => {
 };
 ```
 
-### out-queue
+### `out-queue`
 
 Este evento se emite cuando la llamada ha sido contestada por un agente. **Es opcional escuchar este evento**.
 
@@ -465,7 +467,7 @@ phone.on['out-queue'] = () => {
 };
 ```
 
-### answered\*
+### `answered`\*
 
 Este evento se emite cuando la llamada ha sido contestada por un agente.
 
@@ -479,10 +481,10 @@ phone.on['answered'] = (event) => {
 ```
 
 {% hint style="info" %}
-Recuerda que deberás cargar nuestro WebRTC con anterioridad. Para más información visíta la documentión de [WebRTC SDK](../webrtc.md).
+Recuerda que deberás cargar nuestro WebRTC con anterioridad. Para más información visíta la documentión de [WebRTC SDK](webrtc/).
 {% endhint %}
 
-### connected-call
+### `connected-call`
 
 Este evento se emite cuando se ha conectado a la llamada de forma exitosa. **Es opcional escuchar este evento**.
 
@@ -492,7 +494,7 @@ phone.on['connected-call'] = () => {
 };
 ```
 
-### agent-disconnect
+### `agent-disconnect`
 
 Este evento se emite cuando el agente quién contestó la llamada eventualmente se desconecta de la videollamada por problemas de red. **Es opcional escuchar este evento**.
 
@@ -506,7 +508,7 @@ phone.on['agent-disconnect'] = () => {
 };
 ```
 
-### customer-hangup
+### `customer-hangup`
 
 Este evento se emite cuando se ejecuta el método `phone.hangup()`. **Es opcional escuchar este evento**.
 
@@ -516,7 +518,7 @@ phone.on['customer-hangup'] = () => {
 };
 ```
 
-### ended\*
+### `ended`\*
 
 Este evento se emite cuando se termina la llamada, ya sea por lado de agente o al ejecutar el método `phone.hangup()`.
 
@@ -531,7 +533,7 @@ phone.on['ended'] = () => {
 Deberás eliminar la instancia de WebRTC creada, mediante el método `destroy()`.
 {% endhint %}
 
-### transferred-segment\*
+### `transferred-segment`\*
 
 Este evento se emitirá cuando un agente ha transferido al cliente a un segmento nuevo.
 
@@ -546,7 +548,7 @@ phone.on['transferred-segment'] = (event) => {
 El SDK realizará las conexiones automáticamente, empezando el ciclo desde el evento `queued` por lo tanto, solo deberás asegurarte que esté escuchándose.
 {% endhint %}
 
-### transferred-agent\*
+### `transferred-agent`\*
 
 Este evento se emitirá cuando un agente ha transferido al cliente a un agente en específico.
 
@@ -560,7 +562,7 @@ phone.on['transferred-agent']= (event) => {
 };
 ```
 
-### connection-error
+### `connection-error`
 
 Este evento se emitirá cuando exista algún error en la red o parámetros mal formados que se enviaron a la API. **Es opcional escuchar este evento**.
 
@@ -570,7 +572,7 @@ phone.on['connection-error'] = (event) => {
 }
 ```
 
-### network-issues\*
+### `network-issues`\*
 
 Este evento se emitirá cuando existan problemas de red, como desconexión a Internet o demasiadas reconexiones producto de una red poco confiable.
 
@@ -588,7 +590,7 @@ Esto se debe a que la red requerida para la conexión en la fila de espera es mi
 **El parámetro evaluado no es la velocidad, si no la estabilidad de la red.**
 {% endhint %}
 
-### http-block
+### `http-block`
 
 Este evento se emitirá cuando nuestra API detecte actividad sospechosa como un bot o una llamada desde una red poco confiable. **Es opcional escuchar este evento**.
 
@@ -602,7 +604,7 @@ phone.on['http-block'] = () => {
 };
 ```
 
-### transport-disconnect
+### `transport-disconnect`
 
 Este evento se emite cuando nuestra API desconecta de forma automática la conexión ya sea en la fila de espera o al terminar la llamada. Es decir, naturalmente este evento se emitirá dos veces en una llamada normal. **Es opcional escuchar este evento**.
 
