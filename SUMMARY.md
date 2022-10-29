@@ -38,6 +38,7 @@
   * [Métodos](widgets/api/metodos.md)
   * [Eventos](widgets/api/eventos.md)
   * [Diseño](widgets/api/diseno.md)
+  * [Forzar segmentos](widgets/api/forzar-segmentos.md)
 
 ## Seguridad
 
