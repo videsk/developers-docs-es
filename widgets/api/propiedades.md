@@ -36,6 +36,10 @@ videsk.constraints = {
 {% endtab %}
 
 {% tab title="Micrófono fijo" %}
+{% hint style="info" %}
+Te sugerimos utilizar el método [device](./) para obtener el ID del dispositivo.
+{% endhint %}
+
 {% code lineNumbers="true" %}
 ```javascript
 videsk.constraints = {
