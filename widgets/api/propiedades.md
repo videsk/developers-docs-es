@@ -37,7 +37,7 @@ videsk.constraints = {
 
 {% tab title="Micrófono fijo" %}
 {% hint style="info" %}
-Te sugerimos utilizar el método [device](./) para obtener el ID del dispositivo.
+Te sugerimos utilizar el método [device](https://developers.videsk.io/widgets/api/metodos#device) para obtener el ID del dispositivo.
 {% endhint %}
 
 {% code lineNumbers="true" %}
@@ -55,6 +55,10 @@ videsk.constraints = {
 {% endtab %}
 
 {% tab title="Cámara fija" %}
+{% hint style="info" %}
+Te sugerimos utilizar el método [device](https://developers.videsk.io/widgets/api/metodos#device) para obtener el ID del dispositivo.
+{% endhint %}
+
 {% code lineNumbers="true" %}
 ```javascript
 videsk.constraints = {
