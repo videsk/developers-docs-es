@@ -115,3 +115,41 @@ videsk.render().then(...)
 {% hint style="info" %}
 Si ejecutas este método más de 1 vez, el widget lanzará un `warning` en consola.
 {% endhint %}
+
+## `devices`
+
+Este método permite obtener el listado de dispositivos disponibles en el equipo.
+
+{% hint style="info" %}
+Este método es asíncrono.
+{% endhint %}
+
+{% code lineNumbers="true" %}
+```javascript
+await videsk.devices();
+```
+{% endcode %}
+
+## `device`
+
+Este método permite obtener un dispositivo en particular mediante la búsqueda de su ID o nombre. Recibe dos argumentos:
+
+* `name`: Nombre de dispositivo
+* `type`: tipo de dispositivo. Disponibles `audioinput` y `videoinput`. Por defecto: `audioinput`.
+
+{% hint style="info" %}
+El valor que indiques como primer argumento se buscará mediante coincidencia, no igualdad estricta.
+{% endhint %}
+
+{% hint style="info" %}
+Este método es asíncrono.
+{% endhint %}
+
+{% code lineNumbers="true" %}
+```javascript
+await videsk.device('Sound BlasterX', 'audioinput);  // 4c59e1553b44981af704f3778bc75c8bfbeabf0849b4357c4e9222104f1a794
+await videsk.device('Sound BlasterX', 'audioinput'); // Speakers (Sound BlasterX G1)
+```
+{% endcode %}
+
+En caso que el dispositivo no se encuentre retornará `undefined`.
