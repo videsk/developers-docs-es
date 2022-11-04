@@ -14,7 +14,7 @@ Esta documentación tiene como objetivo que puedas identificar problemas relacio
 Recuerda que estas pruebas las debes realizar en el dispositivo que estás experimentando fallas. En caso que sean fallas de red, podrás utilizar cualquier dispositivo pero conectado a la misma red.
 {% endhint %}
 
-1. Accede a [este enlace](https://test.8x8.vc/)
+1. Accede a este [enlace](https://gauge.videsk.io/)
 2. Haz clic en el botón verde `Start`
 3. Espera a que finalice las pruebas con "Video Bandwidth" finalizado
 4. En la parte superior busca el ícono de "bicho" al lado izquierdo del botón verde `Start`.
