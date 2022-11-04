@@ -98,7 +98,7 @@ Para calcular el tamaño aproximado mensual de las grabaciones debes contar con 
 En el siguiente cálculo de ejemplo consideramos duración promedio de **10 minutos**, **1000 llamadas diarias** y una calidad de grabación estándar `640x480 (100,000 bps + 25,000bps)` equivalente a `1.1 MB` por minuto, aproximadamente.
 
 $$
-tamaño (MB) = (minutos * llamadas* 1.1 MB) * participantes*30 días
+tamaño (MB) = (minutos * participantes* 1.1 MB) * llamadas*30 días
 $$
 
 Considerando videollamadas de **2 participantes**, solo agente y cliente (sin pantalla compartida), el tamaño mensual sería equivalente a `660 GB`.
