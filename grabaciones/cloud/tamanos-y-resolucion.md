@@ -102,3 +102,5 @@ tamaño (MB) = (minutos * participantes* 1.1 MB) * llamadas*30 días
 $$
 
 Considerando videollamadas de **2 participantes**, solo agente y cliente (sin pantalla compartida), el tamaño mensual sería equivalente a `660 GB`.
+
+{% embed url="https://t.videsk.io/" %}
