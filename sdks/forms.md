@@ -17,8 +17,8 @@ Para utilizar Forms SDK podrás instarlo mediante nuestro CDN.
 {% tabs %}
 {% tab title="HTML" %}
 ```html
-<link rel="stylesheet" href="https://assets.videsk.io/js/sdk/forms.min.css" />
-<script src="https://assets.videsk.io/js/sdk/forms.min.js"></script>
+<link rel="stylesheet" href="https://cdn.videsk.io/sdk/forms.min.css" />
+<script src="https://cdn.videsk.io/sdk/forms.min.js"></script>
 ```
 {% endtab %}
 
@@ -26,11 +26,11 @@ Para utilizar Forms SDK podrás instarlo mediante nuestro CDN.
 ```javascript
 const link = document.createElement('link');
 link.rel = "stylesheet";
-link.href = "https://assets.videsk.io/js/sdk/forms.min.css";
+link.href = "https://cdn.videsk.io/sdk/forms.min.css";
 document.head.appendChild(link);
 
 const script = document.createElement('script');
-script.src = 'https://cdn.videsk.io/js/sdk/forms.min.js';
+script.src = 'https://cdn.videsk.io/sdk/forms.min.js';
 document.body.appendChild(script);
 ```
 {% endtab %}
