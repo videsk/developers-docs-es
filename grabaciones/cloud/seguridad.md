@@ -49,7 +49,7 @@ Solo si configuras el respaldo en nubes de terceros, luego de confirmar la subid
 Esta configuración nos permite entregar redundancia sobre las grabaciones para evitar pérdidas indeseadas, si tu proveedor de almacenamiento presenta fallas.
 
 {% hint style="info" %}
-Realizamos una facturación mínima de 50GB para asegurar disponibilidad de redundancia para tu cuenta.
+Realizamos una facturación mínima de 100GB para asegurar disponibilidad de redundancia para tu cuenta.
 {% endhint %}
 
 ## Integridad
