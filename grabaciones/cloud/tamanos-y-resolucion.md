@@ -103,4 +103,12 @@ $$
 
 Considerando videollamadas de **2 participantes**, solo agente y cliente (sin pantalla compartida), el tamaño mensual sería equivalente a `660 GB`.
 
+## Calculadora
+
+Puedes usar esta calculadora diseñada que **entrega un aproximado** en gigabytes y tarifa mensual.
+
+{% hint style="warning" %}
+Este es un estimador y no corresponde a una tarifa fija o exacta.
+{% endhint %}
+
 {% embed url="https://t.videsk.io/" %}
