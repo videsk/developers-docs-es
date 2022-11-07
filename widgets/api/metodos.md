@@ -151,4 +151,4 @@ await videsk.device('Sound BlasterX', 'audioinput');  // 4c59e1553b44981af704f37
 ```
 {% endcode %}
 
-En caso que el dispositivo no se encuentre retornará `false`.
+En caso que el dispositivo no se encuentre retornará `undefined`.
