@@ -9,10 +9,11 @@
 * [📞 Phone](sdks/phone.md)
 * [📹 WebRTC](sdks/webrtc/README.md)
   * [Métodos](sdks/webrtc/metodos.md)
-* [📄 Forms](sdks/forms.md)
+* [📄 Formularios](sdks/forms.md)
 * [🤖 Captcha](sdks/captcha.md)
 * [✨ Ejemplos](sdks/ejemplos/README.md)
   * [Segmento como agente](sdks/ejemplos/segment-as-agent.md)
+* [📂 Intercambio archivos](sdks/intercambio-archivos.md)
 
 ## Componentes web
 
