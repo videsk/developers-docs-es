@@ -42,7 +42,7 @@ phone.addEventListener('fileshare-canceled', () => {
 Este evento se emite cuando se adjunta un nuevo archivo, pero aún no ha sido enviado.
 
 ```javascript
-phone.addEventListener('fileshare-file-removed', event => {
+phone.addEventListener('fileshare-new-file', event => {
     const { side, data } = event.detail;
     // Do something
 });
@@ -57,7 +57,7 @@ Este evento se emitará por cada archivo añadido o a enviar.
 Este evento se emite cuando un archivo adjunto pero no enviado, se elimina de la bandeja de envió.
 
 ```javascript
-phone.addEventListener('fileshare-removed', event => {
+phone.addEventListener('fileshare-file-removed', event => {
     const { fileId } = event.detail;
     // Do something
 });

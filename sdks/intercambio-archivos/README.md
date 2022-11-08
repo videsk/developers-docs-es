@@ -10,6 +10,10 @@ Este SDK te permite utilizar la función de intercambio de archivos de forma sen
 
 El sistema de intercambio de archivos opera como una bandeja de envío, que posee a su vez una lista de archivos por enviar o ya enviados.
 
+{% hint style="warning" %}
+Esta función es activada por el agente manualmente, debes escuchar los eventos antes de comenzar a enviar archivos.
+{% endhint %}
+
 ## Instalación
 
 Para utilizar el intercambio de archivo necesitas cargar:
