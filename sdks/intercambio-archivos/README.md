@@ -65,9 +65,15 @@ const files = fileshare.queue;
 
 Para obtener un listado actualizado puedes usar los eventos usando la propiedad de la instancia `fileshare.queue`.
 
-## Anatomia de archivos
+## Anatomía de archivos
 
 Los archivos que se envíen mediante el SDK serán añadidos a un `queue` el cual corresponde a un `Array`.
+
+```javascript
+fileshare.queue
+// output
+[{...}]
+```
 
 Cada elemento dentro de este `Array` es un `Object`, que está compuesto de:
 
@@ -89,9 +95,37 @@ Cada elemento dentro de este `Array` es un `Object`, que está compuesto de:
 
 Corresponde al Buffer en memoria del archivo a enviar o recibido. Debes convertir este ArrayBuffer en el tipo de dato que necesites. Más información sobre ArrayBuffer acá.
 
+#### `endedAt`
 
+Corresponde a la fecha de término en el intercambio de archivos como `timestamp`.
 
+#### `startedAt`
 
+Corresponde a la fecha de inicio en el intercambio de archivos como `timestamp`.
+
+#### `id`
+
+Corresponde al id del archivo intercambiado.
+
+#### `meta`
+
+Corresponde a los meta datos del archivo a enviar o enviado, como un `Object`. Esta compuesto por `name` y `type`, siendo el nombre del archivo y tipo (MIME) respectivamente.
+
+#### `progress`
+
+Corresponde al total porcentual intercambiado desde 0 a 100.
+
+#### `received`
+
+Corresponde al tamaño en bytes recibidos.
+
+#### `size`
+
+Corresponde al tamaño del archivo a enviar o recibido.
+
+#### `status`
+
+Corresponde al estado del archivo a enviar o recibido, el cual puede ser `queued`, `canceled`, `sending`, `receiving`, `completed`.
 
 
 
