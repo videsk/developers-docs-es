@@ -20,6 +20,7 @@ Estamos trabajando para ofrecer más integraciones con proveedores que ofrezcan 
 
 * hCaptcha
 * Google reCaptcha Enterprise
+* Cloudflare Turnstile
 
 ## Instalación
 

@@ -147,8 +147,7 @@ Este método es asíncrono.
 
 {% code lineNumbers="true" %}
 ```javascript
-await videsk.device('Sound BlasterX', 'audioinput);  // 4c59e1553b44981af704f3778bc75c8bfbeabf0849b4357c4e9222104f1a794
-await videsk.device('Sound BlasterX', 'audioinput'); // Speakers (Sound BlasterX G1)
+await videsk.device('Sound BlasterX', 'audioinput');  // 4c59e1553b44981af704f3778bc75c8bfbeabf0849b4357c4e9222104f1a794
 ```
 {% endcode %}
 

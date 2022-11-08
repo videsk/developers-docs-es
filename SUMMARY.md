@@ -13,7 +13,9 @@
 * [🤖 Captcha](sdks/captcha.md)
 * [✨ Ejemplos](sdks/ejemplos/README.md)
   * [Segmento como agente](sdks/ejemplos/segment-as-agent.md)
-* [📂 Intercambio archivos](sdks/intercambio-archivos.md)
+* [📂 Intercambio archivos](sdks/intercambio-archivos/README.md)
+  * [Métodos](sdks/intercambio-archivos/metodos.md)
+  * [Eventos](sdks/intercambio-archivos/eventos.md)
 
 ## Componentes web
 
