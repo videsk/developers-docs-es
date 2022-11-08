@@ -4,9 +4,7 @@ description: Te explicamos cómo usar nuestro SDK de intercambio de archivos.
 
 # 📂 Intercambio archivos
 
-{% hint style="warning" %}
 La documentación y recursos necesarios para utilizar FileShare SDK está estrictamente restringido para uso de clientes de Videsk. Nos reservamos el derecho de restringir su acceso y uso, si detectamos un uso inadecuado.
-{% endhint %}
 
 Este SDK te permite utilizar la función de intercambio de archivos de forma sencilla, pero te permite definir tu propia interfaz o flujos.
 
@@ -66,6 +64,36 @@ const files = fileshare.queue;
 ```
 
 Para obtener un listado actualizado puedes usar los eventos usando la propiedad de la instancia `fileshare.queue`.
+
+## Anatomia de archivos
+
+Los archivos que se envíen mediante el SDK serán añadidos a un `queue` el cual corresponde a un `Array`.
+
+Cada elemento dentro de este `Array` es un `Object`, que está compuesto de:
+
+```javascript
+{
+    buffer: ArrayBuffer,
+    endedAt: Number,
+    id: String,
+    meta: Object,
+    progress: Number,
+    received: Number,
+    size: Number,
+    startedAt: Number,
+    status: String
+}
+```
+
+#### `buffer`
+
+Corresponde al Buffer en memoria del archivo a enviar o recibido. Debes convertir este ArrayBuffer en el tipo de dato que necesites. Más información sobre ArrayBuffer acá.
+
+
+
+
+
+
 
 {% content-ref url="metodos.md" %}
 [metodos.md](metodos.md)
