@@ -39,3 +39,16 @@ const constraints = { audio: true, video: true };
 await document.querySelector('videsk-webrtc').display(constraints);
 ```
 
+### devices
+
+Este método obtiene el listado de dispositivos disponibles como cámara, micrófono y altavoz.
+
+No recibe ningún argumento.
+
+{% hint style="info" %}
+Podrás usar este método para encontrar un dispositivo en particular o crear una lista seleccionable.
+{% endhint %}
+
+```javascript
+await document.querySelector('videsk-webrtc').devices();
+```
