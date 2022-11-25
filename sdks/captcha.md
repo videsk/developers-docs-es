@@ -29,14 +29,14 @@ Para utilizar Forms SDK podrás instarlo mediante nuestro CDN.
 {% tabs %}
 {% tab title="HTML" %}
 ```html
-<script src="https://assets.videsk.io/js/sdk/captcha.min.js"></script>
+<script src="https://cdn.videsk.io/sdk/captcha.min.js"></script>
 ```
 {% endtab %}
 
 {% tab title="Javascript" %}
 ```javascript
 const script = document.createElement('script');
-script.src = 'https://cdn.videsk.io/js/sdk/captcha.min.js';
+script.src = 'https://cdn.videsk.io/sdk/captcha.min.js';
 document.body.appendChild(script);
 ```
 {% endtab %}
