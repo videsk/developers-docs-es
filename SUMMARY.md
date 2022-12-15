@@ -16,6 +16,10 @@
 * [📂 Intercambio archivos](sdks/intercambio-archivos/README.md)
   * [Métodos](sdks/intercambio-archivos/metodos.md)
   * [Eventos](sdks/intercambio-archivos/eventos.md)
+* [📅 Calendario](sdks/calendario/README.md)
+  * [Métodos](sdks/calendario/metodos.md)
+  * [Eventos](sdks/calendario/eventos.md)
+  * [Propiedades](sdks/calendario/propiedades.md)
 
 ## Componentes web
 
