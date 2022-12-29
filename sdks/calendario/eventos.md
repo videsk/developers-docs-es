@@ -72,6 +72,10 @@ Con este evento deberás hacer uso de nuestro SDK de WebRTC.
 
 Este evento se dispara cuando se ha llamado al método `modify`. El evento contiene la acción a realizar `action` y el token de aceso `accessToken`.
 
+{% hint style="warning" %}
+Es importante mantener siempre disponible `v-schedule-action` y `v-schedule-auth` en la URL, o bien las mismas keys pero en `localStorage`. De lo contrario no podremos detactar y emitir este evento.
+{% endhint %}
+
 ```javascript
 calendar.addEventListener('modify', event => {
     const { action, accessToken } = event;
