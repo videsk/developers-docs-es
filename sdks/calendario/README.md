@@ -51,3 +51,35 @@ const calendar = new Calendar(token);
 Posteriormente puedes acceder a sus métodos y propiedades.
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Métodos</strong></td><td>Conoce cómo usar los métodos de Calendar SDK.</td><td></td><td><a href="metodos.md">metodos.md</a></td><td></td></tr><tr><td><strong>Propiedades</strong></td><td>Conoce cuáles son las propiedades de Calendar SDK.</td><td></td><td><a href="propiedades.md">propiedades.md</a></td><td></td></tr></tbody></table>
+
+## Flujos
+
+A continuación, puedes observar los dos tipos de flujos existentes, agendamiento y modificación. Te sugerimos leer con detención de esta manera tendrás una visión global de cada uno de los pasos involucrados en el agendamiento.
+
+### Agendamiento
+
+Este flujo corresponde al inicial, cuando un cliente desea agendar una reunión por primera vez.
+
+{% hint style="warning" %}
+El envío de recordatorios puede suceder hasta 4 veces en diferentes periodos según la configuración realizada, ambas para cliente y agente.
+{% endhint %}
+
+{% hint style="info" %}
+Los posibles errores que pueden surgir es agendar unos segundos antes de la hora seleccionada, por ejemplo: Agendar para las 14:05:00 a las 14:04:59.
+
+
+
+También es posible que se niege el agendamiento si alguien más ha toma la hora al mismo tiempo, solo si hay 1 agente u hora disponible.
+{% endhint %}
+
+{% embed url="https://www.figma.com/file/I4Pe99i1sfDlqRhyl2sgnh/Calendar-flow?node-id=0:1&t=QQPfsWmKEvrPVXfc-1" %}
+
+### Modificación
+
+Este flujo corresponde al momento en que un cliente desea cancelar o reagendar una cita previamente solicitada.
+
+{% hint style="warning" %}
+Este flujo siempre se debe realizar con los tokens enviados por correo electrónico u otro medio seleccionado. Por seguridad no existen PINs, claves o búsqueda por correo para efectuar modificaciones.
+{% endhint %}
+
+{% embed url="https://www.figma.com/file/I4Pe99i1sfDlqRhyl2sgnh/Calendar-flow?node-id=9:44&t=QQPfsWmKEvrPVXfc-1" %}

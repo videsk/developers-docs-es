@@ -58,4 +58,19 @@ calendar.addEventListener('rescheduled', event => {
 
 ## `join`
 
-Este evento se dispara cuando se ha llamado al método `connect`. El evento contiene los&#x20;
+Este evento se dispara cuando se ha llamado al método `connect`. El evento contiene el `accessToken` necesario para comenzar la videollamada.
+
+{% hint style="info" %}
+Con este evento deberás hacer uso de nuestro SDK de WebRTC.
+{% endhint %}
+
+{% content-ref url="../webrtc/" %}
+[webrtc](../webrtc/)
+{% endcontent-ref %}
+
+## `modify`
+
+Este evento se dispara cuando se ha llamado al método `modify`. El evento contiene el&#x20;
+
+
+
