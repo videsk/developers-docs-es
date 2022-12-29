@@ -72,7 +72,7 @@ Los posibles errores que pueden surgir es agendar unos segundos antes de la hora
 También es posible que se niege el agendamiento si alguien más ha toma la hora al mismo tiempo, solo si hay 1 agente u hora disponible.
 {% endhint %}
 
-{% embed url="https://www.figma.com/file/I4Pe99i1sfDlqRhyl2sgnh/Calendar-flow?node-id=0:1&t=QQPfsWmKEvrPVXfc-1" %}
+{% @figma/embed fileId="I4Pe99i1sfDlqRhyl2sgnh" nodeId="0:1" url="https://www.figma.com/file/I4Pe99i1sfDlqRhyl2sgnh/Calendar-flow?node-id=0:1&t=QQPfsWmKEvrPVXfc-1" %}
 
 ### Modificación
 
@@ -82,4 +82,4 @@ Este flujo corresponde al momento en que un cliente desea cancelar o reagendar u
 Este flujo siempre se debe realizar con los tokens enviados por correo electrónico u otro medio seleccionado. Por seguridad no existen PINs, claves o búsqueda por correo para efectuar modificaciones.
 {% endhint %}
 
-{% embed url="https://www.figma.com/file/I4Pe99i1sfDlqRhyl2sgnh/Calendar-flow?node-id=9:44&t=QQPfsWmKEvrPVXfc-1" %}
+{% @figma/embed fileId="I4Pe99i1sfDlqRhyl2sgnh" nodeId="9:44" url="https://www.figma.com/file/I4Pe99i1sfDlqRhyl2sgnh/Calendar-flow?node-id=9:44&t=QQPfsWmKEvrPVXfc-1" %}
