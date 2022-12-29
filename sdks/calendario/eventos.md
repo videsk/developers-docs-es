@@ -70,7 +70,13 @@ Con este evento deberás hacer uso de nuestro SDK de WebRTC.
 
 ## `modify`
 
-Este evento se dispara cuando se ha llamado al método `modify`. El evento contiene el&#x20;
+Este evento se dispara cuando se ha llamado al método `modify`. El evento contiene la acción a realizar `action` y el token de aceso `accessToken`.
 
+```javascript
+calendar.addEventListener('modify', event => {
+    const { action, accessToken } = event;
+});
+```
 
+En base a la acción, deberás mostrar la opción de cancelar o reagendar.
 
