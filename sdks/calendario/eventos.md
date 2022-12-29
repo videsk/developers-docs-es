@@ -82,7 +82,10 @@ calendar.addEventListener('modify', event => {
 });
 ```
 
-En base a la acción, deberás mostrar la opción de cancelar o reagendar.
+En base a la acción, deberás mostrar la opción de cancelar o reagendar. La key `action` puede ser:
+
+* `join`: Indica que se desea unir a la reunión
+* `modify`: Indica que se desea modificar la cita
 
 {% hint style="info" %}
 Aquí deberás hacer uso del método `cancel` y `reschedule`.
