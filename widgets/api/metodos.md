@@ -90,13 +90,26 @@ videsk.toggle();
 <pre class="language-javascript"><code class="lang-javascript">// Use window.__VIDESK_WIDGET_ONLOAD__ only for load events not for functions
 <strong>window.__VIDESK_WIDGET_ONLOAD__ = function() {
 </strong>    videsk.toggle();
-}</code></pre>
+}
+</code></pre>
 {% endtab %}
 {% endtabs %}
 
 {% hint style="danger" %}
 No uses `window.onload` o `window.addEventListener("onload")`, para usar la función `toggle`.
 {% endhint %}
+
+## `toggleVisibility`
+
+Este método permite mostrar u ocultar completamente el widget.
+
+Recibe un argumento el cual es un `boolean` que indica el estado. En caso de no proporcionar un argumento alternará su estado `true/false`.
+
+```javascript
+videsk.toggleVisibility();
+// or
+videsk.toggleVisibility(false);
+```
 
 ## `render`
 
