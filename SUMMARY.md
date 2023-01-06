@@ -20,6 +20,9 @@
   * [Métodos](sdks/calendario/metodos.md)
   * [Eventos](sdks/calendario/eventos.md)
   * [Propiedades](sdks/calendario/propiedades.md)
+* [🔇 Cancelación de ruido](sdks/cancelacion-de-ruido/README.md)
+  * [Métodos](sdks/cancelacion-de-ruido/metodos.md)
+  * [Propiedades](sdks/cancelacion-de-ruido/propiedades.md)
 
 ## Componentes web
 

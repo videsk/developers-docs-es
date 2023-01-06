@@ -26,7 +26,7 @@ Haz clic en **Crear**.
 En caso que tu interfaz esté en inglés una función corresponde a **Roles** en el menú de IAM.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Deberás usar este rol para crear las credenciales en el siguiente paso. Así aseguras que solo tendremos permisos para crear archivos, no leer o modificar.
