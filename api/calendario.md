@@ -56,7 +56,7 @@ application/json
 {% swagger-response status="401: Unauthorized" description="API Key invalido" %}
 Referencia de errores en 
 
-[autorización](calendario.md)
+[autorización](autorizacion.md)
 
 .
 {% endswagger-response %}
@@ -164,7 +164,7 @@ application/json
 {% swagger-response status="401: Unauthorized" description="API Key invalido" %}
 Referencia de errores en 
 
-[autorización](calendario.md)
+[autorización](autorizacion.md)
 
 .
 {% endswagger-response %}
@@ -402,7 +402,7 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 {% swagger-response status="401: Unauthorized" description="API Key inválido" %}
 Referencia de errores en 
 
-[autorización](calendario.md)
+[autorización](autorizacion.md)
 
 .
 {% endswagger-response %}
@@ -512,7 +512,7 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 {% swagger-response status="401: Unauthorized" description="API Key invalido" %}
 Referencia de errores en 
 
-[autorización](calendario.md)
+[autorización](autorizacion.md)
 
 .
 {% endswagger-response %}
@@ -750,7 +750,7 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 {% swagger-response status="401: Unauthorized" description="API Key inválido" %}
 Referencia de errores en 
 
-[autorización](calendario.md)
+[autorización](autorizacion.md)
 
 .
 {% endswagger-response %}
@@ -860,7 +860,7 @@ application/json
 {% swagger-response status="401: Unauthorized" description="API Key inválido" %}
 Referencia de errores en 
 
-[autorización](calendario.md)
+[autorización](autorizacion.md)
 
 .
 {% endswagger-response %}
@@ -998,7 +998,7 @@ Campaña o web referido
 {% swagger-response status="401: Unauthorized" description="API Key invalido" %}
 Referencia de errores en 
 
-[autorización](calendario.md)
+[autorización](autorizacion.md)
 
 .
 {% endswagger-response %}
@@ -1083,7 +1083,7 @@ Este error indica que la hora ya ha sido cancelada previamente, no es posible ca
 {% swagger-response status="401: Unauthorized" description="Action token inválido" %}
 Referencia de errores en 
 
-[autorización](calendario.md)
+[autorización](autorizacion.md)
 
 .
 {% endswagger-response %}
@@ -1157,7 +1157,7 @@ Este error indica que la hora ya ha sido reagendada previamente, no es posible r
 {% swagger-response status="401: Unauthorized" description="Action token inválido" %}
 Referencia de errores en 
 
-[autorización](calendario.md)
+[autorización](autorizacion.md)
 
 .
 {% endswagger-response %}
@@ -1214,7 +1214,7 @@ Este error se arroja cuando se intenta obtener información de una hora que ya h
 {% swagger-response status="401: Unauthorized" description="Action token inválido" %}
 Referencia de errores en 
 
-[autorización](calendario.md)
+[autorización](autorizacion.md)
 
 .
 {% endswagger-response %}
