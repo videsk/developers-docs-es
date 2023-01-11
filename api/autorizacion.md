@@ -85,6 +85,18 @@ application/json
 ```
 {% endswagger-response %}
 
+{% swagger-response status="403: Forbidden" description="Integration key was removed" %}
+```javascript
+{
+	"name": "Forbidden",
+	"message": "The integration token it's invalid or was removed.",
+	"code": 403,
+	"className": "forbidden",
+	"errors": {}
+}
+```
+{% endswagger-response %}
+
 {% swagger-response status="403: Forbidden" description="API Key don't have permissions to CRUD" %}
 ```javascript
 {
