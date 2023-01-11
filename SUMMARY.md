@@ -111,3 +111,8 @@
   * [Ubicación de descargas](grabaciones/local/ubicacion-de-descargas.md)
   * [Google Drive / FileStream](grabaciones/local/google-drive-filestream.md)
   * [AWS S3](grabaciones/local/aws-s3.md)
+
+## API
+
+* [Autorización](api/autorizacion.md)
+* [Calendario](api/calendario.md)
