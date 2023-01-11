@@ -8,6 +8,10 @@ Con nuestra Rest API de calendario podrás agendar citas o reuniones para tus cl
 
 Los endpoints a continuación son públicos, es decir, se antepone `/public/` como medio diferenciador de endpoints privados.
 
+{% hint style="info" %}
+Te sugerimos revisar el [diagrama de flujos](../sdks/calendario/#flujos) para tener una vista del orden de peticiones a realizar, antes de utilizar nuestra API.
+{% endhint %}
+
 {% swagger method="get" path="/public/video-contact-center/services" baseUrl="https://api.videsk.io" summary="Obtener servicios de calendario" %}
 {% swagger-description %}
 Podrás obtener el listado de los servicios públicos disponibles
