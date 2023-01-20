@@ -669,30 +669,37 @@ Con este método puedes crear una cita entregando 2 argumentos obligatorios.
 
 {% tabs %}
 {% tab title="Por servicio" %}
-```javascript
-{
-    startAt: "2023-04-03T12:00:00.000Z",
+<pre class="language-javascript"><code class="lang-javascript"><strong>{
+</strong>    startAt: "2023-04-03T12:00:00.000Z",
     timezone: "America/Santiago",
-    form: "639a48f0a00c1b57a2ea0e52"
+    form: [{...}],
+    referrer: 'https://schedule.example.com',
+    token: '0.AOpYir-gaFDC4NreNyXVyXTRPhJREe3dv33S9hdQ0H3lsJkOM'
 }
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="Por usuario" %}
 {% hint style="warning" %}
-La key `service` es requerida cuando agendas por usuario.
+La key `service` solo es requerida cuando agendas por usuario.
 {% endhint %}
 
 ```javascript
 {
     startAt: '2023-04-03T12:00:00.000Z',
     timezone: 'America/Santiago',
-    form: '639a48f0a00c1b57a2ea0e52',
-    service: '639a490f4362d0a814b5c7fd'
+    form: [{...}],
+    service: '639a490f4362d0a814b5c7fd',
+    referrer: 'https://schedule.example.com/',
+    token: '0.AOpYir-gaFDC4NreNyXVyXTRPhJREe3dv33S9hdQ0H3lsJkOM'
 }
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+Para poder obtener el formulario deberás usar el [SDK de formulario](../forms.md).
+{% endhint %}
 
 Por lo que deberás:
 
