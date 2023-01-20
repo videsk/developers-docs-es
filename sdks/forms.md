@@ -4,7 +4,7 @@ description: >-
   Javascript.
 ---
 
-# 📄 Forms
+# 📄 Formularios
 
 {% hint style="warning" %}
 La documentación y recursos necesarios para utilizar Forms SDK está estrictamente restringido para uso de clientes de Videsk. Nos reservamos el derecho de restringir su acceso y uso, si detectamos un uso inadecuado.
@@ -49,6 +49,18 @@ const form = new FormSDK({ target: document.querySelector('#form-container') });
 {% endcode %}
 
 De forma simple puedes instanciar Forms. Posteriormente deberás definir oyentes de eventos y adjuntar métodos a un botón personalizado.
+
+## Propiedades
+
+### `data`
+
+Con esta propiedad podrás obtener el formulario con sus campos sin necesidad de llamar al método `submit`.
+
+```javascript
+form.data
+// output
+[{...}]
+```
 
 ## Métodos
 
