@@ -782,3 +782,96 @@ calendar.addEventListener('join', (event) => {
     const { ... } = event.detail;
 });
 ```
+
+## `calendarLink`
+
+Con este método puedes generar enlaces para los servicios de calendario más populares de esta manera tus usuarios podrán añadir la cita con un clic.
+
+El método recibe dos argumentos:
+
+* `type`: nombre del servicio puede ser `google`, `outlook`, `office365`, `yahoo` o `ics`.
+* `payload`: formato para generar el enlace
+
+{% tabs %}
+{% tab title="Payload" %}
+```javascript
+{
+    "title": String,
+    "description": String,
+    "start": UTCDate,
+    "end": UTCDate,
+    "duration": [Number, "minutes"],
+    "url": String,
+    "busy": Boolean,
+    "location": String,
+    "guests": [String],
+}
+```
+
+
+{% endtab %}
+
+{% tab title="Example" %}
+```javascript
+{
+    "title": "Reunión de {duration} min con {service}",
+    "description": "...",
+    "start": "2023-02-02T19:10:00.000Z",
+    "end": "2023-02-02T19:15:00.000Z",
+    "duration": [15, "minutes"],
+    "url": "https://videsk.io/?=&v-schedule-action=join&v-schedule-auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+    "busy": true,
+    "location": "https://videsk.io/?=&v-schedule-action=join&v-schedule-auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+    "guests": ["john.doe@gmail.com"]
+}
+```
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+Los valores mencionados se obtienen en la respuesta luego de haber usando el método [`create`](metodos.md#create) or [`reschedule`](metodos.md#reschedule).
+{% endhint %}
+
+#### `title`
+
+Valor por defecto que utilizamos en el título inyectando variables.
+
+```handlebars
+Reunión de {duration} min con {service}
+```
+
+#### `description`
+
+Valor por defecto que utilizamos en la descripción inyectando variables.
+
+```handlebars
+Puedes acceder a la reunión a través de este enlace:\n\n{joinURL}. \n\n------------\n\nTambién puedes cancelar la reunión desde este enlace:\n\n{cancelURL}. \n\n------------\n\nO reagendar desde este enlace:\n\n{rescheduleURL}.
+```
+
+#### `start`
+
+Corresponde a la fecha de inicio que se entrega como UTC llamada `startAt`.
+
+#### `end`
+
+Corresponde a la fecha de término que se entrega como UTC llamada `endAt`.
+
+#### `duration`
+
+Corresponde a un array con dos índices, el primero es la duración que se obtiene de la respuesta como `duration` y el segundo la unidad de tiempo, que por defecto debe ser `minutes`, ya que `duration` está en minutos.
+
+#### `url`
+
+Corresponde al enlace de acceso a la reunión. Lo obtienes de la respuesta como `joinUrl`.
+
+#### `busy`
+
+Corresponde al estado del usuario cuando inicie la reunión en su calendario. Se sugiere utilizar `true`.
+
+#### `location`
+
+Corresponde a la ubicación de la reunión, que en este caso se utiliza para rellenar con el enlace de acceso. Algunos clientes de calendario detectan este campo como enlace de videollamada. Obtiene este valor de la respuesta como `joinUrl`.
+
+#### `guests`
+
+Corresponde al listado `Array` de invitados a la reunión. Puedes obtener el valor de la respuesta como `email`.
