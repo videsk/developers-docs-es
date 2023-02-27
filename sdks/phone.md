@@ -287,7 +287,8 @@ Con este método podrás enviar un formulario. Recibe un argumento como `object`
     type,
     segment,
     token,
-}</code></pre>
+}
+</code></pre>
 
 * `values` es un array obtenido mediante [Form SDK](forms.md).
 * `type` es el tipo de formulario pudiendo ser `pre-call` o `contact`.
@@ -308,12 +309,13 @@ El valor de salida puede ser nulo, lo que significa que alguno de los campos del
 Con este método podrás obtener una encuesta de un segmento. Recibe un solo argumento id del segmento:
 
 <pre class="language-javascript" data-line-numbers><code class="lang-javascript"><strong>const response = await phone.getSurvey(segmentId);
-</strong><strong>const { form } = response;</strong></code></pre>
+</strong><strong>const { form } = response;
+</strong></code></pre>
 
 ### Enviar encuesta
 
 {% hint style="warning" %}
-Deberás hacer uso de nuestro SDK de [formularios](forms.md) y de [captcha](captcha.md).
+Deberás hacer uso de nuestro SDK de [formularios](forms.md).
 {% endhint %}
 
 Con este método podrás enviar una encuesta. Recibe un argumento como `object`:
@@ -322,7 +324,8 @@ Con este método podrás enviar una encuesta. Recibe un argumento como `object`:
 </strong>    values,
     call,
     segment,
-}</code></pre>
+}
+</code></pre>
 
 * `values` es un array obtenido mediante [Form SDK](forms.md).
 * `call` es el id de la llamada.
@@ -339,9 +342,7 @@ El valor de salida puede ser nulo, lo que significa que alguno de los campos de 
 
 Phone SDK posee un listado de eventos que te ayudarán a ejecutar acciones sobre el HTML. Son los cuales deberás escuchar mediante funciones para realizar cambios de interfaz.
 
-{% embed url="https://www.figma.com/file/ZgAVJ4UIU5hHN9F0sXWNG7/Widget-workflow?node-id=0%3A1" %}
-Flujo lógico
-{% endembed %}
+{% @figma/embed fileId="ZgAVJ4UIU5hHN9F0sXWNG7" nodeId="0:1" url="https://www.figma.com/file/ZgAVJ4UIU5hHN9F0sXWNG7/Widget-workflow?node-id=0%3A1" %}
 
 Para utilizar los eventos deberás realizar lo siguiente:
 

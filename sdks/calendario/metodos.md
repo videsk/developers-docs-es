@@ -787,6 +787,14 @@ calendar.addEventListener('join', (event) => {
 
 Con este método puedes generar enlaces para los servicios de calendario más populares de esta manera tus usuarios podrán añadir la cita con un clic.
 
+```javascript
+const link = calendar.calendarLink('google', payload);
+```
+
+{% hint style="info" %}
+Para abrir el link en otra pestaña puedes utilizar <mark style="color:green;background-color:purple;">`window.open(link, "_blank")`</mark>.
+{% endhint %}
+
 El método recibe dos argumentos:
 
 * `type`: nombre del servicio puede ser `google`, `outlook`, `office365`, `yahoo` o `ics`.
