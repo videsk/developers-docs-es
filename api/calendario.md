@@ -12,7 +12,7 @@ Los endpoints a continuación son públicos, es decir, se antepone `/public/` co
 Te sugerimos revisar el [diagrama de flujos](../sdks/calendario/#flujos) para tener una vista del orden de peticiones a realizar, antes de utilizar nuestra API.
 {% endhint %}
 
-{% swagger method="get" path="/public/video-contact-center/services" baseUrl="https://api.videsk.io" summary="Obtener servicios de calendario" %}
+{% swagger method="get" path="/public/video-contact-center/services" baseUrl="https://api.videsk.io" summary="Obtener servicios de calendario" expanded="true" %}
 {% swagger-description %}
 Podrás obtener el listado de los servicios públicos disponibles
 {% endswagger-description %}
@@ -882,7 +882,7 @@ Referencia de errores en
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="/public/video-contact-center/schedule/user/:id" baseUrl="https://api.videsk.io" summary="Agendar una hora por servicio" %}
+{% swagger method="post" path="/public/video-contact-center/schedule/user/:id" baseUrl="https://api.videsk.io" summary="Agendar una hora por agente" %}
 {% swagger-description %}
 Agendar una hora mediante un agente
 {% endswagger-description %}
