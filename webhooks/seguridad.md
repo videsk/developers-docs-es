@@ -8,7 +8,7 @@ description: >-
 
 Nuestra tecnología de webhooks permite máxima flexibilidad y compatibilidad con cualquier plataformas moderna y legadas. Esto al mismo tiempo conlleva que la seguridad sea un pilar fundamental a la hora de utilizar esta función.
 
-Por eso te sugerimos leer con detención las siguientes recomendaciones e información sobre como opera nuestra tecnología.
+Por eso, te sugerimos leer con detención las siguientes recomendaciones e información sobre como opera nuestra tecnología.
 
 ## Secretos
 
@@ -16,7 +16,9 @@ Los secretos permiten almacenar de forma segura información sensible como llave
 
 Por ello, dispones de la opción de añadir una cantidad ilimitada de secretos, siendo de tu responsabilidad determinar cuando debe ser un secreto o no.
 
+{% hint style="info" %}
 El uso de secretos no impacta en el rendimiento a la hora de enviar los datos de un evento a una plataforma.
+{% endhint %}
 
 **Una vez que los secretos se crean, no podrán ser vistos por nadie nunca más, ni si quiera por el usuario que lo haya creado.**
 
@@ -24,7 +26,7 @@ Si requieres ver el valor de un secreto, deberás intentar obtenerla desde la pl
 
 **Las llaves de cifrado son almacenadas de forma seguras y nadie del personal de Videsk tiene acceso a ellas.**
 
-El cifrado y descifrado utilizado para el almacenamiento de secretos en texto plano y en reposo es AES-256-CBC.
+El cifrado utilizado para el almacenamiento de secretos en reposo es AES-256-CBC.
 
 {% hint style="info" %}
 Los secretos tienen un límite de 2000 caracteres como máximo.
@@ -42,7 +44,7 @@ Te recomendamos utilizar plataformas que dispongan mecanismos de autenticación 
 Videsk es compatible con cabeceras de autorización básica _usuario:contraseña_.
 {% endhint %}
 
-Para ello visita la documentación de desarrolladores de la plataforma que deseas integrar y busca la sección de autenticación o autorización. Por ejemplo, la mayoría de las plataformas te entregarán una API Key la cual debe ser enviada en la cabecera de la petición o en algunos casos como parámetro en la URL.
+Para ello, visita la documentación de desarrolladores de la plataforma que deseas integrar y busca la sección de autenticación o autorización. Por ejemplo, la mayoría de las plataformas te entregarán una API Key la cual debe ser enviada en la cabecera de la petición o en algunos casos como parámetro en la URL.
 
 La forma más común es crear una cabecera llamada `Authorization` la cual deberá contener el valor de autorización.
 
@@ -84,7 +86,7 @@ Por seguridad, no saneamos las respuestas de la aplicación. Por lo que si esta 
 
 Verifica el formato generado en nuestro editor incorporado antes de enviar a la plataforma original, de esta forma evitaras bloqueos o eventualmente marquen tu cuenta como sospechosa.
 
-Adicional te sugerimos utilizar plataformas playground como las mencionadas acá para evitar constantes peticiones con errores.
+Adicionalmente, te sugerimos utilizar plataformas playground como las mencionadas acá para evitar constantes peticiones con errores.
 
 {% content-ref url="integraciones/" %}
 [integraciones](integraciones/)
@@ -115,5 +117,5 @@ Nuestras instancias serverless solo se ejecutan por un máximo de 60 segundos de
 Todo se ejecuta dentro de nuestra red VPC y sale de ella una vez que la petición está completamente lista.
 
 {% hint style="info" %}
-La velocidad promedio de transferencia de datos entre plataformas comerciales no supera los 250 milisegundos.
+La velocidad promedio de transferencia entre plataformas comerciales, no supera los 250 milisegundos.
 {% endhint %}
