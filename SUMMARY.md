@@ -60,6 +60,8 @@
 ## 🖇 Integraciones
 
 * [Kioskos](integraciones/kioskos.md)
+* [Frameworks](integraciones/frameworks/README.md)
+  * [Angular](integraciones/frameworks/angular.md)
 
 ## 🎆 Webhooks
 
