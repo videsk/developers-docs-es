@@ -24,7 +24,7 @@ El cifrado y descifrado utilizado para el almacenamiento de credenciales en repo
 
 En el siguiente esquema explicamos como se realiza el proceso de almacenamiento y transacción de las credenciales.
 
-{% embed url="https://www.figma.com/file/0vs8s1P47jsMfMMA2Ktpgt/Recordings?node-id=101%3A2" %}
+{% @figma/embed fileId="0vs8s1P47jsMfMMA2Ktpgt" nodeId="101:2" url="https://www.figma.com/file/0vs8s1P47jsMfMMA2Ktpgt/Recordings?node-id=101%3A2" %}
 
 {% hint style="info" %}
 Las credenciales tienen un límite de 5000 caracteres como máximo.
@@ -54,9 +54,9 @@ Realizamos una facturación mínima de 100GB para asegurar disponibilidad de red
 
 ## Integridad
 
-Verificamos la integrar de las grabaciones y archivos mediante criptografía utilizando generación y verificación de hash SHA-1.
+Verificamos la integridad de las grabaciones y archivos mediante criptografía utilizando generación y verificación SHA-256, y para verificación de integridad en tránsito utilizamos verificación por redundancia cíclica o CRC-32.
 
-Esto nos permite asegurar la integridad de las grabaciones en reposo y transporte, de esta forma ataques como Man-in-the-middle o similares sean mitigados.
+Esto nos permite asegurar la integridad de las grabaciones en reposo y transporte, de esta forma ataques como Man-in-the-middle, mutaciones o similares sean mitigados.
 
 {% hint style="info" %}
 Puedes verificar el hash de cada archivo luego de descargar.
