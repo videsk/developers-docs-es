@@ -64,11 +64,15 @@ Este evento se dispara cuando se ha llamado al método `join`. El evento contien
 Con este evento deberás hacer uso de nuestro SDK de [WebRTC](../webrtc/#uso).
 {% endhint %}
 
+{% hint style="danger" %}
+Recuerda que deberás escuchar el evento [hangup](../webrtc/metodos.md#addeventlistener) de WebRTC para terminar el llamado, usando el método [destroy](../webrtc/metodos.md#destroy). De lo contrario, la llamada seguirá activa.
+{% endhint %}
+
 ```javascript
 calendar.addEventListener('join', event => {
     const { accessToken } = event.detail;
     const webrtc = new WebRTC();
-    await webrtc.create(accessToken, constraints);
+    await webrtc.create(accessToken);
 });
 ```
 
