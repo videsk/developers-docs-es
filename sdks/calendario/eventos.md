@@ -67,7 +67,8 @@ Con este evento deberás hacer uso de nuestro SDK de [WebRTC](../webrtc/#uso).
 ```javascript
 calendar.addEventListener('join', event => {
     const { accessToken } = event.detail;
-    const webrtc = new WebRTC(accessToken);
+    const webrtc = new WebRTC();
+    await webrtc.create(accessToken, constraints);
 });
 ```
 
