@@ -61,8 +61,15 @@ calendar.addEventListener('rescheduled', event => {
 Este evento se dispara cuando se ha llamado al método `join`. El evento contiene el `accessToken` necesario para comenzar la videollamada.
 
 {% hint style="info" %}
-Con este evento deberás hacer uso de nuestro SDK de WebRTC.
+Con este evento deberás hacer uso de nuestro SDK de [WebRTC](../webrtc/#uso).
 {% endhint %}
+
+```javascript
+calendar.addEventListener('join', event => {
+    const { accessToken } = event.detail;
+    const webrtc = new WebRTC(accessToken);
+});
+```
 
 {% content-ref url="../webrtc/" %}
 [webrtc](../webrtc/)
