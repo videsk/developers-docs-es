@@ -755,8 +755,8 @@ Este método te permite generar la conexión necesaria para unirse a la videolla
 Para acceder al token puedes usar `calendar.appointmentToken`.
 {% endhint %}
 
-{% hint style="info" %}
-Deberás usar este método cuando el evento `join` se dispara.
+{% hint style="warning" %}
+Solo deberás ejecutar el método `connect` si los parámetros `v-schedule-action` y `v-sechdule-auth` no están presentes en la URL.
 {% endhint %}
 
 ```javascript
