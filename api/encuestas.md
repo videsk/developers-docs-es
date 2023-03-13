@@ -155,7 +155,19 @@ Valor de la respuesta
 ```
 {% endswagger-response %}
 
-{% swagger-response status="400: Bad Request" description="Encuesta respondida o ID entidad inválido" %}
+{% swagger-response status="400: Bad Request" description="ID entidad inválido" %}
+```javascript
+{
+  "name": "BadRequest",
+  "message": "Provide a call or appointment id.",
+  "code": 400,
+  "className": "bad-request",
+  "errors": {}
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="Encuesta respondida" %}
 ```javascript
 {
   "name": "BadRequest",
