@@ -8,6 +8,14 @@ Con nuestra Rest API de formularios podrás obtener las encuestas diseñadas en 
 
 Los endpoints a continuación son públicos, es decir, se antepone `/public/` como medio diferenciador de endpoints privados.
 
+{% hint style="info" %}
+Para mostrar las encuestas te sugerimos utilizar nuestro SDK de formulario.
+{% endhint %}
+
+{% content-ref url="../sdks/forms.md" %}
+[forms.md](../sdks/forms.md)
+{% endcontent-ref %}
+
 {% swagger method="get" path="/public/video-contact-center/surveys/:id" baseUrl="https://api.videsk.io" summary="Obtener encuesta de un segmento o servicio" %}
 {% swagger-description %}
 Podrás obtener la encuesta de un segmento o servicio mediante su ID
