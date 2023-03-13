@@ -52,3 +52,27 @@ export class AppComponent {
 }
 ```
 {% endcode %}
+
+## Declarar componente web
+
+Para usar nuestros componentes web puedes crear un componente Angular dentro de tu aplicación y luego asociarlo a nuestro componente web.
+
+{% hint style="info" %}
+Deberás cargar el componente desde nuestra CDN en tu `index.html`.
+{% endhint %}
+
+```javascript
+import { Component, AfterViewInit } from '@angular/core';
+
+declare const WebRTC: any;
+
+@Component({
+  selector: 'app-videsk-webrtc',
+  template: '<videsk-webrtc></videsk-webrtc>'
+})
+export class MyComponent implements AfterViewInit {
+  ngAfterViewInit() {
+    new WebRTC(accessToken);
+  }
+}
+```
