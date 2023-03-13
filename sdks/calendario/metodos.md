@@ -755,7 +755,7 @@ Este método te permite generar la conexión necesaria para unirse a la videolla
 Para acceder al token puedes usar `calendar.appointmentToken`.
 {% endhint %}
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 Solo deberás ejecutar el método `connect` si los parámetros `v-schedule-action` y `v-sechdule-auth` no están presentes en la URL.
 {% endhint %}
 
@@ -766,6 +766,10 @@ await calendar.connect();
 ## `join`
 
 Con este método podrás unirte a la videollamada.
+
+{% hint style="danger" %}
+Deberás ejecutar este método solo 5 minutos antes de la fecha de inicio y máximo 30 minutos después de la fecha de término.
+{% endhint %}
 
 ```javascript
 calendar.join();
