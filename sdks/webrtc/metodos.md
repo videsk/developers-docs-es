@@ -24,7 +24,7 @@ Este método recibe tres argumentos en el siguiente orden, siendo solo el primer
 
 #### `accessToken`
 
-Corresponde al token de conexión, el cual lo puedes obtener desde el evento [`answered`](../phone.md#answered) de Phone SDK.
+Corresponde al token de conexión, el cual lo puedes obtener desde el evento [`answered`](../phone/#answered) de Phone SDK.
 
 #### `constraints` (opcional)
 

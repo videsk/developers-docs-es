@@ -2,7 +2,7 @@
 
 Los siguientes eventos te permiten escuchar diferentes estados al momento de intercambiar archivos.
 
-Los siguientes eventos los deberás escuchar desde la instancia de [Phone](../phone.md) SDK, **no** desde una instancia de `FileShare`, esto debido a que se hará cargo de emitir eventos cuando sea necesario.
+Los siguientes eventos los deberás escuchar desde la instancia de [Phone](../phone/) SDK, **no** desde una instancia de `FileShare`, esto debido a que se hará cargo de emitir eventos cuando sea necesario.
 
 {% embed url="https://www.figma.com/file/2i9FRajfNU50zYjcNC3Tmu/Fileshare-Events-Flow?node-id=0%3A1" %}
 

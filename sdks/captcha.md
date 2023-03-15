@@ -49,14 +49,14 @@ const captcha = new CaptchaSDK(providerName, options);
 ```
 
 {% hint style="info" %}
-Deberás usar este SDK junto con [Phone](phone.md#obtener-formulario), el cual provee los argumentos para instanciar Captcha.
+Deberás usar este SDK junto con [Phone](phone/#obtener-formulario), el cual provee los argumentos para instanciar Captcha.
 {% endhint %}
 
 ### Opciones
 
 El segundo argumento de Captcha es un object de opciones, el cual debe contener:
 
-* `siteKey`: clave del sitio, el cual debes obtener mediante [Phone](phone.md#obtener-formulario)
+* `siteKey`: clave del sitio, el cual debes obtener mediante [Phone](phone/#obtener-formulario)
 * `resource`: URL del recurso JS del proveedor captcha
 * `node`: id DOM como `string` sin query, es decir, `#myButton` debe ser `myButton`.
 
@@ -70,8 +70,8 @@ Definir la opción `node` solo aplica para proveedores: _hCaptcha_.
 
 Podrás encontrar un ejemplo funcional junto a nuestro Phone SDK.
 
-{% content-ref url="phone.md" %}
-[phone.md](phone.md)
+{% content-ref url="phone/" %}
+[phone](phone/)
 {% endcontent-ref %}
 
 ## Métodos

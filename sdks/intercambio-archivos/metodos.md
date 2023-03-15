@@ -2,7 +2,7 @@
 
 Los siguientes métodos te permiten acceder a funciones que cambiarán el comportamiento o ayudantes para ciertas acciones.
 
-Para usar los siguientes métodos debes usar la instancia generada por [Phone](../phone.md) SDK.
+Para usar los siguientes métodos debes usar la instancia generada por [Phone](../phone/) SDK.
 
 ```javascript
 const fileshare = phone.extensionGetModule('fileshare');

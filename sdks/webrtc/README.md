@@ -7,7 +7,7 @@ description: SDK para crear una instancia de conexión de videollamada WebRTC.
 Con este SDK podrás una instancia de conexión de videollamada WebRTC de una manera muy simple.
 
 {% hint style="warning" %}
-Este SDK lo deberás utilizar con nuestro [Phone SDK](../phone.md).
+Este SDK lo deberás utilizar con nuestro [Phone SDK](../phone/).
 {% endhint %}
 
 ## Instalación

@@ -35,7 +35,7 @@ document.appendChild(script);
 {% endtab %}
 {% endtabs %}
 
-Este SDK **no** requiere de una instancia manual, es decir, `new FileSharing()`. Actualmente, debes utilizarlo en conjunto con nuestro otro [SDK Phone](../phone.md).
+Este SDK **no** requiere de una instancia manual, es decir, `new FileSharing()`. Actualmente, debes utilizarlo en conjunto con nuestro otro [SDK Phone](../phone/).
 
 Esto lo podrás hacer usando un método llamado `addExtension`, la cual permite añadir extensiones o características extras.
 
@@ -46,7 +46,7 @@ phone.addExtension({ name: 'fileshare', extension: FileShare });
 
 En el caso de la clave (key) `extension`, corresponde a la clase `FileShare`. Por lo tanto, debes cargar el `script` desde nuestro CDN previamente a este código para poder referenciarlo.
 
-Una vez que hagas esto, automáticamente [Phone](../phone.md) SDK se hará cargo del intercambio a nivel de red y deberás escuchar los diferentes eventos.
+Una vez que hagas esto, automáticamente [Phone](../phone/) SDK se hará cargo del intercambio a nivel de red y deberás escuchar los diferentes eventos.
 
 ## Instancia FileShare
 

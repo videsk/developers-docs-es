@@ -6,7 +6,10 @@
 
 ## SDKs
 
-* [📞 Phone](sdks/phone.md)
+* [📞 Phone](sdks/phone/README.md)
+  * [Métodos](sdks/phone/metodos.md)
+  * [Eventos](sdks/phone/eventos.md)
+  * [Demo](sdks/phone/demo.md)
 * [📹 WebRTC](sdks/webrtc/README.md)
   * [Métodos](sdks/webrtc/metodos.md)
 * [📄 Formularios](sdks/forms.md)
