@@ -99,6 +99,10 @@ const [{ id }] = await phone.getAbandonReasons();
 phone.setAbandonReason({ id });
 ```
 
+{% hint style="danger" %}
+Deberás usar el método `leave` o `setAbandonReason`, no ambos.
+{% endhint %}
+
 ## Colgar
 
 Con este método podrás colgar la llamada de forma manual.
