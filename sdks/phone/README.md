@@ -54,4 +54,4 @@ Si instancias `VideskPhone`sin un token automáticamente intentará extraerlo de
 https://example.com?api-key=eyJhbGciOiJIUzI1NiIsI...
 ```
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Métodos</strong></td><td>Listado de métodos disponibles en Phone.</td><td></td><td><a href="../calendario/metodos.md">metodos.md</a></td></tr><tr><td><strong>Eventos</strong></td><td>Listado de eventos disponibles en Phone.</td><td></td><td><a href="eventos.md">eventos.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Métodos</strong></td><td>Listado de métodos disponibles en Phone.</td><td></td><td><a href="metodos.md">metodos.md</a></td></tr><tr><td><strong>Eventos</strong></td><td>Listado de eventos disponibles en Phone.</td><td></td><td><a href="eventos.md">eventos.md</a></td></tr></tbody></table>
