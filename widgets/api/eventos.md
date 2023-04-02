@@ -15,6 +15,7 @@ window.__VIDESK_WIDGET_ONLOAD__ = function() {
 * onToggle $$f$$&#x20;
 * onFullToggle $$f$$&#x20;
 * onSelected $$f$$
+* onUnavailable $$f$$
 * onQueued $$f$$
 * onQueueUpdated $$f$$
 * onQueueAbandoned $$f$$
@@ -68,6 +69,16 @@ Deberás escoger entre formulario de contacto o realizar una acción mediante es
 ```javascript
 videsk.events.onSelected = function ({ name, available, date }) {
     // Do something here with name of segment, availability and date
+}
+```
+
+## onUnavailable
+
+Este evento permite escuchar cuando se intentó llamar y no hay ejecutivos conectados.
+
+```javascript
+videsk.events.onUnavailable = function () {
+    // Do something
 }
 ```
 
