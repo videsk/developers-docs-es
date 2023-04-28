@@ -3,13 +3,12 @@
 Para poder asignar las funciones personalizadas debes utilizar nuestra función global de la siguiente forma:
 
 ```javascript
-// Use window.__VIDESK_WIDGET_ONLOAD__ only for load events not for functions
-window.__VIDESK_WIDGET_ONLOAD__ = function() {
+document.addEventListener('videsk-load', () => {
     videsk.events = {
         onToggle: function (){},
         onQueued: function (){},
     };
-}
+});
 ```
 
 * onToggle $$f$$&#x20;
@@ -26,6 +25,10 @@ window.__VIDESK_WIDGET_ONLOAD__ = function() {
 * onReconnected $$f$$
 * onConnectionError $$f$$&#x20;
 
+{% hint style="info" %}
+Mantenemos compatibilidad con versiones anteriores para definir eventos mediante `videsk.events.onEventName = () => {}`.
+{% endhint %}
+
 ## onToggle
 
 Este evento permite escuchar cuando se dispara el evento de visibilidad de Videsk ya sea por que un cliente hizo clic en la burbuja flotante o se ejecutó mediante la función API `videsk.toggle()`
@@ -33,9 +36,9 @@ Este evento permite escuchar cuando se dispara el evento de visibilidad de Vides
 El evento retornará el estado de visibilidad del widget como `booleano` `true` o `false` y la fecha en la cual se disparó en formato `datetime`.
 
 ```javascript
-videsk.events.onToggle = function ({ status, date }) {
+videsk.addEventListener('onToggle', ({ status, date }) => {
     // Do something here with status and date
-}
+});
 ```
 
 ## onFullToggle
@@ -47,9 +50,9 @@ Habitualmente este evento se gatilla por parámeteros presentes en la URL. Y es 
 {% endhint %}
 
 ```javascript
-videsk.events.onToggle = function ({ status, date }) {
+videsk.addEventListener('onToggle', ({ status, date }) => {
     // Do something here with status and date
-}
+});
 ```
 
 ## onSelected
@@ -67,9 +70,9 @@ Deberás escoger entre formulario de contacto o realizar una acción mediante es
 {% endhint %}
 
 ```javascript
-videsk.events.onSelected = function ({ name, available, date }) {
+videsk.addEventListener('onSelected', ({ name, available, date }) => {
     // Do something here with name of segment, availability and date
-}
+});
 ```
 
 ## onUnavailable
@@ -77,9 +80,9 @@ videsk.events.onSelected = function ({ name, available, date }) {
 Este evento permite escuchar cuando se intentó llamar y no hay ejecutivos conectados.
 
 ```javascript
-videsk.events.onUnavailable = function () {
+videsk.addEventListener('onUnavailable', () => {
     // Do something
-}
+});
 ```
 
 ## onQueued
@@ -89,9 +92,9 @@ Este evento permite escuchar cuando el cliente ha sido añadido a la fila virtua
 El evento retornará la posición del cliente en la fila de espera como `number` y la fecha como `datetime`.
 
 ```javascript
-videsk.events.onQueued = function ({ position, date }) {
+videsk.addEventListener('onQueued', ({ position, date }) => {
     // Do something here with position and date
-}
+});
 ```
 
 ## onQueueUpdated
@@ -101,9 +104,9 @@ Este evento permite escuchar cuando la posición del cliente ha sido actualizada
 El evento retornará la posición actualizada del cliente en la fila como `number` y la fecha como `datetime`.
 
 ```javascript
-videsk.events.onQueueUpdated = function ({ position, date }) {
+videsk.addEventListener('onQueueUpdated', ({ position, date }) => {
     // Do something here with position and date
-}
+});
 ```
 
 ## onQueueAbandoned
@@ -117,9 +120,9 @@ Este evento no tiene relación cuando la llamada termina o inicia. Esto evento s
 El evento retornará la fecha en el cual se ejecutó la acción de abandonar la fila como `datetime`.
 
 ```javascript
-videsk.events.onQueueAbandoned = function ({ date }) {
+videsk.addEventListener('onQueueAbandoned', ({ date }) => {
     // Do something with date
-}
+});
 ```
 
 ## onDismissed
@@ -129,9 +132,9 @@ Este evento permite escuchar cuando un agente rechaza una llamada.
 El evento retornará la fecha en el cual se ejecutó la acción de rechazo como `datetime`.
 
 ```javascript
-videsk.events.onDismissed = function ({ date }) {
+videsk.addEventListener('onDismissed', ({ date }) => {
     // Do something with date
-}
+});
 ```
 
 ## onStart
@@ -141,9 +144,9 @@ Este evento permite escuchar cuando el cliente ingresa a la videollamada, es dec
 El evento retornará la fecha como `datetime` en el cual sucedió.
 
 ```javascript
-videsk.events.onStart = function ({ date }) {
+videsk.addEventListener('onStart', ({ date }) => {
     // Do something with date
-}
+});
 ```
 
 ## onEnd
@@ -153,9 +156,9 @@ Este evento permite escuchar cuando el cliente termina la videollamada, es decir
 El evento retornará la fecha como `datetime` en el cual sucedió.
 
 ```javascript
-videsk.events.onEnd = function ({ date }) {
+videsk.addEventListener('onEnd', ({ date }) => {
     // Do someting with date
-}
+});
 ```
 
 ## onSurvey
@@ -169,9 +172,9 @@ Este evento dependerá si tiene activada la opción de encuesta al final de una 
 El evento retornará dos argumentos, el primer corresponde un `object` con la encuesta y el segundo con la fecha en la cual se envió como `datetime`.
 
 ```javascript
-videsk.events.onSurvey = function ({ survey, date }) {
+videsk.addEventListener('onSurvey', ({ survey, date }) => {
     // Do something with survey and date
-}
+});
 ```
 
 
@@ -187,12 +190,10 @@ Este evento dependerá si el widget carga junto con tu sitio.
 El evento retornará la fecha en la cual se se ha reconectado como `datetime`.
 
 ```javascript
-videsk.events.onReconnected = function ({ date }) {
+videsk.addEventListener('onReconnected', ({ date }) => {
     // Do something with survey and date
-}
+});
 ```
-
-
 
 ## onConnectionError
 
@@ -205,7 +206,7 @@ Puede ocurrir que nuestros servidores detecten que un usuario se está conectand
 El evento retornará la fecha en la cual se se ha generad el error de conexión como `datetime`.
 
 ```javascript
-videsk.events.onConnectionError = function ({ date }) {
+videsk.addEventListener('onConnectionError', ({ date }) => {
     // Do something with survey and date
-}
+});
 ```
