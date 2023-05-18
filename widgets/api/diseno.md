@@ -111,3 +111,7 @@ Refresca tu sitio y verás los cambios.
 {% hint style="warning" %}
 No modifiques el nombre clave `widget-custom-style`, de esta manera identificamos los parámetros personalizados.
 {% endhint %}
+
+## Ejemplo
+
+{% embed url="https://codesandbox.io/s/widget-settings-docs-pgebyg?file=/main.js" %}

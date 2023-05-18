@@ -51,7 +51,7 @@
   * [Propiedades](widgets/api/propiedades.md)
   * [Métodos](widgets/api/metodos.md)
   * [Eventos](widgets/api/eventos.md)
-  * [Ajustes](widgets/api/ajustes.md)
+  * [Ajustes](widgets/api/diseno.md)
   * [Forzar segmentos](widgets/api/forzar-segmentos.md)
 
 ## Seguridad
