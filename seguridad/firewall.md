@@ -29,7 +29,7 @@ Lo primero que deberás determinar es el tipo de NAT que posees en tu negocio. E
 | Cono restringido de puertos (Port-Restricted Cone) | En una conexión restringida por puerto NAT bloqueará todo el tráfico a menos que el host de la red privada haya enviado previamente tráfico a una IP y puerto específico, entonces solo en ese caso esa IP/puerto tendrán acceso a la red privada.                                                                                                                                 | ✅                |
 | Simétrico (Symmetric)                              | En este caso la traducción de dirección IP privada a dirección IP pública depende de la dirección IP de destino donde se quiere enviar el tráfico.                                                                                                                                                                                                                                 | ✅                |
 
-__[_Fuente original_](https://es.wikipedia.org/wiki/Traducci%C3%B3n\_de\_direcciones\_de\_red)__
+[_Fuente original_](https://es.wikipedia.org/wiki/Traducci%C3%B3n\_de\_direcciones\_de\_red)
 
 ## 2. Tipo de firewall
 

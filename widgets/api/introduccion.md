@@ -47,6 +47,6 @@ Antes de comenzar recuerda el uso de la variable global `videsk` como acceso a l
 [eventos.md](eventos.md)
 {% endcontent-ref %}
 
-{% content-ref url="diseno.md" %}
-[diseno.md](diseno.md)
+{% content-ref url="ajustes.md" %}
+[ajustes.md](ajustes.md)
 {% endcontent-ref %}

@@ -138,4 +138,4 @@ De esta forma se transformó consigue un `Array` simple sin objetos.
 {% endtab %}
 {% endtabs %}
 
-## ``
+##

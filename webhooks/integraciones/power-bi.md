@@ -136,7 +136,7 @@ Ya con los datos de integración que nos proporciona PowerBI, iremos a la config
 
 ![](<../../.gitbook/assets/image (11).png>)
 
-* Copia el contenido **Raw** de PowerBI **** y pégalo en el editor de código de Webhook que se encuentra al final del editor.
+* Copia el contenido **Raw** de PowerBI y pégalo en el editor de código de Webhook que se encuentra al final del editor.
 
 ![](<../../.gitbook/assets/image (39).png>)
 

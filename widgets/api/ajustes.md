@@ -1,14 +1,14 @@
-# Diseño
+# Ajustes
 
-Nuestro widget posee un diseño que contiene componentes como colores de cabecera, cuerpo, botones y textos, donde cada uno de ellos se puede configurar por separado.
+Nuestro widget posee una configuración o ajuste que contiene componentes como colores de cabecera, cuerpo, botones y textos, donde cada uno de ellos se puede configurar por separado.
 
-Por defecto, el comportamiento es obtener el diseño del widget que hayas configurado en tu cuenta mediante nuestra API.
+Por defecto, el comportamiento es obtener el ajuste del widget que hayas configurado en tu cuenta mediante nuestra API.
 
 {% hint style="info" %}
-Recuerda que esta función permite sobre escribir el diseño que hayas configurado desde tu cuenta.
+Recuerda que esta función permite sobre escribir los ajustes y diseños que hayas configurado desde tu cuenta.
 {% endhint %}
 
-Pero también es posible forzar un diseño propio añadiendo un poco de código en tu sitio web. Para ello deberás tener en cuenta que la estructura es la siguiente:
+Pero también es posible forzar un ajuste propio añadiendo un poco de código en tu sitio web. Para ello deberás tener en cuenta que la estructura es la siguiente:
 
 ```json
 {
@@ -36,7 +36,7 @@ Pero también es posible forzar un diseño propio añadiendo un poco de código 
 Esta estructura de parámetros te permite modificar logotipo, colores, textos, ajustes y servicios a visibilizar.
 
 {% hint style="warning" %}
-Lee a continuación antes de modificar la estructura de diseño.
+Lee a continuación antes de modificar la estructura del ajuste.
 {% endhint %}
 
 ### Logo

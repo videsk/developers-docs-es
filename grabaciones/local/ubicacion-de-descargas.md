@@ -40,7 +40,7 @@ Asegura que la casilla "**Preguntar qué hacer con cada descarga**" esté desact
 
 ## Safari
 
-Accede a Safari, luego ve a la barra de menú superior, selecciona Safari _»_ Preferencias, o puedes usar el atajo de teclado <mark style="background-color:blue;"></mark> <mark style="background-color:blue;"></mark><mark style="background-color:blue;">**⌘**</mark>**  +   **<mark style="background-color:blue;"><mark style="color:blue;background-color:blue;">****<mark style="color:blue;background-color:blue;"></mark><mark style="background-color:blue;">**  **</mark><mark style="background-color:blue;">**,**</mark><mark style="background-color:blue;">** **</mark><mark style="background-color:blue;"><mark style="color:blue;background-color:blue;">****<mark style="color:blue;background-color:blue;"></mark><mark style="color:blue;background-color:blue;">** **</mark><mark style="color:blue;background-color:blue;">** **</mark><mark style="color:blue;background-color:blue;">****</mark>**  .**
+Accede a Safari, luego ve a la barra de menú superior, selecciona Safari _»_ Preferencias, o puedes usar el atajo de teclado  <mark style="background-color:blue;">**⌘**</mark>**  + **  <mark style="background-color:blue;">**,**</mark>  ** .**
 
 En la pestaña "**General**" busca la opción "**Ubicación de los archivos descargados**", luego haz clic en el menú desplegable y selecciona "**Otra...**". Allí deberás selecciona la carpeta asignada para sincronizar las grabaciones.
 
