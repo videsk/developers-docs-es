@@ -12,7 +12,7 @@ Los slots son espacios que contienen elementos por defecto, pero que podrás ree
 
 Los `slots` disponibles son:
 
-### Botones
+## Botones
 
 El listado de botones accionables como compartir pantalla, micrófono, cámara, colgar, pantalla completa, rotar cámara y chat se puede personalizar o incluso eliminar.
 
@@ -52,3 +52,17 @@ Puedes utilizar cualquier elemento HTML dentro de la etiqueta `videsk-webrtc` in
 </videsk-webrtc>
 ```
 {% endcode %}
+
+## Iconos
+
+Puedes personalizar los íconos:
+
+* `participants-toggle-icons`
+
+```html
+<videsk-webrtc>
+  <div slot="participants-toggle-icons">
+     <!-- Custom icons -->
+  </div>
+</videsk-webrtc>
+```
