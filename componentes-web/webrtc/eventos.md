@@ -14,6 +14,8 @@ webrtc.addEventListener('hangup', event => {
 Te sugerimos desectructurar cada evento desde `event.detail`.
 {% endhint %}
 
+Además, algunos de los siguientes eventos son cancelables, es decir, puedes sobrescribir el comportamiento por defecto usando `event.preventDefault()`.
+
 ## `media:status`
 
 Este evento emite el estado del video y audio de cada uno de los participantes cada vez que sea modificado.
@@ -77,3 +79,22 @@ webrtc.addEventListener('participant', event => {
 | `participant` | `HTMLNode`    | Nodo HTML del participante                           |
 | `peer`        | `Peer`        | Constructor `Peer`                                   |
 | `stream`      | `MediaStream` | Stream de participante                               |
+
+## `participants-toggle`
+
+Este evento se emite cuando se intenta mostrar/ocultar a los participantes en el modo `sidebar`.
+
+{% hint style="info" %}
+Este evento es cancelable.
+{% endhint %}
+
+```javascript
+webrtc.addEventListener('participants-toggle', event => {
+    const { status } = event.detail;
+    // Custom code
+});
+```
+
+| Nombre   | Tipo      | Descripción                                           |
+| -------- | --------- | ----------------------------------------------------- |
+| `status` | `Boolean` | Estado actual de los participantes (visible u oculto) |
