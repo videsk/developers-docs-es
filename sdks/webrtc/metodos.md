@@ -58,7 +58,7 @@ webrtc.destroy();
 ```
 {% endcode %}
 
-Este método recibe un argumento de tipo `boolean` que te permite definir si detiene las pistas de cámara y micrófono. Por defecto el valor es `true`.
+Este método recibe dos argumentos opcionales de tipo `boolean` donde el primero permite definir si detiene las pistas de cámara y micrófono, mientras que el segundo elimina el elemento DOM. Por defecto el valor del primer argumento es `true`, en el caso del segundo es `false`.
 
 #### `stopCamera`
 
