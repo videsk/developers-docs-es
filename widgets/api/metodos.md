@@ -66,6 +66,30 @@ videsk.calendar(serviceId, agentId); // Seleccionará el servicio y agente
 Si el servicio se configuró como selección manual y no se entrega el argumento de `agent` la vista del widget quedará en el listado de agentes asociados al servicio.
 {% endhint %}
 
+## `getByStatus`
+
+Este méodo permite obtener el número de ejecutivos que están conectados a un segmento en particular. Recibe dos argumentos el primero obligatorio corresponde al ID del segmento como `String` y el segundo opcional como `String` que corresponde al estado a buscar que puede ser `online` (por defecto) o `available`.
+
+{% hint style="info" %}
+Este método es asíncrono.
+{% endhint %}
+
+```javascript
+await videsk.getByStatus(segmentId); // Por defecto se busca online
+
+await videsk.getByStatus(segmentId, 'available'); // Se buscará por available
+```
+
+{% hint style="warning" %}
+Debes verificar que el valor de retorno no sea una instancia de error, es decir:
+
+```
+const response = await videsk.getByStatus(segmentId);
+if (response instanceof Error) return console.error('Error', response.message);
+const total = response;
+```
+{% endhint %}
+
 ## `toggle`
 
 Esta es la función para alternar la vista del widget, el cual acciona el mismo evento cuando un cliente hace clic en el botón flotante.
