@@ -122,3 +122,4 @@
 * [Autorización](api/autorizacion.md)
 * [Calendario](api/calendario.md)
 * [Encuestas](api/encuestas.md)
+* [Formularios](api/formularios.md)

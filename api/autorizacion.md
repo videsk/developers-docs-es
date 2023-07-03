@@ -9,6 +9,12 @@ La API de Videsk utiliza una autorización estándar basada en cabecera `Authori
 No utilizamos definición de versionamiento en URL o cabeceras ya que se realiza de forma interna mediante configuración de cada cuenta, es decir, en tu propia cuenta podrás definir cual versión de API utilizar en caso de estar disponible.
 
 {% hint style="info" %}
+Existen ciertos endpoints que requerirán ciertos campos en el cuerpo (`body`) dependiendo del API Token que hayas creado, ya sea para usarlo de forma pública o en backend.
+
+Este comportamiento se verá reflejado en las medidas de seguridad como captcha o similares.
+{% endhint %}
+
+{% hint style="info" %}
 Hasta en el año 2023 mantenemos una sola versión.
 {% endhint %}
 
