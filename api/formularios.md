@@ -12,6 +12,30 @@ Los endpoints a continuación son públicos, es decir, se antepone `/public/` co
 Para renderizar los formularios te sugerimos utilizar nuestro SDK de formulario.
 {% endhint %}
 
+## Formato
+
+Nuestros formularios están cuidadosamente diseñados para presentar un formato amigable y flexible al mismo tiempo.
+
+Todos los formularios que se envíen deben tener el siguiente esquema:
+
+```javascript
+[
+    { "_id": String, "value": String || Array || Number }
+]
+```
+
+Dentro de este `Array` debes añadir el listado de campos con su `_id` y `value`, siendo este último capaz de recibir tres tipos de datos: `String`, `Number` y `Array`.
+
+El ID debe coincidir con los valores que se entregan al obtener un formulario, es decir, con el campo `_id`.
+
+Debes considerar que los valores deben coincidir con los configurados en tu cuenta, sobre todo para los casos de selección única o múltiple.
+
+Contamos con 3 niveles de validación:
+
+1. Tipo de dato corresponde con el tipo de campo
+2. Validación del valor por campo (built-in y/o personalizado)
+3. Verificación de restricciones (máximo, mínimo, longitud, etc)
+
 {% content-ref url="../sdks/forms.md" %}
 [forms.md](../sdks/forms.md)
 {% endcontent-ref %}
