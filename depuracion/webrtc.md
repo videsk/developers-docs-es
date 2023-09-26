@@ -31,17 +31,17 @@ Lee a continuación para conocer las razones por tus agentes no podrían conecta
 Es posible que las pruebas arrojen errores en el micrófono si este está apagado o silenciado desde tu equipo o teclado.
 {% endhint %}
 
-![Error al capturar audio](<../.gitbook/assets/image (60).png>)
+![Error al capturar audio](<../.gitbook/assets/image (66).png>)
 
 Como requisitos mínimo deberás contar con micrófono para unirte a las videollamadas.
 
-![Éxito al detectar cámara](<../.gitbook/assets/image (33).png>)
+![Éxito al detectar cámara](<../.gitbook/assets/image (53).png>)
 
 ### Red
 
 Para identificar problemas de red es necesario entender ciertos conceptos.&#x20;
 
-![Pruebas de red](<../.gitbook/assets/image (51).png>)
+![Pruebas de red](<../.gitbook/assets/image (41).png>)
 
 `Network` consiste en pruebas propias de la red, siendo necesario disponer de al menos conexiones `UDP` o `TCP`. Si ambos tipos de protocolos de transmisión están restringidos no podrás conectar las videollamadas.
 
@@ -49,7 +49,7 @@ Para identificar problemas de red es necesario entender ciertos conceptos.&#x20;
 No es requerido contar con compatibilidad IPv6.
 {% endhint %}
 
-![Pruebas de conexión](<../.gitbook/assets/image (59).png>)
+![Pruebas de conexión](<../.gitbook/assets/image (39).png>)
 
 Para el caso de `Connectivity` serán las pruebas de conexión, donde se probará la disponibilidad de conectar desde tu red con `Relay`, es decir, servidores de retransmisión, `Reflexive` para conexión P2P fuera de la red y finalmente conexión `Host` también P2P pero dentro de la red.
 

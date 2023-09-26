@@ -26,7 +26,7 @@ Haz clic en **Crear**.
 En caso que tu interfaz esté en inglés una función corresponde a **Roles** en el menú de IAM.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Deberás usar este rol para crear las credenciales en el siguiente paso. Así aseguras que solo tendremos permisos para crear archivos, no leer o modificar.
@@ -57,7 +57,7 @@ Luego deberás buscar la cuenta de servicio, dando clic en el nombre. Posteriorm
 
 Finalmente haz clic en el tipo de clave **JSON**.
 
-<figure><img src="../../.gitbook/assets/image (8) (2).png" alt=""><figcaption><p>Generar clave privada</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption><p>Generar clave privada</p></figcaption></figure>
 
 Como último paso deberás pegar el contenido del archivo JSON en nuestra interfaz de configuración y Probar las credenciales.
 
@@ -65,7 +65,7 @@ Como último paso deberás pegar el contenido del archivo JSON en nuestra interf
 Solo puedes probar las credenciales la primera vez que las creas, luego no podrás utilizar la función.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 ## Opción 1
 
@@ -115,3 +115,25 @@ Clave privada otorgada a la cuenta de servicio con permiso de escritura para cre
 ### Client email
 
 Dirección de correo electrónico de la cuenta de servicio asociada y que cuenta con los permisos de escritura.
+
+## Metadata
+
+Una vez que la integración para sincronizar las grabaciones esté completada y correcta, se comenzarán a enviar con metadata asociada a la llamada, lo que te permitirá buscar grabaciones de una manera enriquecida.
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+Por defecto, adjuntamos:
+
+| Clave       | Valor  | Descripción                                              |
+| ----------- | ------ | -------------------------------------------------------- |
+| duration    | Number | Duración de la grabación en minutos                      |
+| checkSum    | String | CheckSum de la grabación con SHA-1                       |
+| startedAt   | Date   | Timestamp en la que comenzó la grabación                 |
+| endedAt     | Date   | Timestamp en la que finalizó la grabación                |
+| user        | String | ID del ejecutivo                                         |
+| extension   | String | Extensión del archivo, por defecto: _webm_.              |
+| uploadDate  | Date   | Fecha en la que se intentó sincronizar con cloud storage |
+| recordingId | String | ID de las pistas (no llamada)                            |
+| size        | Number | Tamaño del archivo en bytes                              |
+| identifier  | String | ID de la llamada                                         |
+| contentType | String | MIME type del archivo, por defecto: _video/webm_.        |

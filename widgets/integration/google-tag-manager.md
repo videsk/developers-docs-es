@@ -12,11 +12,11 @@ Es posible que no visualices tu widget mediante GTM (Google Tag Manager), si est
 
 Deberás ingresar al espacio de trabajo asociado al sitio web que deseas integrar Videsk. Luego dar clic en **Añadir nueva etiqueta**.
 
-![](<../../.gitbook/assets/image (44).png>)
+![](<../../.gitbook/assets/image (42).png>)
 
 Se desplegará una ventana lateral derecha, donde deberás dar clic en el rectángulo blanco con título **Configuración de la etiqueta**.
 
-![](<../../.gitbook/assets/image (37).png>)
+![](<../../.gitbook/assets/image (5).png>)
 
 ## 2. Instalar etiqueta de Videsk
 
@@ -26,15 +26,15 @@ A continuación, deberás seleccionar la integración mediante plantillas comuni
 
 Luego que cargue el listado deberás buscar "**Videsk**" mediante el buscador ubicado en la parte superior derecha.
 
-![](<../../.gitbook/assets/image (42).png>)
+![](<../../.gitbook/assets/image (27).png>)
 
 Luego dar clic en el botón azul, **Añadir a espacio de trabajo**.
 
-![](<../../.gitbook/assets/image (68).png>)
+![](<../../.gitbook/assets/image (4).png>)
 
 Finalmente deberás dar clic en **Añadir**.
 
-![](<../../.gitbook/assets/image (1) (2).png>)
+![](<../../.gitbook/assets/image (11).png>)
 
 {% hint style="info" %}
 La secuencia de comendas a insertar es el mismo el cual puedes obtener desde tu cuenta dashboard.
@@ -44,11 +44,11 @@ La secuencia de comendas a insertar es el mismo el cual puedes obtener desde tu 
 
 Ahora ya configurada la etiqueta debemos ingresar el token de nuestro widget.
 
-![](<../../.gitbook/assets/image (24).png>)
+![](<../../.gitbook/assets/image (23).png>)
 
 Para ello debemos ir a nuestra cuenta dashboard, luego en **Integraciones** y finalmente la pestaña **Integración**.
 
-![](<../../.gitbook/assets/image (22) (1).png>)
+![](<../../.gitbook/assets/image (90).png>)
 
 Deberás dar clic en el segundo botón de **Copiar**, y luego pegarlo en el campo **Public Token**.
 
@@ -60,4 +60,4 @@ Dependiendo de tu caso podrás hacer uso de activadores preestablecidos en tu cu
 
 Puedes ver nuestro video en la parte superior donde explicamos cómo definir un activador para ciertas páginas de nuestro sitio web.
 
-![](<../../.gitbook/assets/image (46).png>)
+![](<../../.gitbook/assets/image (65).png>)

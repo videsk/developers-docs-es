@@ -6,6 +6,17 @@ description: Propiedades disponibles para realizar acciones de forma 100% progra
 
 Nuestro widget contiene propiedades que permiten cambiar o sobreescribir el comportamiento por defecto.
 
+{% hint style="info" %}
+Te sugerimos utilizar estas propiedades solo una vez que el evento `videsk-load` sea disparado.
+
+```javascript
+document.addEventListener('videsk-load', () => {
+    // Puedes usar aquí las propiedades
+    videsk.xyz = '...';
+});
+```
+{% endhint %}
+
 ## `constraints`
 
 Esta propiedad de lectura y escritura permite sobreescribir los valores por defecto de cámara y/o micrófono.
@@ -24,11 +35,11 @@ Por defecto, este valor es indefinido.
 {% tab title="Básico" %}
 {% code lineNumbers="true" %}
 ```javascript
-videsk.constraints // undefined
 videsk.constraints = {
     video: false, // sin cámara
     audio: true,
 };
+videsk.constraints // undefined
 ```
 {% endcode %}
 
@@ -72,8 +83,22 @@ videsk.constraints = {
 ```
 {% endcode %}
 {% endtab %}
+
+{% tab title="Cámara trasera" %}
+{% code lineNumbers="true" %}
+```javascript
+videsk.constraints = {
+    audio: true,
+    video: {
+        facingMode: 'environment'
+    }
+};
+```
+{% endcode %}
+{% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
 Te sugerimos utilizar esta propiedad en tótems o kioskos interactivos, ya que podrás definir los permisos con anterioridad sin percibir problemas técnicos.
 {% endhint %}
+

@@ -14,6 +14,6 @@ A continuación podrás encontrar la API de nuestro widget la cual podrás utili
 [eventos.md](eventos.md)
 {% endcontent-ref %}
 
-{% content-ref url="diseno.md" %}
-[diseno.md](diseno.md)
+{% content-ref url="ajustes.md" %}
+[ajustes.md](ajustes.md)
 {% endcontent-ref %}

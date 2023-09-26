@@ -26,19 +26,19 @@ Deberás ingresar a la página de soporte de Google Drive acá:
 
 Siga los pasos de instalación para Windows o Mac.
 
-![Vista de instalación en Windows](<../../.gitbook/assets/image (32).png>)
+![Vista de instalación en Windows](<../../.gitbook/assets/image (25).png>)
 
 ### 3. Configure sus preferencias
 
 Selecciones las casillas sobre sus preferencias respecto a crear un acceso directo de File Stream en el escritorio de su ordenador y sobre añadir accesos directos de Documentos, Hojas e cálculo y presentaciones de Google.
 
-![Vista de preferencias](<../../.gitbook/assets/image (23).png>)
+![Vista de preferencias](<../../.gitbook/assets/image (72).png>)
 
 ### 4. Instalación
 
 Continúe con la instalación hasta ver el siguiente mensaje:
 
-![Vista de instalación finalizada](<../../.gitbook/assets/image (31).png>)
+![Vista de instalación finalizada](<../../.gitbook/assets/image (51).png>)
 
 Una vez que haya finalizado la instalación deberás configurar la carpeta descarga del navegador a utilizar.
 

@@ -210,3 +210,14 @@ videsk.addEventListener('onConnectionError', ({ date }) => {
     // Do something with survey and date
 });
 ```
+
+## custom-event
+
+Este evento se dispara cuando se ha configurado un segmento como evento, el cual contiene un payload como `Array` que dependerá de los valores ingresados, los cuales siempre serán `String`.
+
+```javascript
+document.addEventListener('custom-event', event => {
+    const args = event.detail;
+    // Do something with values as String
+})
+```

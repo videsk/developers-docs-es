@@ -22,7 +22,7 @@ En caso de webhooks, cada evento posee sus propias variables, algo similar a un 
 
 Estos eventos los podrás encontrar directamente en el modo editor cuando creas un nuevo webhook, que están ubicados en la parte lateral junto con la pestaña de documentación.
 
-![Ejemplo de diccionario](<../.gitbook/assets/image (52).png>)
+![Ejemplo de diccionario](<../.gitbook/assets/image (70).png>)
 
 Como cada evento posee sus propias variables, podrás obtener información de cada una de ellas como tipo, descripción y nombre.
 

@@ -1,73 +1,89 @@
 # Métodos
 
-Los siguientes métodos te permiten acceder a funciones que cambiarán el comportamiento o ayudantes para ciertas acciones.
+## `connect`
 
-Para usar los siguientes métodos debes usar la instancia generada por [Phone](../phone/) SDK.
-
-```javascript
-const fileshare = phone.extensionGetModule('fileshare');
-```
-
-## `add`
-
-Este método permite adjuntar archivos a la lista, pero no se enviaránc hasta usar el método `send`. Para obtener este archivo debes hacer uso de un elemento DOM de tipo `file` y el archivo a&#x20;
+Debes usar este método[^1] asíncrono para realizar la conexión con otro par `BeamPort`, entregando un `accessToken` que podrás obtener desde el evento `beamport:connect` de `Phone SDK`.
 
 ```javascript
-fileshare.add(file);
+await port.connect(accessToken);
 ```
-
-El tipo de elemento DOM HTML es el siguiente (ejemplo):
-
-{% hint style="info" %}
-Puedes pasar como argumento un único archivo o como lista `FileList`.
-{% endhint %}
-
-```html
-<input type="file" accept="image/*,.pdf" />
-```
-
-La documentación oficial de `input` file [está aquí](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file).
 
 ## `send`
 
-Este método permite enviar los archivos que estén en el listado de archivos, pero no han sido enviados.
+Este método asíncrono te permite enviar los archivos automáticamente al otro par `BeamPort`. Los argumentos que recibe este método son:
+
+1. `input`: Archivo como `File`, `ArrayBuffer` o `Blob`.
+2. `mimeType`: MIME del archivo, opcional si `input` es de tipo `File`.
+3. `id`: ID del archivo, opcional.
 
 ```javascript
-fileshare.send();
+// File
+await port.send(myFile);
+// ArrayBuffer o Blob
+await port.send(myBuffer, 'application/msword');
 ```
+
+Recomendamos el uso de nuestro componente web de transferencia de archivos, o bien [puedes usar un `input` de tipo `file`, escuchando el evento `change`](#user-content-fn-2)[^2].
+
+#### Consideraciones método `send`
+
+En caso que desees adjuntar varios archivos deberás ejecutar una iteración sobre los archivos:
+
+```javascript
+files.forEach(file => port.send(file));
+```
+
+En el caso que envíes un `ArrayBuffer` o `Blob`, deberás indicar de manera obligatoria el `id` y `mimeType`.
+
+```javascript
+await port.send(myBlob, 'my-unique-id', 'image/png');
+```
+
+{% hint style="warning" %}
+Si **no** indicas un MIME type para un archivo como `ArrayBuffer` o `Blob` , no será legible para el agente.
+{% endhint %}
 
 ## `cancel`
 
-Este método permite cancelar el envío de archivos en curso.
+Este método permite cancelar el envío del archivo en curso o eliminar el acceso del archivo en el par `BeamPort` remoto.
+
+Deberás entregar como único argumento el mismo archivo envíado como `File`, `ArrayBuffer` o `Blob`.
+
+```javascript
+await port.cancel(myFile);
+```
+
+## `disconnect`
+
+Con este método detendrás la conexión BeamPort en su totalidad, por lo deberás crear una nueva si lo necesitas.
+
+```javascript
+port.disconnect();
+```
+
+## `addEventListener`
+
+Podrás escuchar los eventos a través de un oyente adjunto. Puedes añadir todos los eventos que necesites para el mismo o diferente.
+
+```javascript
+port.addEventListener('eventName', event => {
+    const eventData = event.detail;
+    // Do something
+});
+```
+
+## `getFile`
+
+Con este método podrás obtener el archivo usando el valor CRC-32 como único argumento y `String`. El valor retornado será un `BeamPortFile`.
+
+```javascript
+port.getFile(crc32);
+```
 
 {% hint style="info" %}
-Esto cancelará todos los archivos en curso de envío, no es posible cancelar individualmente
+`BeamPort` **no** almacena los archivos enviados, solo recibidos. Puedes obtener el listado de archivos recibidos desde la propiedad `store`.
 {% endhint %}
 
-```javascript
-fileshare.cancel();
-```
+[^1]: Este método es asíncrono
 
-## `download`
-
-Este método permite descargar un archivo en particular al dispositivo. Para ello debes proporcionar el id del archivo, el cual podrás encontrar en el listado `fileshare.queue`.
-
-```javascript
-fileshare.download(fileId);
-```
-
-## `remove`
-
-Este método permite eliminar un archivo que aún no se ha enviado o no se está enviando. Para ello debes proporcionar el id del archivo, el cual podrás encontrar en el listado `fileshare.queue`.
-
-```javascript
-fileshare.remove(fileId);
-```
-
-## `find`
-
-Este método puedes buscar fácilmente el archivo el cual retorna un valor como `Object`. El único argumento que debes proporcionar el id del archivo.
-
-```javascript
-fileshare.find(fileId);
-```
+[^2]: [https://developer.mozilla.org/en-US/docs/Web/API/File\_API/Using\_files\_from\_web\_applications](https://developer.mozilla.org/en-US/docs/Web/API/File\_API/Using\_files\_from\_web\_applications)

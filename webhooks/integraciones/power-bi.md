@@ -28,19 +28,19 @@ Para realizar la conexión utilizaremos la API de Power BI llamada [Real-time st
 
 Debes ir al menú lateral, seleccionar **Examinar > Recientes**, y luego selecciona el espacio de trabajo que desees añadir el conjunto de datos.
 
-![](<../../.gitbook/assets/image (12) (1).png>)
+![](<../../.gitbook/assets/image (71).png>)
 
 Luego en tu espacio de trabajo deberás dar clic en Nuevo y seleccionar la opción **Conjunto de datos de streaming**.
 
-![](<../../.gitbook/assets/image (17).png>)
+![](<../../.gitbook/assets/image (44).png>)
 
 Posteriormente, se desplegará un menú lateral derecho, donde deberás selecciona la opción **API** y dar clic en el botón siguiente ubicado en la parte inferior.
 
-![](<../../.gitbook/assets/image (45).png>)
+![](<../../.gitbook/assets/image (13).png>)
 
 A continuación, te mostrará un formulario el cual deberemos rellenar con los datos que necesitamos exportar. Ingresaremos un nombre de referencia el cual puede ser el que tú quieras.
 
-![](<../../.gitbook/assets/image (30).png>)
+![](<../../.gitbook/assets/image (74).png>)
 
 ## 2. Modelo de datos
 
@@ -48,11 +48,11 @@ Para cargar los datos de forma automática en PowerBI es necesario que indiquemo
 
 Para ello dejaremos abierto PowerBI unos minutos, abriremos una nueva pestaña y deberás acceder a tu cuenta dashboard ([clic aquí](https://app.videsk.io)), luego seleccionar en el menú la opción de **Webhooks**.
 
-![](<../../.gitbook/assets/image (63).png>)
+![](<../../.gitbook/assets/image (6).png>)
 
-Ya en Webhooks deberás dar clic en el botón azul ![](<../../.gitbook/assets/image (26) (1).png>)ubicado en la parte superior derecha. Posteriormente, deberás seleccionar la opción **Personalizado**.
+Ya en Webhooks deberás dar clic en el botón azul ![](<../../.gitbook/assets/image (60).png>)ubicado en la parte superior derecha. Posteriormente, deberás seleccionar la opción **Personalizado**.
 
-![](<../../.gitbook/assets/image (40).png>)
+![](<../../.gitbook/assets/image (62).png>)
 
 Luego, deberás seleccionar qué tipo de evento quieres enviar a PowerBI.
 
@@ -60,7 +60,7 @@ Luego, deberás seleccionar qué tipo de evento quieres enviar a PowerBI.
 **Para este ejemplo utilizaremos los datos del evento de llamada creada,** pero recuerda que las instrucciones aplican para cualquier otro evento**.**
 {% endhint %}
 
-![](<../../.gitbook/assets/image (35).png>)
+![](<../../.gitbook/assets/image (47).png>)
 
 Luego de dar clic en el evento ingresarás al editor Webhook.
 
@@ -72,7 +72,7 @@ Ya en el editor irás al menú lateral derecho, en la parte superior encontrará
 Los datos que puedes observar son completamente aleatorios y no son asociados a tus clientes o negocio.
 {% endhint %}
 
-![](<../../.gitbook/assets/image (19).png>)
+![](<../../.gitbook/assets/image (32).png>)
 
 {% hint style="info" %}
 Te sugerimos hacer un listado con los datos que quieres cargar en PowerBI.
@@ -110,7 +110,7 @@ Deberías obtener una estructura de valores de transmisión similar a esto:
 ]
 ```
 
-![](<../../.gitbook/assets/image (14).png>)
+![](<../../.gitbook/assets/image (68).png>)
 
 {% hint style="warning" %}
 Los nombres de valor son sensibles a mayúsculas, minúsculas, espacios, caracteres especiales, etc.
@@ -122,7 +122,7 @@ Recuerda seleccionar correctamente el tipo de valor, de lo contrario los datos p
 
 Deberás activar la opción de **Análisis de historial de datos**. La cual permite almacenar los datos que enviemos generando un historial de datos.
 
-![](<../../.gitbook/assets/image (2) (1).png>)
+![](<../../.gitbook/assets/image (7).png>)
 
 Para finalizar das clic en el botón **Crear**. Posteriormente, nos mostrará datos de integración que usaremos en Videsk.
 
@@ -132,15 +132,15 @@ Ya con los datos de integración que nos proporciona PowerBI, iremos a la config
 
 * Copia la URL de inserción de PowerBI, y pégala en el campo Método y URL.
 
-![](<../../.gitbook/assets/image (34).png>)
+![](<../../.gitbook/assets/image (24).png>)
 
-![](<../../.gitbook/assets/image (11).png>)
+![](<../../.gitbook/assets/image (21).png>)
 
 * Copia el contenido **Raw** de PowerBI y pégalo en el editor de código de Webhook que se encuentra al final del editor.
 
-![](<../../.gitbook/assets/image (39).png>)
+![](<../../.gitbook/assets/image (64).png>)
 
-![](<../../.gitbook/assets/image (8) (1).png>)
+![](<../../.gitbook/assets/image (63).png>)
 
 Ahora falta el último y más importante paso que corresponde a extraer los datos dinámicos mediante nuestro lenguaje de marcado.
 
@@ -173,7 +173,7 @@ En este ejemplo solo estaremos utilizando 6 tipos de datos, pero puedes extraer 
 En este caso usamos `"{{agent.firstname}} {{agent.lastname}}"` entre comillas ya que es un dato compuesto. Cuando es un dato simple te sugerimos utilizar el ayudante [parser](../helpers/parser.md).
 {% endhint %}
 
-![](<../../.gitbook/assets/image (10).png>)
+![](<../../.gitbook/assets/image (15).png>)
 
 ```javascript
 [
@@ -192,11 +192,11 @@ Ya lista la estructura podrás observar en el visualizador (texto en verde) los 
 
 Verificando que se asemeje la estructura a la que PowerBI espera recibir, solo faltaría asignar un nombre a este Webhook el cual es solo para que tu equipo pueda diferenciar entre múltiples Webhooks.
 
-![](<../../.gitbook/assets/image (36).png>)
+![](<../../.gitbook/assets/image (77).png>)
 
 No olvides dar clic en **Guardar**.
 
-![](<../../.gitbook/assets/image (61).png>)
+![](<../../.gitbook/assets/image (17).png>)
 
 Listo! Ya está integrada tu cuenta Videsk con PowerBI. Ya puedes realizar llamadas y se cargarán en tiempo real! :tada:
 
@@ -204,4 +204,4 @@ Listo! Ya está integrada tu cuenta Videsk con PowerBI. Ya puedes realizar llama
 Recuerda asignar el conjunto de datos creado a un informe nuevo o existente.
 {% endhint %}
 
-![Ejemplo de informe en PowerBI con datos enviados mediante Webhooks](<../../.gitbook/assets/image (48).png>)
+![Ejemplo de informe en PowerBI con datos enviados mediante Webhooks](<../../.gitbook/assets/image (45).png>)

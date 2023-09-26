@@ -14,6 +14,8 @@ En general nuestros productos intentan ser lo más descriptivos posibles y en su
 
 Lo primero que deberás conocer como mejor herramienta del navegador para depurar ya sea en etapa de desarrollo o producción es **Devtools** o **Inspector de Elementos**.
 
+
+
 ## ¿Cómo acceder a Devtools?
 
 Para acceder a él existen varias maneras y dependerá de cada navegador:
@@ -27,7 +29,7 @@ Para acceder a él existen varias maneras y dependerá de cada navegador:
 **El clic derecho lo podrás realizar en cualquier lugar del sitio web.**
 {% endhint %}
 
-![Menú emergente al hacer clic derecho en el sitio](<../.gitbook/assets/image (66).png>)
+![Menú emergente al hacer clic derecho en el sitio](<../.gitbook/assets/image (87).png>)
 
 {% hint style="info" %}
 Si te hemos solicitado mantener abierto Devtools, por errores que nuestros sistemas de monitoreo no han logrado capturar, lee a continuación.
@@ -37,15 +39,15 @@ Si necesitas caputrar información ya sea de errores de código, red, etc. te su
 
 ### Vista acoplada
 
-![Vista acoplada](<../.gitbook/assets/image (27).png>)
+![Vista acoplada](<../.gitbook/assets/image (10).png>)
 
 ### Vista desacoplada
 
-Para acceder a la vista desacoplada deberás hacer clic en los tres puntos ![](<../.gitbook/assets/image (53).png>) ubicado en la parte superior derecha, y luego selecciona el ícono ![](<../.gitbook/assets/image (58).png>).
+Para acceder a la vista desacoplada deberás hacer clic en los tres puntos ![](<../.gitbook/assets/image (73).png>) ubicado en la parte superior derecha, y luego selecciona el ícono ![](<../.gitbook/assets/image (14).png>).
 
 Luego de esto la ventana quedará completamente desacoplada y podrás minimizarla.
 
-![Vista como ventana desacoplada](<../.gitbook/assets/image (57) (1).png>)
+![Vista como ventana desacoplada](<../.gitbook/assets/image (79).png>)
 
 ## Visualizar errores
 
@@ -55,7 +57,7 @@ La mejor forma de obtener los errores es hacer clic en la pestaña con el nombre
 Si nuestro equipo técnico te ha solicitado que abras Devtools o Inspector de elementos, dirígete a la sección de exportar registros de errores.
 {% endhint %}
 
-![Vista de "console" con errores y advertencias](<../.gitbook/assets/image (54).png>)
+![Vista de "console" con errores y advertencias](<../.gitbook/assets/image (48).png>)
 
 Existen mensajes con distintos colores de fondo, los más comunes serán rojo y amarillo, siendo errores y advertencias, respectivamente.
 
@@ -67,7 +69,7 @@ Es probable que nuestro equipo técnico te solicite realizar una descarga de los
 
 Para ello deberás estar en la [vista Console](devtools.md#visualizar-errores) y luego en cualquier lugar de la consola (Console) haz clic derecho, para finalmente dar clic en la opción **`Save as...`**.
 
-![Menú emergente al hacer clic derecho en console](<../.gitbook/assets/image (67).png>)
+![Menú emergente al hacer clic derecho en console](<../.gitbook/assets/image (22).png>)
 
 El archivo que descarges deberás enviarlo a [support@videsk.io](mailto:support@videsk.io), con el asunto **Registros de errores**, adjuntando el archivo con registros que habitualmente se llamará **{website}-{date}.log**.
 

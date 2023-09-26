@@ -19,6 +19,8 @@
 * [📂 Intercambio archivos](sdks/intercambio-archivos/README.md)
   * [Métodos](sdks/intercambio-archivos/metodos.md)
   * [Eventos](sdks/intercambio-archivos/eventos.md)
+  * [Propiedades](sdks/intercambio-archivos/propiedades.md)
+  * [BeamPortFile](sdks/intercambio-archivos/beamportfile.md)
 * [📅 Calendario](sdks/calendario/README.md)
   * [Métodos](sdks/calendario/metodos.md)
   * [Eventos](sdks/calendario/eventos.md)
@@ -34,6 +36,11 @@
   * [Propiedades](componentes-web/webrtc/propiedades.md)
   * [Métodos](componentes-web/webrtc/metodos.md)
   * [Eventos](componentes-web/webrtc/eventos.md)
+* [🗃 Fileshare](componentes-web/fileshare/README.md)
+  * [Slots](componentes-web/fileshare/slots.md)
+  * [Propiedades](componentes-web/fileshare/propiedades.md)
+  * [Métodos](componentes-web/fileshare/metodos.md)
+  * [Eventos](componentes-web/fileshare/eventos.md)
 
 ## Widgets
 
@@ -44,14 +51,14 @@
 * [🖌 Personalización](widgets/personalizacion/README.md)
   * [Posición del widget](widgets/personalizacion/posicion-del-widget.md)
   * [Burbuja personalizable](widgets/personalizacion/burbuja-personalizable.md)
-* [🔗 Acciones por URL](widgets/url-triggers.md)
+* [🔗 Acciones por URL](widgets/acciones-por-url.md)
 * [🛰 API](widgets/api/README.md)
   * [Introducción](widgets/api/introduccion.md)
   * [Variables globales](widgets/api/variables-globales.md)
   * [Propiedades](widgets/api/propiedades.md)
   * [Métodos](widgets/api/metodos.md)
   * [Eventos](widgets/api/eventos.md)
-  * [Ajustes](widgets/api/diseno.md)
+  * [Ajustes](widgets/api/ajustes.md)
   * [Forzar segmentos](widgets/api/forzar-segmentos.md)
 
 ## Seguridad

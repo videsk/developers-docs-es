@@ -26,15 +26,15 @@ Si es el caso, te sugerimos contactar a tu desarrollador.
 
 En el menú lateral izquierdo, deberás buscar **Aspecto** y luego haz clic en **Editor**.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 Luego ya con el editor cargado deberás dar clic en el ícono de Wordpress en la parte superior izquierda, para finalmente dar clic en la opción **Template Parts**.
 
-<figure><img src="../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
 
 Posteriormente deberás buscar una parte de la plantilla que contenga el nombre Footer o pie de página, y deberás darle clic.
 
-<figure><img src="../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -42,15 +42,15 @@ Posteriormente deberás buscar una parte de la plantilla que contenga el nombre 
 
 Ya dentro del bloque footer, deberás dar clic en el botón azul + ubicado en la parte superior izquierda del editor, para posteriormente buscar el elemento **Custom HTML**.
 
-<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
 
 Deberás arrastrar el elemento en cualquier parte del pie de página o footer y dentro de la caja de texto pegarás el script de tu cuenta.
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
 Solo queda dar clic en el botón **Guardar** ubicado en la parte superior derecha.
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
 
 ## WordPress 5 o inferior
 
@@ -58,12 +58,12 @@ Solo queda dar clic en el botón **Guardar** ubicado en la parte superior derech
 
 En el menú lateral izquierdo, deberás buscar **Aspecto** y luego haz clic en **Widgets**.
 
-<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
 
 ### 2. Añadir bloque HTML
 
 Luego deberás buscar el elemento **HTML Personalizado** y arrastrarlo a cualquier recuadro que contenga el título **Footer o pie de página**.
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
 
 Con el elemento en **Footer** solo falta pegar el script que obtuviste de tu cuenta, y dar clic en el botón **Guardar**.
