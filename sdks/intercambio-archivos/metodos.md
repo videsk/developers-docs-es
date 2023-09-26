@@ -2,7 +2,7 @@
 
 ## `connect`
 
-Debes usar este método[^1] asíncrono para realizar la conexión con otro par `BeamPort`, entregando un `accessToken` que podrás obtener desde el evento `beamport:connect` de `Phone SDK`.
+Debes usar este método[^1] asíncrono para realizar la conexión con otro par `BeamPort`, entregando un `accessToken` que podrás obtener desde el evento `beamport:create` de `Phone SDK`.
 
 ```javascript
 await port.connect(accessToken);

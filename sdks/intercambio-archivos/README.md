@@ -51,7 +51,7 @@ sequenceDiagram
     participant Phone as Phone
     participant Agent as BeamPort Agent
 
-    Agent ->> Phone: Send "beamport:activated" event
+    Agent ->> Phone: Send "beamport:create" event
     Phone ->> User: Send accessToken
     User -->> User: Create instance
     User ->> Agent: Establish direct bidirectional connection
