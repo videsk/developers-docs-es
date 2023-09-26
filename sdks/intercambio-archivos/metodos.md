@@ -36,7 +36,7 @@ files.forEach(file => port.send(file));
 En el caso que envíes un `ArrayBuffer` o `Blob`, deberás indicar de manera obligatoria el `id` y `mimeType`.
 
 ```javascript
-await port.send(myBlob, 'my-unique-id', 'image/png');
+await port.send(myBlob, 'image/png', 'my-unique-id');
 ```
 
 {% hint style="warning" %}

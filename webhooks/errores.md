@@ -30,7 +30,7 @@ Para el caso de errores de formato en el webhook, automáticamente capturaremos 
 
 Los errores capturados durante el proceso de envío contienen una estructura que podrás visualizar de forma sencilla.
 
-![Estructura de un error](<../.gitbook/assets/image (19).png>)
+![Estructura de un error](<../.gitbook/assets/image (56).png>)
 
 Por defecto podrás ver los siguientes datos, los cuales describiremos a continuación.
 

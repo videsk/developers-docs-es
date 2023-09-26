@@ -24,7 +24,7 @@ El ruido ambiente ideal debe oscilar entre menor o igual a 90 db (decibelios).
 
 Como referencia puedes usar esta tabla:
 
-<figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption><p>Fuente: <a href="https://es.wikipedia.org/wiki/Decibelio">https://es.wikipedia.org/wiki/Decibelio</a></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Fuente: <a href="https://es.wikipedia.org/wiki/Decibelio">https://es.wikipedia.org/wiki/Decibelio</a></p></figcaption></figure>
 
 ## Uso
 

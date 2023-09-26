@@ -26,7 +26,7 @@ Haz clic en **Crear**.
 En caso que tu interfaz esté en inglés una función corresponde a **Roles** en el menú de IAM.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Deberás usar este rol para crear las credenciales en el siguiente paso. Así aseguras que solo tendremos permisos para crear archivos, no leer o modificar.
@@ -57,7 +57,7 @@ Luego deberás buscar la cuenta de servicio, dando clic en el nombre. Posteriorm
 
 Finalmente haz clic en el tipo de clave **JSON**.
 
-<figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption><p>Generar clave privada</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (2).png" alt=""><figcaption><p>Generar clave privada</p></figcaption></figure>
 
 Como último paso deberás pegar el contenido del archivo JSON en nuestra interfaz de configuración y Probar las credenciales.
 
@@ -65,7 +65,7 @@ Como último paso deberás pegar el contenido del archivo JSON en nuestra interf
 Solo puedes probar las credenciales la primera vez que las creas, luego no podrás utilizar la función.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 ## Opción 1
 

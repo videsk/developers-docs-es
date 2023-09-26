@@ -8,32 +8,32 @@ Puedes integrar Videsk mediante Cloudflare en menos de 5 minutos! A continuació
 
 Lo primero que debes hacer el seleccionar el sitio de tu cuenta Cloudflare, luego buscar en el panel lateral derecho **Aplicaciones**.
 
-![](<../../.gitbook/assets/image (28).png>)
+![](<../../.gitbook/assets/image (3) (1).png>)
 
-![](<../../.gitbook/assets/image (82).png>)
+![](<../../.gitbook/assets/image (7) (1).png>)
 
 Luego deberás buscar **Videsk** en la barra de búsqueda en la parte superior. Y posteriormente seleccionar la app **Videsk Widget**.
 
-![](<../../.gitbook/assets/image (56).png>)
+![](<../../.gitbook/assets/image (47).png>)
 
 Finalmente deberás dar clic en el botón superior **Vista previa de su sitio**.
 
-![](<../../.gitbook/assets/image (76).png>)
+![](<../../.gitbook/assets/image (55).png>)
 
 ## 2. Ingresar token
 
 Y en el editor de integraciones deberás ingresar el token público que encontrarás en tu cuenta dashboard.
 
-![](<../../.gitbook/assets/image (55).png>)
+![](<../../.gitbook/assets/image (21).png>)
 
 Deberás copiar y pegar el token en la casilla **Public Token**.
 
 ## 3. Seleccionar páginas
 
-En este paso deberás seleccionar si quieres que tu widget aparezca en todas las páginas de tu sitio o solo en algunas páginas. Para ello podrás dar clic en el botón ubicado en la parte superior donde está el texto Install Videsk Widget on ![](<../../.gitbook/assets/image (89).png>).
+En este paso deberás seleccionar si quieres que tu widget aparezca en todas las páginas de tu sitio o solo en algunas páginas. Para ello podrás dar clic en el botón ubicado en la parte superior donde está el texto Install Videsk Widget on ![](<../../.gitbook/assets/image (5) (1) (1).png>).
 
 Allí podrás ingresar en qué dominio, subdominio o url aparecerá.
 
-![](<../../.gitbook/assets/image (20).png>)
+![](<../../.gitbook/assets/image (25).png>)
 
 Listo! :tada:

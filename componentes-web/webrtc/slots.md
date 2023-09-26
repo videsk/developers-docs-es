@@ -24,7 +24,7 @@ El listado de botones accionables como compartir pantalla, micrófono, cámara, 
 * `button-chat`: botón de chat
 * `button-fullscreen`: botón de pantalla completa
 
-<figure><img src="../../.gitbook/assets/image (61).png" alt=""><figcaption><p>Botones disponibles por defecto</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Botones disponibles por defecto</p></figcaption></figure>
 
 {% hint style="info" %}
 Los botones de cambio de cámara y compartir pantalla automáticamente se mostrarán si la función está disponible en el navegador, de lo contrario no se mostrará.

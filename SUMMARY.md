@@ -51,14 +51,14 @@
 * [🖌 Personalización](widgets/personalizacion/README.md)
   * [Posición del widget](widgets/personalizacion/posicion-del-widget.md)
   * [Burbuja personalizable](widgets/personalizacion/burbuja-personalizable.md)
-* [🔗 Acciones por URL](widgets/acciones-por-url.md)
+* [🔗 Acciones por URL](widgets/url-triggers.md)
 * [🛰 API](widgets/api/README.md)
   * [Introducción](widgets/api/introduccion.md)
   * [Variables globales](widgets/api/variables-globales.md)
   * [Propiedades](widgets/api/propiedades.md)
   * [Métodos](widgets/api/metodos.md)
   * [Eventos](widgets/api/eventos.md)
-  * [Ajustes](widgets/api/ajustes.md)
+  * [Ajustes](widgets/api/diseno.md)
   * [Forzar segmentos](widgets/api/forzar-segmentos.md)
 
 ## Seguridad
