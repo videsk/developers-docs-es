@@ -1,6 +1,14 @@
 # Eventos
 
-Para poder asignar las funciones personalizadas debes utilizar nuestra función global de la siguiente forma:
+Nuestro widget emite un evento al momento de cargar llamado `videsk-load`, el cual puede ser usado para comenzar a interactuar con el widget, esto debido a que posee una carga diferida y asíncrona:
+
+```javascript
+document.addEventListener('videsk-load', () => {
+    // Puedes usar la variable global videsk
+});
+```
+
+Para poder asignar las funciones personalizadas debes utilizar nuestra función global `videsk` de la siguiente forma:
 
 ```javascript
 document.addEventListener('videsk-load', () => {
@@ -10,6 +18,10 @@ document.addEventListener('videsk-load', () => {
     };
 });
 ```
+
+{% hint style="info" %}
+Puedes acceder a nuestra variable global mediante `window.videsk` o `videsk`.
+{% endhint %}
 
 * onToggle $$f$$&#x20;
 * onFullToggle $$f$$&#x20;
