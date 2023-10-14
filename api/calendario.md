@@ -58,11 +58,7 @@ application/json
 {% endswagger-response %}
 
 {% swagger-response status="401: Unauthorized" description="API Key invalido" %}
-Referencia de errores en 
-
-[autorización](autorizacion.md)
-
-.
+Referencia de errores en [autorización](autorizacion.md).
 {% endswagger-response %}
 {% endswagger %}
 
@@ -166,11 +162,7 @@ application/json
 {% endswagger-response %}
 
 {% swagger-response status="401: Unauthorized" description="API Key invalido" %}
-Referencia de errores en 
-
-[autorización](autorizacion.md)
-
-.
+Referencia de errores en [autorización](autorizacion.md).
 {% endswagger-response %}
 {% endswagger %}
 
@@ -404,11 +396,7 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 {% endswagger-response %}
 
 {% swagger-response status="401: Unauthorized" description="API Key inválido" %}
-Referencia de errores en 
-
-[autorización](autorizacion.md)
-
-.
+Referencia de errores en [autorización](autorizacion.md).
 {% endswagger-response %}
 {% endswagger %}
 
@@ -514,11 +502,7 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 {% endswagger-response %}
 
 {% swagger-response status="401: Unauthorized" description="API Key invalido" %}
-Referencia de errores en 
-
-[autorización](autorizacion.md)
-
-.
+Referencia de errores en [autorización](autorizacion.md).
 {% endswagger-response %}
 {% endswagger %}
 
@@ -752,11 +736,7 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 {% endswagger-response %}
 
 {% swagger-response status="401: Unauthorized" description="API Key inválido" %}
-Referencia de errores en 
-
-[autorización](autorizacion.md)
-
-.
+Referencia de errores en [autorización](autorizacion.md).
 {% endswagger-response %}
 {% endswagger %}
 
@@ -862,11 +842,7 @@ application/json
 {% endswagger-response %}
 
 {% swagger-response status="401: Unauthorized" description="API Key inválido" %}
-Referencia de errores en 
-
-[autorización](autorizacion.md)
-
-.
+Referencia de errores en [autorización](autorizacion.md).
 {% endswagger-response %}
 
 {% swagger-response status="409: Conflict" description="Hora no disponible" %}
@@ -1000,11 +976,7 @@ Campaña o web referido
 {% endswagger-response %}
 
 {% swagger-response status="401: Unauthorized" description="API Key invalido" %}
-Referencia de errores en 
-
-[autorización](autorizacion.md)
-
-.
+Referencia de errores en [autorización](autorizacion.md).
 {% endswagger-response %}
 
 {% swagger-response status="409: Conflict" description="Hora no disponible" %}
@@ -1022,9 +994,7 @@ Referencia de errores en
 
 {% swagger method="post" path="/public/video-contact-center/schedule/cancel" baseUrl="https://api.videsk.io" summary="Cancelar una hora" %}
 {% swagger-description %}
-Cancelar una hora usando 
-
-`actionToken`
+Cancelar una hora usando `actionToken`
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
@@ -1085,19 +1055,13 @@ Este error indica que la hora ya ha sido cancelada previamente, no es posible ca
 {% endswagger-response %}
 
 {% swagger-response status="401: Unauthorized" description="Action token inválido" %}
-Referencia de errores en 
-
-[autorización](autorizacion.md)
-
-.
+Referencia de errores en [autorización](autorizacion.md).
 {% endswagger-response %}
 {% endswagger %}
 
 {% swagger method="post" path="/public/video-contact-center/schedule/reschedule" baseUrl="https://api.videsk.io" summary="Reagendar una hora" %}
 {% swagger-description %}
-Reagendar una hora usando 
-
-`actionToken`
+Reagendar una hora usando `actionToken`
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
@@ -1159,11 +1123,7 @@ Este error indica que la hora ya ha sido reagendada previamente, no es posible r
 {% endswagger-response %}
 
 {% swagger-response status="401: Unauthorized" description="Action token inválido" %}
-Referencia de errores en 
-
-[autorización](autorizacion.md)
-
-.
+Referencia de errores en [autorización](autorizacion.md).
 {% endswagger-response %}
 {% endswagger %}
 
@@ -1216,10 +1176,6 @@ Este error se arroja cuando se intenta obtener información de una hora que ya h
 {% endswagger-response %}
 
 {% swagger-response status="401: Unauthorized" description="Action token inválido" %}
-Referencia de errores en 
-
-[autorización](autorizacion.md)
-
-.
+Referencia de errores en [autorización](autorizacion.md).
 {% endswagger-response %}
 {% endswagger %}

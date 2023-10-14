@@ -130,3 +130,4 @@
 * [Calendario](api/calendario.md)
 * [Encuestas](api/encuestas.md)
 * [Formularios](api/formularios.md)
+* [QMS](api/qms.md)
