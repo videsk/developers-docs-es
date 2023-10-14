@@ -190,7 +190,13 @@ Backend API Key
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Información de la fila" %}
-
+```json
+{
+    "name": "Atención a clientes",
+    "id": "652a1ae848880e168884e49b",
+    "users": 1
+}
+```
 {% endswagger-response %}
 
 {% swagger-response status="404: Not Found" description="Oficina o segmento no encontrado" %}
