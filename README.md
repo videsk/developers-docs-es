@@ -2,6 +2,7 @@
 description: >-
   Hola 👋 dev! Está es la documentación de desarrollo sobre nuestros productos
   como recursos de flujos, SDK y API.
+layout: landing
 ---
 
 # 👋 Bienvenido
