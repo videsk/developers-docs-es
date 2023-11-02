@@ -143,6 +143,8 @@ phone.listen('queued', () => console.log('El cliente ha sido añadido a la fila'
 Para los siguientes métodos deberás usar nuestros dos SDKs [Forms](../forms.md) y [Captcha](../captcha.md), **solo si deseas usarlos**.
 {% endhint %}
 
+***
+
 ## Obtener formulario
 
 Con este método podrás obtener el formulario de un segmento. Recibe tres argumentos:
