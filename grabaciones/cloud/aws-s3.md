@@ -105,4 +105,6 @@ Recuerda reemplazar los valores de ejemplo con tus ajustes.
 
 ```
 
+Referencia: [https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html)
+
 [^1]: Esto es el prefijo del archivo
