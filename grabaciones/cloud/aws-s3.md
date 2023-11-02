@@ -60,3 +60,49 @@ Este es el nombre de la región que proporciona AWS S3 al momento de conectarse.
 ## Bucket name
 
 Corresponde al nombre del bucket creado. Ejemplo: `videsk-storage-s3`
+
+## Sugerencias de seguridad
+
+Si estás utilizando un bucket multipropósito te sugerimos añadir políticas de control de acceso a tus bucket para evitar accesos no deseados a otros ficheros.
+
+En el siguiente ejemplo usamos un perfil IAM `videsk-connector` para definir reglas de escritura en la carpeta (prefijos) [`uploads/`](#user-content-fn-1)[^1] , siendo `ACCOUNT-ID-WITHOUT-HYPHENS` tu ID de cuenta.
+
+{% hint style="info" %}
+Recuerda reemplazar los valores de ejemplo con tus ajustes.
+{% endhint %}
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowPrefixedWrites",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:user/videsk-connector"
+            },
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::YOUR-BUCKET-NAME/uploads/*"
+        },
+        {
+            "Sid": "DenyNonPrefixedWrites",
+            "Effect": "Deny",
+            "Principal": {
+                "AWS": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:user/videsk-connector"
+            },
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::YOUR-BUCKET-NAME/*",
+            "Condition": {
+                "StringNotLikeIfExists": {
+                    "s3:prefix": [
+                        "uploads/*"
+                    ]
+                }
+            }
+        }
+    ]
+}
+
+```
+
+[^1]: Esto es el prefijo del archivo
