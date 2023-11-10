@@ -205,3 +205,39 @@ Recuerda asignar el conjunto de datos creado a un informe nuevo o existente.
 {% endhint %}
 
 ![Ejemplo de informe en PowerBI con datos enviados mediante Webhooks](<../../.gitbook/assets/image (48).png>)
+
+## Ejemplo webhook
+
+```javascript
+[
+	{
+      "segmento": {{parser segment.name}},
+      "agente": "{{agent.firstname}} {{agent.lastname}}",
+      "fecha_inicio" : {{parser startedAt}},
+      "fecha_fin": {{parser endedAt}},
+      "cliente_cuelga": {{parser customerLeave}},
+      "comentario": {{parser comment.text}},
+      "formulario_agente": {{parser agentForm}},
+      "formulario_cliente": {{parser baseForm}},
+      "sistema_operativo_nombre": {{parser extraData.osName}},
+      "sistema_operativo_version": {{parser extraData.osVersion}},
+      "navegador_nombre": {{parser extraData.browserName}},
+      "navegador_version": {{parser extraData.browserVersion}},
+      "dispositivo": {{parser extraData.deviceType}},
+      "sitio_web": {{parser extraData.referrer}},
+      "zona_horaria": {{parser extraData.timezone}},
+      "idioma": {{parser extraData.langName}},
+      "region": {{parser extraData.regionName}},
+      "ciudad": {{parser extraData.cityName}},
+      "latitud": {{parser extraData.coordinates.[0]}},
+      "longitud": {{parser extraData.coordinates.[1]}},
+      "duracion": {{parser duration}},
+      "id" :{{parser id}},
+      "duracion_acw": {{parser acwDuration}},
+      "duracion_efectiva": {{parser effectiveDuration}},
+      "dia": {{#date startedAt}}{ "day": "numeric" }{{/date}},
+      "mes": {{#date startedAt}}{ "month": "numeric" }{{/date}},
+      "ano": {{#date startedAt}}{ "year": "numeric" }{{/date}}
+    }
+]
+```
