@@ -102,3 +102,23 @@ videsk.constraints = {
 Te sugerimos utilizar esta propiedad en tótems o kioskos interactivos, ya que podrás definir los permisos con anterioridad sin percibir problemas técnicos.
 {% endhint %}
 
+## `fullscreen`
+
+Con esta propiedad podrás configurar el widget para que cubra todo el sitio sin necesidad de añadir CSS personalizado.
+
+```javascript
+videsk.fullscreen = true;
+```
+
+{% code lineNumbers="true" %}
+```javascript
+document.addEventListener('videsk-load', () => {
+    videsk.fullscreen = true;
+    videsk.toggle(true);
+});
+```
+{% endcode %}
+
+{% hint style="warning" %}
+Al usar el widget en modo `fullscreen` la burbuja desaparece, por lo tanto, deberás usar `videsk.toggle(true)` para forzar la visibilidad.
+{% endhint %}
