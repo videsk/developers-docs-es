@@ -22,6 +22,33 @@ Debes considerar que la forma de comunicación entre nuestro ACD y POCs (puntos 
 
 Puedes ver más información en la [documentación de Webhooks](broken-reference).
 
+### Flujo de integración
+
+Glosario:
+
+* QMS: Sistema de administración de filas (Queues Management System)
+* POC: Puntos de contacto (Point of contact)
+* Screens: Pantallas con turnos
+
+```mermaid
+sequenceDiagram
+
+    participant Screens
+    participant QMS
+    participant Videsk
+
+    QMS->>Videsk: Solicita añadir cliente a fila video
+    Note over QMS,Videsk: Respuesta de éxito o falla inmediata
+    Videsk->>QMS: Responde a solicitud de adición fila
+    activate Videsk
+    Videsk-->>Videsk: Asigna llamada a un agente y POC
+    Videsk->>QMS: (Webhook) Notificación de asignación
+    deactivate Videsk
+    QMS->>Screens: Notifica a cliente número POC en pantalla
+    Screens->>Videsk: Cliente se sienta frente a POC
+
+```
+
 {% swagger method="post" path="/branches/:branch/queues/:queue" baseUrl="https://api.videsk.io/public/video-contact-center" summary="Solicitud de añadir a fila" %}
 {% swagger-description %}
 Solicitar añadir a la fila un ticket de QMS
