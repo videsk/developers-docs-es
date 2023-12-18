@@ -14,6 +14,8 @@ La forma base de integración es mediante un script. Este script carga recursos 
 No somos compatibles con [SRI (Subresource Integrity)](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource\_Integrity), de lo contrario no podríamos ofrecer actualizaciones y mejoras de forma constante los cuales son cada semana.
 {% endhint %}
 
+{% embed url="https://www.loom.com/share/68ea3f599d9f4c7cad50f126cd5b37cd?sid=cb16d1fa-f5c2-4cc1-b206-5d5477afc017" %}
+
 {% tabs %}
 {% tab title="HTML" %}
 ```markup
