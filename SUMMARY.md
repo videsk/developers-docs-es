@@ -66,6 +66,7 @@
 * [🔐 SSL](seguridad/ssl.md)
 * [💆♀ Cabeceras](seguridad/cabeceras.md)
 * [⛔ Firewall](seguridad/firewall.md)
+* [🖼 Iframes](seguridad/iframes.md)
 
 ## 🖇 Integraciones
 
