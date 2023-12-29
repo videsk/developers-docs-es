@@ -8,7 +8,7 @@ description: Te explicamos porqué es obligatorio contar un SSL válido en tu si
 
 Además de lo anterior, existen ciertas tecnologías, como las que utiliza Videsk que requieren que exista de manera obligatoria un SSL válido, con el objetivo de garantizar la seguridad del transporte de datos entre tus clientes y tu equipo.
 
-## ¿Porqué necesito uno?
+## ¿Por qué necesito uno?
 
 Videsk utiliza tecnología en tiempo real, una de ellas es WebRTC que requiere de conexiones seguras mediante tu certificado SSL, asegurando que la conexión entre tu cliente y con alguien de tu equipo sea 100% cifrada evitando fugas de datos ya sea de video, audio, chat, archivos, etc.
 

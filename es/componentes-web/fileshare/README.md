@@ -17,10 +17,10 @@ Primero deberás cargar el componente en la cabecera de tu sitio web como script
 ```
 
 {% hint style="warning" %}
-Debes cargar el recurso antes de usar el componente `<videsk-fileshare>`, de lo contario será un elemento sin las propiedades y métodos. Además, debes tener cuidado con el atribute `async` o `defer`.
+Debes cargar el recurso antes de usar el componente `<videsk-fileshare>`, de lo contario será un elemento sin las propiedades y métodos. Además, debes tener cuidado con los atributos `async` o `defer`.
 {% endhint %}
 
-Para poder personalizar este componente solo deberás definirlo en alguna parte de tú código HTML:
+Para poder personalizar este componente solo deberás definirlo en alguna parte de tu código HTML:
 
 ```html
 <videsk-fileshare></videsk-fileshare>
