@@ -105,6 +105,7 @@
   * [Power BI](webhooks/integraciones/power-bi.md)
   * [Airtable](webhooks/integraciones/airtable.md)
 * [🐞 Errores](webhooks/errores.md)
+* [🔌 Integradores (3rd party)](webhooks/integradores-3rd-party.md)
 
 ## 🐞 Depuración
 
