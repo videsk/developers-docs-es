@@ -137,7 +137,7 @@ Para más información de los errores generados por formulario visita la [docume
 {% endswagger %}
 
 {% hint style="info" %}
-El valor `integrationData`será usado para ser enviado mediante nuestros webhooks, por lo que es útil en caso que desees enviar un ID interno, metadata, etc. para la sincronización.
+El valor `integrationData`será usado para ser enviado mediante nuestros webhooks, por lo que es útil en caso que desees enviar un ID interno, metadata, etc. para la sincronización. **Tiene un límite de 50 Kb**, recibe cualquier tipo de dato `String`, `Objetcs`, `Arrays`, etc.
 
 
 
