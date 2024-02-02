@@ -113,11 +113,7 @@ Tipo de entidad "segments" o "services"
 {% endswagger-response %}
 
 {% swagger-response status="401: Unauthorized" description="API Key inválido" %}
-Referencia de errores en 
-
-[autorización](autorizacion.md)
-
-.
+Referencia de errores en [autorización](autorizacion.md).
 {% endswagger-response %}
 {% endswagger %}
 
@@ -219,10 +215,6 @@ Este es un campo vació requerido que funciona como honeypot a bots.
 {% endswagger-response %}
 
 {% swagger-response status="401: Unauthorized" description="API Key inválido" %}
-Referencia de errores en 
-
-[autorización](autorizacion.md)
-
-.
+Referencia de errores en [autorización](autorizacion.md).
 {% endswagger-response %}
 {% endswagger %}

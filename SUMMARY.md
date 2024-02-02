@@ -127,10 +127,10 @@
   * [Google Drive / FileStream](grabaciones/local/google-drive-filestream.md)
   * [AWS S3](grabaciones/local/aws-s3.md)
 
-## API
+## API pública
 
-* [Autorización](api/autorizacion.md)
-* [Calendario](api/calendario.md)
-* [Encuestas](api/encuestas.md)
-* [Formularios](api/formularios.md)
-* [QMS](api/qms.md)
+* [Autorización](api-publica/autorizacion.md)
+* [Calendario](api-publica/calendario.md)
+* [Encuestas](api-publica/encuestas.md)
+* [Formularios](api-publica/formularios.md)
+* [QMS](api-publica/qms.md)
