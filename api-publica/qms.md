@@ -148,7 +148,7 @@ El valor `integrationData`será usado para ser enviado mediante nuestros webhook
 Esto no se mostrará al agente, solo estará disponible en los webhooks de integración.
 {% endhint %}
 
-{% swagger method="get" path="/branches" baseUrl="https://api..videsk.io/public/video-contact-center" summary="Obtener listado de oficinas" %}
+{% swagger method="get" path="/branches" baseUrl="https://api.videsk.io/public/video-contact-center" summary="Obtener listado de oficinas" %}
 {% swagger-description %}
 Listado de oficinas usando API Key
 {% endswagger-description %}
