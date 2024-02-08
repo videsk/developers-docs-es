@@ -101,20 +101,6 @@ La respuesta contiene el ID interno del ticket en la fila y el nombre del segmen
 ```
 {% endswagger-response %}
 
-{% swagger-response status="428: Precondition Required" description="Formulario obligatorio" %}
-```json
-{
-    "name": "PreconditionRequired",
-    "message": "Is mandatory to provide a forms submission id.",
-    "code": 426,
-    "className": "precondition-require",
-    "errors": {}
-}
-```
-
-Para más información de los errores generados por formulario visita la [documentación de formularios](formularios.md).
-{% endswagger-response %}
-
 {% swagger-response status="406: Not Acceptable" description="Sin agentes disponibles" %}
 ```json
 {
@@ -137,6 +123,20 @@ Para más información de los errores generados por formulario visita la [docume
     "errors": {}
 }
 ```
+{% endswagger-response %}
+
+{% swagger-response status="428: Precondition Required" description="Formulario obligatorio" %}
+```json
+{
+    "name": "PreconditionRequired",
+    "message": "Is mandatory to provide a forms submission id.",
+    "code": 426,
+    "className": "precondition-require",
+    "errors": {}
+}
+```
+
+Para más información de los errores generados por formulario visita la [documentación de formularios](formularios.md).
 {% endswagger-response %}
 {% endswagger %}
 
