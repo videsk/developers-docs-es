@@ -74,6 +74,10 @@ ID de fila (segment)
 ID del formulario
 {% endswagger-parameter %}
 
+{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
+application/json
+{% endswagger-parameter %}
+
 {% swagger-response status="201: Created" description="Ticket añadido a la fila" %}
 ```json
 {
@@ -153,6 +157,10 @@ Listado de oficinas usando API Key
 Backend API Key
 {% endswagger-parameter %}
 
+{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
+application/json
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="Listado de oficinas" %}
 ```json
 [
@@ -178,6 +186,10 @@ Listado de filas disponibles en la oficina
 
 {% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
 Backend API Key
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
+application/json
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Listado de filas disponibles" %}
@@ -214,6 +226,10 @@ Obtén información de una fila individual
 
 {% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
 Backend API Key
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
+application/json
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Información de la fila" %}

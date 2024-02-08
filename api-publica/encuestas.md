@@ -29,6 +29,14 @@ ID de la entidad
 Tipo de entidad "segments" o "services"
 {% endswagger-parameter %}
 
+{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
+Bearer {token}
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
+application/json
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="Encuesta" %}
 ```javascript
 {
@@ -140,6 +148,14 @@ ID de la respuesta
 
 {% swagger-parameter in="body" name="values.value" required="true" type="String" %}
 Valor de la respuesta
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
+Bearer {token}
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
+application/json
 {% endswagger-parameter %}
 
 {% swagger-response status="201: Created" description="Encuesta recibida" %}

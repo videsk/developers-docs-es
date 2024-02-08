@@ -53,6 +53,14 @@ ID del segmento
 Tipo de formulario "base" o "contact"
 {% endswagger-parameter %}
 
+{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
+Bearer {token}
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
+application/json
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="Formulario" %}
 ```javascript
 {
@@ -210,6 +218,14 @@ Valor del campo
 
 {% swagger-parameter in="body" name="token" type="String" %}
 Token captcha (no backend)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
+Bearer {token}
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
+application/json
 {% endswagger-parameter %}
 
 {% swagger-response status="201: Created" description="Encuesta recibida" %}

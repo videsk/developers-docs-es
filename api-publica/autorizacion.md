@@ -27,7 +27,7 @@ Obtener segmentos usando autorización con API Key
 Bearer {API Key}
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" required="true" name="Content-Type" type="" %}
+{% swagger-parameter in="header" required="true" name="Content-Type" type="String" %}
 application/json
 {% endswagger-parameter %}
 
