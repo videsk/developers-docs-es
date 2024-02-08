@@ -101,13 +101,13 @@ La respuesta contiene el ID interno del ticket en la fila y el nombre del segmen
 ```
 {% endswagger-response %}
 
-{% swagger-response status="400: Bad Request" description="Formulario obligatorio" %}
+{% swagger-response status="428: Precondition Required" description="Formulario obligatorio" %}
 ```json
 {
-    "name": "BadRequest",
+    "name": "PreconditionRequired",
     "message": "Is mandatory to provide a forms submission id.",
-    "code": 400,
-    "className": "bad-request",
+    "code": 426,
+    "className": "precondition-require",
     "errors": {}
 }
 ```
