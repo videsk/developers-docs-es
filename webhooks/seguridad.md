@@ -119,3 +119,34 @@ Todo se ejecuta dentro de nuestra red VPC y sale de ella una vez que la petició
 {% hint style="info" %}
 La velocidad promedio de transferencia entre plataformas comerciales, no supera los 250 milisegundos.
 {% endhint %}
+
+## Compartir secretos
+
+{% hint style="warning" %}
+Nuestro protocolo dicta que la prioridad es que nuestros clientes deben cargar sus secretos de plataformas terceras directamente en su propia cuenta, evite compartirnos credenciales por la seguridad de su propio negocio.
+{% endhint %}
+
+En caso que estés realizando una integración asistida por nuestro equipo y requieras compartir credenciales de acceso a cuentas de tus proveedores, deberá seguir nuestros protocolos, evitando siempre a toda costa enviar información sensible como credenciales en texto plano sin mecanismos de protección.
+
+Nuestro protocolo dicta que toda información será almacenada internamente en baúles de credenciales diseñadas especificamente para estas situaciones con tiempo de expiración.
+
+### Protocolo (credential sharing)
+
+1. <mark style="color:red;">**Analice si realmente es necesario compartir credenciales con nuestro equipo de soporte, API keys, tokens, etc. pueden ser cargados directamente a través de la plataforma.**</mark>
+2. Ingrese a Doppler Share: [https://share.doppler.com/](https://share.doppler.com/)
+3. Ajuste el tiempo de expiración en 1 vista (1 view) y 1 día (1 day).
+4. Copie y pegue la información a compartir
+5. Copie la URL generada
+6. Envíe un correo a [security@videsk.io](mailto:security@videsk.io) con el asunto: Customers integration credentials sharin<mark style="background-color:red;">g</mark>
+7. En el cuerpo del correo debe enviar la siguiente estructura:
+
+<pre><code>Empresa: (Nombre del negocio)
+Detalles: (Describa el tipo de información sensible a compartir)
+<strong>Clasificación: (Crítica, Alta, Media o Baja)
+</strong>Tiempo de expiración: (Indique cuánto tiempo se deberá retener esta información, por defecto: 3 meses)
+Contacto de seguridad: (Correo del personal de su negocio encargado de notificaciones de seguridad)
+</code></pre>
+
+{% hint style="danger" %}
+No comparta credenciales a ningún otro correo que no corresponda a **security@videsk.io**.
+{% endhint %}
