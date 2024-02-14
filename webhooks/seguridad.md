@@ -137,7 +137,7 @@ Nuestro protocolo dicta que toda información será almacenada internamente en b
 3. Ajuste el tiempo de expiración en 1 vista (1 view) y 1 día (1 day).
 4. Copie y pegue la información a compartir
 5. Copie la URL generada
-6. Envíe un correo a [security@videsk.io](mailto:security@videsk.io) con el asunto: Customers integration credentials sharin<mark style="background-color:red;">g</mark>
+6. Envíe un correo a [security@videsk.io](mailto:security@videsk.io) con el asunto: <mark style="background-color:yellow;">Customers integration credentials sharing</mark>
 7. En el cuerpo del correo debe enviar la siguiente estructura:
 
 <pre><code>Empresa: (Nombre del negocio)
