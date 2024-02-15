@@ -14,17 +14,6 @@ Existen ciertos endpoints que requerirán ciertos campos en el cuerpo (`body`) d
 Este comportamiento se verá reflejado en las medidas de seguridad como captcha o similares.
 {% endhint %}
 
-```mermaid
-sequenceDiagram
-    User->>Videsk: POST /auth/login
-    Videsk->>User: Exchange tokens (access and refresh)
-    User->> Videsk: POST /auth/refresh-token
-    Videsk->>User: Exchange accessToken
-    User->>Videsk: POST /auth/logout
-    Videsk->>Videsk: Invalidate tokens
-
-```
-
 {% swagger method="get" path="/public/video-contact-center/segments" baseUrl="https://api.videsk.io" summary="Ejemplo de autorización" expanded="true" %}
 {% swagger-description %}
 Obtener segmentos usando autorización con API Key
