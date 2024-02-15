@@ -130,6 +130,7 @@
 ## API pública
 
 * [Autorización](api-publica/autorizacion.md)
+* [Segmentos](api-publica/segmentos.md)
 * [Calendario](api-publica/calendario.md)
 * [Encuestas](api-publica/encuestas.md)
 * [Formularios](api-publica/formularios.md)
