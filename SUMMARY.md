@@ -1,8 +1,8 @@
 # Table of contents
 
 * [👋 Bienvenido](README.md)
-* [‼ Consideraciones](consideraciones.md)
-* [☝ Conceptos](conceptos.md)
+* [‼️ Consideraciones](consideraciones.md)
+* [☝️ Conceptos](conceptos.md)
 
 ## SDKs
 
@@ -36,7 +36,7 @@
   * [Propiedades](componentes-web/webrtc/propiedades.md)
   * [Métodos](componentes-web/webrtc/metodos.md)
   * [Eventos](componentes-web/webrtc/eventos.md)
-* [🗃 Fileshare](componentes-web/fileshare/README.md)
+* [🗃️ Fileshare](componentes-web/fileshare/README.md)
   * [Slots](componentes-web/fileshare/slots.md)
   * [Propiedades](componentes-web/fileshare/propiedades.md)
   * [Métodos](componentes-web/fileshare/metodos.md)
@@ -48,11 +48,11 @@
   * [Google Tag Manager](widgets/integration/google-tag-manager.md)
   * [WordPress](widgets/integration/wordpress.md)
   * [Cloudflare](widgets/integration/cloudflare.md)
-* [🖌 Personalización](widgets/personalizacion/README.md)
+* [🖌️ Personalización](widgets/personalizacion/README.md)
   * [Posición del widget](widgets/personalizacion/posicion-del-widget.md)
   * [Burbuja personalizable](widgets/personalizacion/burbuja-personalizable.md)
 * [🔗 Acciones por URL](widgets/url-triggers.md)
-* [🛰 API](widgets/api/README.md)
+* [🛰️ API](widgets/api/README.md)
   * [Introducción](widgets/api/introduccion.md)
   * [Variables globales](widgets/api/variables-globales.md)
   * [Propiedades](widgets/api/propiedades.md)
@@ -64,11 +64,11 @@
 ## Seguridad
 
 * [🔐 SSL](seguridad/ssl.md)
-* [💆♀ Cabeceras](seguridad/cabeceras.md)
+* [💆‍♀️ Cabeceras](seguridad/cabeceras.md)
 * [⛔ Firewall](seguridad/firewall.md)
-* [🖼 Iframes](seguridad/iframes.md)
+* [🖼️ Iframes](seguridad/iframes.md)
 
-## 🖇 Integraciones
+## 🖇️ Integraciones
 
 * [Kioskos](integraciones/kioskos.md)
 * [Frameworks](integraciones/frameworks/README.md)
@@ -101,7 +101,7 @@
   * [#get](webhooks/helpers/get.md)
   * [#date](webhooks/helpers/date.md)
   * [#url-param](webhooks/helpers/url-param.md)
-* [🎛 Integraciones](webhooks/integraciones/README.md)
+* [🎛️ Integraciones](webhooks/integraciones/README.md)
   * [Power BI](webhooks/integraciones/power-bi.md)
   * [Airtable](webhooks/integraciones/airtable.md)
 * [🐞 Errores](webhooks/errores.md)

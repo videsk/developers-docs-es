@@ -254,3 +254,13 @@ application/json
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+## Postman collection
+
+Puedes clonar nuestra colección de postman exclusiva para integración QMS:
+
+{% embed url="https://www.postman.com/videsk/workspace/qms-integration/overview" %}
+Colección Postman
+{% endembed %}
+
+La colección incluye un flow para mejor entendimiento de cómo realizar la integración.
