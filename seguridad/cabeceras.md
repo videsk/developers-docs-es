@@ -38,7 +38,7 @@ Si configuras el valor en `DENY` podrías perder ciertas funcionalidades de Vide
 Esta cabecera (CSP) permite definir que tipo de contenido se tiene permitido cargar para cada servicio y tipo de recursos registrados en esta cabecera.
 
 ```
-Content-Security-Policy: connect-src 'self' *.videsk.io: script-src *.videsk.io; style-src *.videsk.io prefetch-src *.videsk.io media-src *.videsk.io;
+Content-Security-Policy: connect-src 'self' *.videsk.io; script-src *.videsk.io; style-src *.videsk.io; prefetch-src *.videsk.io; media-src *.videsk.io;
 ```
 
 {% hint style="warning" %}
