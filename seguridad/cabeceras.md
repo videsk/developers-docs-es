@@ -4,7 +4,7 @@ description: >-
   antes de integrar Videsk en tu sitio web.
 ---
 
-# 💆♀ Cabeceras
+# 💆‍♀️ Cabeceras
 
 Dependiendo de la configuración de tu sitio web y dónde esté alojado deberás configurar ciertas cabeceras en tu servidor web.
 
@@ -38,8 +38,12 @@ Si configuras el valor en `DENY` podrías perder ciertas funcionalidades de Vide
 Esta cabecera (CSP) permite definir que tipo de contenido se tiene permitido cargar para cada servicio y tipo de recursos registrados en esta cabecera.
 
 ```
-Content-Security-Policy: script-src *.videsk.io; style-src *.videsk.io; prefetch-src *.videsk.io; media-src *.videsk.io; ....
+Content-Security-Policy: connect-src 'self' *.videsk.io: script-src *.videsk.io; style-src *.videsk.io prefetch-src *.videsk.io media-src *.videsk.io;
 ```
+
+{% hint style="warning" %}
+Sin `connect-src 'self' *videsk.io` provocarás que las conexiones WebSocket sean bloqueadas.
+{% endhint %}
 
 ## Content-Security-Policy-Report-Only
 
