@@ -14,20 +14,21 @@ Existen ciertos endpoints que requerirán ciertos campos en el cuerpo (`body`) d
 Este comportamiento se verá reflejado en las medidas de seguridad como captcha o similares.
 {% endhint %}
 
-{% swagger method="get" path="/public/video-contact-center/segments" baseUrl="https://api.videsk.io" summary="Ejemplo de autorización" expanded="true" %}
-{% swagger-description %}
+## Ejemplo de autorización
+
+<mark style="color:blue;">`GET`</mark> `https://api.videsk.io/public/video-contact-center/segments`
+
 Obtener segmentos usando autorización con API Key
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="Bearer" required="true" %}
-Bearer {API Key}
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="header" required="true" name="Content-Type" type="String" %}
-application/json
-{% endswagger-parameter %}
+| Name                                            | Type   | Description      |
+| ----------------------------------------------- | ------ | ---------------- |
+| Authorization<mark style="color:red;">\*</mark> | Bearer | Bearer {API Key} |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json |
 
-{% swagger-response status="401: Unauthorized" description="Invalid JWT" %}
+{% tabs %}
+{% tab title="401: Unauthorized Invalid JWT" %}
 ```javascript
 {
 	"name": "NotAuthenticated",
@@ -37,9 +38,9 @@ application/json
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="JWT malformed" %}
+{% tab title="401: Unauthorized JWT malformed" %}
 ```javascript
 {
 	"name": "NotAuthenticated",
@@ -49,9 +50,9 @@ application/json
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="Invalid signature" %}
+{% tab title="401: Unauthorized Invalid signature" %}
 ```javascript
 {
 	"name": "NotAuthenticated",
@@ -61,21 +62,9 @@ application/json
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="Expired JWT" %}
-```javascript
-{
-	"name": "NotAuthenticated",
-	"message": "jwt expired",
-	"code": 401,
-	"className": "not-authenticated",
-	"errors": {}
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="401: Unauthorized" description="Infected JWT" %}
+{% tab title="401: Unauthorized Infected JWT" %}
 ```javascript
 {
 	"name": "NotAuthenticated",
@@ -85,21 +74,21 @@ application/json
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="403: Forbidden" description="Integration key was removed" %}
+{% tab title="401: Unauthorized Expired JWT" %}
 ```javascript
 {
-	"name": "Forbidden",
-	"message": "The integration token it's invalid or was removed.",
-	"code": 403,
-	"className": "forbidden",
+	"name": "NotAuthenticated",
+	"message": "jwt expired",
+	"code": 401,
+	"className": "not-authenticated",
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="403: Forbidden" description="API Key don't have permissions to CRUD" %}
+{% tab title="403: Forbidden API Key don't have permissions to CRUD" %}
 ```javascript
 {
 	"name": "Forbidden",
@@ -109,5 +98,17 @@ application/json
 	"errors": {}
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+
+{% tab title="403: Forbidden Integration key was removed" %}
+```javascript
+{
+	"name": "Forbidden",
+	"message": "The integration token it's invalid or was removed.",
+	"code": 403,
+	"className": "forbidden",
+	"errors": {}
+}
+```
+{% endtab %}
+{% endtabs %}

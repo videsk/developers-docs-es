@@ -12,20 +12,21 @@ Los endpoints a continuación son públicos, es decir, se antepone `/public/` co
 Te sugerimos revisar el [diagrama de flujos](../sdks/calendario/#flujos) para tener una vista del orden de peticiones a realizar, antes de utilizar nuestra API.
 {% endhint %}
 
-{% swagger method="get" path="/public/video-contact-center/services" baseUrl="https://api.videsk.io" summary="Obtener servicios de calendario" expanded="true" %}
-{% swagger-description %}
+## Obtener servicios de calendario
+
+<mark style="color:blue;">`GET`</mark> `https://api.videsk.io/public/video-contact-center/services`
+
 Podrás obtener el listado de los servicios públicos disponibles
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Bearer {token}
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
+| Name                                            | Type   | Description      |
+| ----------------------------------------------- | ------ | ---------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer {token}   |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json |
 
-{% swagger-response status="200: OK" description="Listado de servicios" %}
+{% tabs %}
+{% tab title="200: OK Listado de servicios" %}
 {% code lineNumbers="true" %}
 ```javascript
 {
@@ -55,39 +56,41 @@ application/json
 }
 ```
 {% endcode %}
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="API Key invalido" %}
+{% tab title="401: Unauthorized API Key invalido" %}
 Referencia de errores en [autorización](autorizacion.md).
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="get" path="/public/video-contact-center/services/:id/dates" baseUrl="https://api.videsk.io" summary="Obtener días del mes disponibles por id de servicio" %}
-{% swagger-description %}
+## Obtener días del mes disponibles por id de servicio
+
+<mark style="color:blue;">`GET`</mark> `https://api.videsk.io/public/video-contact-center/services/:id/dates`
+
 Días del mes disponibles basado en el ID del servicio
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="id" type="String" required="true" %}
-ID del servicio
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-parameter in="query" name="date" type="Date" required="true" %}
-Mes en formato ISO-8601
-{% endswagger-parameter %}
+| Name                                 | Type   | Description     |
+| ------------------------------------ | ------ | --------------- |
+| id<mark style="color:red;">\*</mark> | String | ID del servicio |
 
-{% swagger-parameter in="query" name="timezone" type="String" required="true" %}
-Zona horaria en formato ISO-8601
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Bearer {token}
-{% endswagger-parameter %}
+| Name                                       | Type   | Description                      |
+| ------------------------------------------ | ------ | -------------------------------- |
+| date<mark style="color:red;">\*</mark>     | Date   | Mes en formato ISO-8601          |
+| timezone<mark style="color:red;">\*</mark> | String | Zona horaria en formato ISO-8601 |
 
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-response status="200: OK" description="Listado de días del mes" %}
+| Name                                            | Type   | Description      |
+| ----------------------------------------------- | ------ | ---------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer {token}   |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json |
+
+{% tabs %}
+{% tab title="200: OK Listado de días del mes" %}
 ```javascript
 [
 	"2023-02-01T03:00:00.000Z",
@@ -120,9 +123,13 @@ application/json
 	"2023-02-28T03:00:00.000Z"
 ]
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Fecha está en el pasado" %}
+{% tab title="401: Unauthorized API Key invalido" %}
+Referencia de errores en [autorización](autorizacion.md).
+{% endtab %}
+
+{% tab title="400: Bad Request Fecha está en el pasado" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -133,9 +140,9 @@ application/json
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Fecha inválida" %}
+{% tab title="400: Bad Request Fecha inválida" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -146,9 +153,9 @@ application/json
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Zona horaria inválida" %}
+{% tab title="400: Bad Request Zona horaria inválida" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -159,39 +166,37 @@ application/json
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger-response status="401: Unauthorized" description="API Key invalido" %}
-Referencia de errores en [autorización](autorizacion.md).
-{% endswagger-response %}
-{% endswagger %}
+## Obtener horas del día disponibles por id de servicio
 
-{% swagger method="get" path="/public/video-contact-center/services/:id/hours" baseUrl="https://api.videsk.io" summary="Obtener horas del día disponibles por id de servicio" %}
-{% swagger-description %}
+<mark style="color:blue;">`GET`</mark> `https://api.videsk.io/public/video-contact-center/services/:id/hours`
+
 Horas del días disponibles basado en el ID del servicio
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="id" type="String" required="true" %}
-ID del servicio
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-parameter in="query" name="date" type="Date" required="true" %}
-Hora en formato ISO-8601
-{% endswagger-parameter %}
+| Name                                 | Type   | Description     |
+| ------------------------------------ | ------ | --------------- |
+| id<mark style="color:red;">\*</mark> | String | ID del servicio |
 
-{% swagger-parameter in="query" name="timezone" type="String" required="true" %}
-Zona horaria en formato ISO-8601
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Bearer {token}
-{% endswagger-parameter %}
+| Name                                       | Type   | Description                      |
+| ------------------------------------------ | ------ | -------------------------------- |
+| date<mark style="color:red;">\*</mark>     | Date   | Hora en formato ISO-8601         |
+| timezone<mark style="color:red;">\*</mark> | String | Zona horaria en formato ISO-8601 |
 
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-response status="200: OK" description="Listado de horas" %}
+| Name                                            | Type   | Description      |
+| ----------------------------------------------- | ------ | ---------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer {token}   |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json |
+
+{% tabs %}
+{% tab title="200: OK Listado de horas" %}
 Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sdks/calendario/) para formatear fechas en zona horaria local.
 
 ```javascript
@@ -354,9 +359,9 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 	"2023-02-25T02:55:00.000Z"
 ]
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Fecha está en el pasado" %}
+{% tab title="400: Bad Request Fecha está en el pasado" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -367,9 +372,9 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Fecha inválida" %}
+{% tab title="400: Bad Request Fecha inválida" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -380,9 +385,9 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Zona horaria inválida" %}
+{% tab title="400: Bad Request Zona horaria inválida" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -393,39 +398,41 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="API Key inválido" %}
+{% tab title="401: Unauthorized API Key inválido" %}
 Referencia de errores en [autorización](autorizacion.md).
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="get" path="/public/video-contact-center/users/:id/dates" baseUrl="https://api.videsk.io" summary="Obtener días del mes disponibles por id de usuario" %}
-{% swagger-description %}
+## Obtener días del mes disponibles por id de usuario
+
+<mark style="color:blue;">`GET`</mark> `https://api.videsk.io/public/video-contact-center/users/:id/dates`
+
 Días del mes disponibles basado en el ID del servicio
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="id" type="String" required="true" %}
-ID del usuario
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Bearer {token}
-{% endswagger-parameter %}
+| Name                                 | Type   | Description    |
+| ------------------------------------ | ------ | -------------- |
+| id<mark style="color:red;">\*</mark> | String | ID del usuario |
 
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="query" name="date" type="Date" required="true" %}
-Mes en formato ISO-8601
-{% endswagger-parameter %}
+| Name                                       | Type   | Description                      |
+| ------------------------------------------ | ------ | -------------------------------- |
+| date<mark style="color:red;">\*</mark>     | Date   | Mes en formato ISO-8601          |
+| timezone<mark style="color:red;">\*</mark> | String | Zona horaria en formato ISO-8601 |
 
-{% swagger-parameter in="query" name="timezone" type="String" required="true" %}
-Zona horaria en formato ISO-8601
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-response status="200: OK" description="Listado de días del mes" %}
+| Name                                            | Type   | Description      |
+| ----------------------------------------------- | ------ | ---------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer {token}   |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json |
+
+{% tabs %}
+{% tab title="200: OK Listado de días del mes" %}
 Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sdks/calendario/) para formatear fechas en zona horaria local.
 
 ```javascript
@@ -460,9 +467,9 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 	"2023-02-28T03:00:00.000Z"
 ]
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Fecha está en el pasado" %}
+{% tab title="400: Bad Request Fecha está en el pasado" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -473,9 +480,9 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Fecha inválida" %}
+{% tab title="400: Bad Request Fecha inválida" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -486,9 +493,9 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Zona horaria inválida" %}
+{% tab title="400: Bad Request Zona horaria inválida" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -499,39 +506,41 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="API Key invalido" %}
+{% tab title="401: Unauthorized API Key invalido" %}
 Referencia de errores en [autorización](autorizacion.md).
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="get" path="/public/video-contact-center/users/:id/hours" baseUrl="https://api.videsk.io" summary="Obtener horas del día disponibles por id de usuario" %}
-{% swagger-description %}
+## Obtener horas del día disponibles por id de usuario
+
+<mark style="color:blue;">`GET`</mark> `https://api.videsk.io/public/video-contact-center/users/:id/hours`
+
 Horas del días disponibles basado en el ID del usuario
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="id" type="String" required="true" %}
-ID del usuario
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Bearer {token}
-{% endswagger-parameter %}
+| Name                                 | Type   | Description    |
+| ------------------------------------ | ------ | -------------- |
+| id<mark style="color:red;">\*</mark> | String | ID del usuario |
 
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="query" name="date" type="String" required="true" %}
-Hora en formato ISO-8601
-{% endswagger-parameter %}
+| Name                                       | Type   | Description                      |
+| ------------------------------------------ | ------ | -------------------------------- |
+| date<mark style="color:red;">\*</mark>     | String | Hora en formato ISO-8601         |
+| timezone<mark style="color:red;">\*</mark> | String | Zona horaria en formato ISO-8601 |
 
-{% swagger-parameter in="query" name="timezone" type="String" required="true" %}
-Zona horaria en formato ISO-8601
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-response status="200: OK" description="Listado de horas" %}
+| Name                                            | Type   | Description      |
+| ----------------------------------------------- | ------ | ---------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer {token}   |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json |
+
+{% tabs %}
+{% tab title="200: OK Listado de horas" %}
 Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sdks/calendario/) para formatear fechas en zona horaria local.
 
 ```javascript
@@ -694,9 +703,9 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 	"2023-02-25T02:55:00.000Z"
 ]
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Fecha está en el pasado" %}
+{% tab title="400: Bad Request Fecha está en el pasado" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -707,9 +716,9 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Fecha inválida" %}
+{% tab title="400: Bad Request Fecha inválida" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -720,9 +729,9 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Zona horaria inválida" %}
+{% tab title="400: Bad Request Zona horaria inválida" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -733,47 +742,43 @@ Las fechas están en ISO-8601, puedes utilizar nuestro [SDK de calendario](../sd
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="API Key inválido" %}
+{% tab title="401: Unauthorized API Key inválido" %}
 Referencia de errores en [autorización](autorizacion.md).
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="post" path="/public/video-contact-center/schedule/service/:id" baseUrl="https://api.videsk.io" summary="Agendar una hora por servicio" %}
-{% swagger-description %}
+## Agendar una hora por servicio
+
+<mark style="color:green;">`POST`</mark> `https://api.videsk.io/public/video-contact-center/schedule/service/:id`
+
 Agendar una hora mediante un servicio con selección automáticamente de agente
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="id" type="String" required="true" %}
-ID de servicio
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-parameter in="body" name="startAt" type="Date" required="true" %}
-Fecha en formato ISO-8601
-{% endswagger-parameter %}
+| Name                                 | Type   | Description    |
+| ------------------------------------ | ------ | -------------- |
+| id<mark style="color:red;">\*</mark> | String | ID de servicio |
 
-{% swagger-parameter in="body" name="timezone" type="String" required="true" %}
-Zona horaria en formato ISO-8601
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="body" name="form" type="Array" required="true" %}
-Campos de formulario
-{% endswagger-parameter %}
+| Name                                            | Type   | Description      |
+| ----------------------------------------------- | ------ | ---------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer {token}   |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json |
 
-{% swagger-parameter in="body" name="referrer" type="String" required="true" %}
-Campaña o web referido
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Bearer {token}
-{% endswagger-parameter %}
+| Name                                       | Type   | Description                      |
+| ------------------------------------------ | ------ | -------------------------------- |
+| startAt<mark style="color:red;">\*</mark>  | Date   | Fecha en formato ISO-8601        |
+| timezone<mark style="color:red;">\*</mark> | String | Zona horaria en formato ISO-8601 |
+| form<mark style="color:red;">\*</mark>     | Array  | Campos de formulario             |
+| referrer<mark style="color:red;">\*</mark> | String | Campaña o web referido           |
 
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
-
-{% swagger-response status="201: Created" description="Hora agendada" %}
+{% tabs %}
+{% tab title="201: Created Hora agendada" %}
 ```javascript
 {
    "email":"john.doe@example.com",
@@ -790,22 +795,9 @@ application/json
    "message":"Your appointment was successfully scheduled."
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Fecha inválida" %}
-```javascript
-{
-	"name": "BadRequest",
-	"message": "A valid \"date\" is required",
-	"code": 400,
-	"className": "bad-request",
-	"data": "date",
-	"errors": {}
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="400: Bad Request" description="Zona horaria inválida" %}
+{% tab title="400: Bad Request Zona horaria inválida" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -816,9 +808,34 @@ application/json
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Error en los campos de formulario" %}
+{% tab title="400: Bad Request Fecha inválida" %}
+```javascript
+{
+	"name": "BadRequest",
+	"message": "A valid \"date\" is required",
+	"code": 400,
+	"className": "bad-request",
+	"data": "date",
+	"errors": {}
+}
+```
+{% endtab %}
+
+{% tab title="409: Conflict Hora no disponible" %}
+```javascript
+{
+	"name": "Conflict",
+	"message": "Sorry, the hour \"2023-02-07T03:56:00.000Z\" is unavailable.",
+	"code": 409,
+	"className": "conflict",
+	"errors": {}
+}
+```
+{% endtab %}
+
+{% tab title="400: Bad Request Error en los campos de formulario" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -839,63 +856,56 @@ application/json
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="API Key inválido" %}
+{% tab title="401: Unauthorized API Key inválido" %}
 Referencia de errores en [autorización](autorizacion.md).
-{% endswagger-response %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger-response status="409: Conflict" description="Hora no disponible" %}
+## Agendar una hora por agente
+
+<mark style="color:green;">`POST`</mark> `https://api.videsk.io/public/video-contact-center/schedule/user/:id`
+
+Agendar una hora mediante un agente
+
+#### Path Parameters
+
+| Name                                 | Type   | Description    |
+| ------------------------------------ | ------ | -------------- |
+| id<mark style="color:red;">\*</mark> | String | ID del usuario |
+
+#### Headers
+
+| Name                                            | Type   | Description      |
+| ----------------------------------------------- | ------ | ---------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer {token}   |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json |
+
+#### Request Body
+
+| Name                                       | Type   | Description                      |
+| ------------------------------------------ | ------ | -------------------------------- |
+| startAt<mark style="color:red;">\*</mark>  | Date   | Fecha en formato ISO-8601        |
+| timezone<mark style="color:red;">\*</mark> | String | Zona horaria en formato ISO-8601 |
+| form<mark style="color:red;">\*</mark>     | Array  | Campos de formulario             |
+| referrer<mark style="color:red;">\*</mark> | String | Campaña o web referido           |
+| service<mark style="color:red;">\*</mark>  | String | ID del servicio                  |
+
+{% tabs %}
+{% tab title="400: Bad Request ID del servicio inválido" %}
 ```javascript
 {
-	"name": "Conflict",
-	"message": "Sorry, the hour \"2023-02-07T03:56:00.000Z\" is unavailable.",
-	"code": 409,
-	"className": "conflict",
+	"name": "BadRequest",
+	"message": "A valid service id is required",
+	"code": 400,
+	"className": "bad-request",
 	"errors": {}
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
 
-{% swagger method="post" path="/public/video-contact-center/schedule/user/:id" baseUrl="https://api.videsk.io" summary="Agendar una hora por agente" %}
-{% swagger-description %}
-Agendar una hora mediante un agente
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="id" type="String" required="true" %}
-ID del usuario
-{% endswagger-parameter %}
-
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Bearer {token}
-{% endswagger-parameter %}
-
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="service" type="String" required="true" %}
-ID del servicio
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="startAt" type="Date" required="true" %}
-Fecha en formato ISO-8601
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="timezone" type="String" required="true" %}
-Zona horaria en formato ISO-8601
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="form" type="Array" required="true" %}
-Campos de formulario
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="referrer" type="String" required="true" %}
-Campaña o web referido
-{% endswagger-parameter %}
-
-{% swagger-response status="201: Created" description="Hora agendada" %}
+{% tab title="201: Created Hora agendada" %}
 ```javascript
 {
    "email":"john.doe@example.com",
@@ -912,21 +922,25 @@ Campaña o web referido
    "message":"Your appointment was successfully scheduled."
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="ID del servicio inválido" %}
+{% tab title="409: Conflict Hora no disponible" %}
 ```javascript
 {
-	"name": "BadRequest",
-	"message": "A valid service id is required",
-	"code": 400,
-	"className": "bad-request",
+	"name": "Conflict",
+	"message": "Sorry, the hour \"2023-02-07T04:24:00.000Z\" is unavailable.",
+	"code": 409,
+	"className": "conflict",
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Fecha inválida" %}
+{% tab title="401: Unauthorized API Key invalido" %}
+Referencia de errores en [autorización](autorizacion.md).
+{% endtab %}
+
+{% tab title="400: Bad Request Fecha inválida" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -937,9 +951,9 @@ Campaña o web referido
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Zona horaria inválida" %}
+{% tab title="400: Bad Request Zona horaria inválida" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -950,9 +964,9 @@ Campaña o web referido
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Error en los campos de formulario" %}
+{% tab title="400: Bad Request Error en los campos de formulario" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -973,52 +987,57 @@ Campaña o web referido
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger-response status="401: Unauthorized" description="API Key invalido" %}
-Referencia de errores en [autorización](autorizacion.md).
-{% endswagger-response %}
+## Cancelar una hora
 
-{% swagger-response status="409: Conflict" description="Hora no disponible" %}
-```javascript
-{
-	"name": "Conflict",
-	"message": "Sorry, the hour \"2023-02-07T04:24:00.000Z\" is unavailable.",
-	"code": 409,
-	"className": "conflict",
-	"errors": {}
-}
-```
-{% endswagger-response %}
-{% endswagger %}
+<mark style="color:green;">`POST`</mark> `https://api.videsk.io/public/video-contact-center/schedule/cancel`
 
-{% swagger method="post" path="/public/video-contact-center/schedule/cancel" baseUrl="https://api.videsk.io" summary="Cancelar una hora" %}
-{% swagger-description %}
 Cancelar una hora usando `actionToken`
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Bearer {actionToken}
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
+| Name                                            | Type   | Description          |
+| ----------------------------------------------- | ------ | -------------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer {actionToken} |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json     |
 
-{% swagger-parameter in="body" name="cancelReason" type="String" %}
-Razón de cancelación
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-response status="201: Created" description="Hora cancelada" %}
+| Name         | Type   | Description          |
+| ------------ | ------ | -------------------- |
+| cancelReason | String | Razón de cancelación |
+
+{% tabs %}
+{% tab title="201: Created Hora cancelada" %}
 ```javascript
 {
 	"service": "Service name",
 	"message": "The appointment was successfully canceled"
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Razón de cancelación inválido" %}
+{% tab title="401: Unauthorized Error cancelado" %}
+Este error indica que la hora ya ha sido cancelada previamente, no es posible cancelar después del horario de inicio o ya ha finalizado.
+
+```javascript
+{
+	"name": "NotAuthenticated",
+	"message": "The token is not valid any more.",
+	"code": 401,
+	"className": "not-authenticated",
+	"errors": {}
+}
+```
+{% endtab %}
+
+{% tab title="401: Unauthorized Action token inválido" %}
+Referencia de errores en [autorización](autorizacion.md).
+{% endtab %}
+
+{% tab title="400: Bad Request Razón de cancelación inválido" %}
 ```javascript
 {
 	"name": "BadRequest",
@@ -1038,45 +1057,30 @@ Razón de cancelación
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger-response status="401: Unauthorized" description="Error cancelado" %}
-Este error indica que la hora ya ha sido cancelada previamente, no es posible cancelar después del horario de inicio o ya ha finalizado.
+## Reagendar una hora
 
-```javascript
-{
-	"name": "NotAuthenticated",
-	"message": "The token is not valid any more.",
-	"code": 401,
-	"className": "not-authenticated",
-	"errors": {}
-}
-```
-{% endswagger-response %}
+<mark style="color:green;">`POST`</mark> `https://api.videsk.io/public/video-contact-center/schedule/reschedule`
 
-{% swagger-response status="401: Unauthorized" description="Action token inválido" %}
-Referencia de errores en [autorización](autorizacion.md).
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger method="post" path="/public/video-contact-center/schedule/reschedule" baseUrl="https://api.videsk.io" summary="Reagendar una hora" %}
-{% swagger-description %}
 Reagendar una hora usando `actionToken`
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Bearer {actionToken}
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
+| Name                                            | Type   | Description          |
+| ----------------------------------------------- | ------ | -------------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer {actionToken} |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json     |
 
-{% swagger-parameter in="body" name="date" type="Date" required="true" %}
-Fecha en formato ISO-8601
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-response status="201: Created" description="Hora reagendada" %}
+| Name                                   | Type | Description               |
+| -------------------------------------- | ---- | ------------------------- |
+| date<mark style="color:red;">\*</mark> | Date | Fecha en formato ISO-8601 |
+
+{% tabs %}
+{% tab title="201: Created Hora reagendada" %}
 ```javascript
 {
    "email":"john.doe@example.com",
@@ -1093,22 +1097,9 @@ Fecha en formato ISO-8601
    "message":"Your appointment was successfully scheduled."
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Fecha inválida" %}
-```javascript
-{
-	"name": "BadRequest",
-	"message": "A valid \"date\" is required",
-	"code": 400,
-	"className": "bad-request",
-	"data": "date",
-	"errors": {}
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="401: Unauthorized" description="Error reagendado" %}
+{% tab title="401: Unauthorized Error reagendado" %}
 Este error indica que la hora ya ha sido reagendada previamente, no es posible reagendar después del horario de inicio o ya ha finalizado.
 
 ```javascript
@@ -1120,27 +1111,41 @@ Este error indica que la hora ya ha sido reagendada previamente, no es posible r
 	"errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="Action token inválido" %}
+{% tab title="400: Bad Request Fecha inválida" %}
+```javascript
+{
+	"name": "BadRequest",
+	"message": "A valid \"date\" is required",
+	"code": 400,
+	"className": "bad-request",
+	"data": "date",
+	"errors": {}
+}
+```
+{% endtab %}
+
+{% tab title="401: Unauthorized Action token inválido" %}
 Referencia de errores en [autorización](autorizacion.md).
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="get" path="/public/video-contact-center/schedule/info" baseUrl="https://api.videsk.io" summary="Obtener información de una cita" %}
-{% swagger-description %}
+## Obtener información de una cita
+
+<mark style="color:blue;">`GET`</mark> `https://api.videsk.io/public/video-contact-center/schedule/info`
+
 Obtener la información de una cita como agente, servicio fecha de inicio, fin y estado.
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Bearer {accessToken}
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
+| Name                                            | Type   | Description          |
+| ----------------------------------------------- | ------ | -------------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer {accessToken} |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json     |
 
-{% swagger-response status="201: Created" description="Información de la hora" %}
+{% tabs %}
+{% tab title="201: Created Información de la hora" %}
 ```javascript
 {
    "id":"63be2378f0dd1fdbf86dac48",
@@ -1159,9 +1164,13 @@ application/json
    "status":"pending"
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="Hora expirada" %}
+{% tab title="401: Unauthorized Action token inválido" %}
+Referencia de errores en [autorización](autorizacion.md).
+{% endtab %}
+
+{% tab title="401: Unauthorized Hora expirada" %}
 Este error se arroja cuando se intenta obtener información de una hora que ya ha sido cancelada, reagendada o ha finalizado.
 
 ```javascript
@@ -1173,9 +1182,5 @@ Este error se arroja cuando se intenta obtener información de una hora que ya h
 	"errors": {}
 }
 ```
-{% endswagger-response %}
-
-{% swagger-response status="401: Unauthorized" description="Action token inválido" %}
-Referencia de errores en [autorización](autorizacion.md).
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}

@@ -65,7 +65,8 @@
 
 * [🔐 SSL](seguridad/ssl.md)
 * [💆‍♀️ Cabeceras](seguridad/cabeceras.md)
-* [⛔ Firewall](seguridad/firewall.md)
+* [⛔ Firewall](seguridad/firewall/README.md)
+  * [🖇️ Tipos de NAT](seguridad/firewall/tipos-de-nat.md)
 * [🖼️ Iframes](seguridad/iframes.md)
 
 ## 🖇️ Integraciones

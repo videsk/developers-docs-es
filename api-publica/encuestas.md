@@ -16,28 +16,33 @@ Para mostrar las encuestas te sugerimos utilizar nuestro SDK de formulario.
 [forms.md](../sdks/forms.md)
 {% endcontent-ref %}
 
-{% swagger method="get" path="/public/video-contact-center/surveys/:id" baseUrl="https://api.videsk.io" summary="Obtener encuesta de un segmento o servicio" %}
-{% swagger-description %}
+## Obtener encuesta de un segmento o servicio
+
+<mark style="color:blue;">`GET`</mark> `https://api.videsk.io/public/video-contact-center/surveys/:id`
+
 Podrás obtener la encuesta de un segmento o servicio mediante su ID
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="id" type="String" required="true" %}
-ID de la entidad
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-parameter in="query" name="type" type="String" required="true" %}
-Tipo de entidad "segments" o "services"
-{% endswagger-parameter %}
+| Name                                 | Type   | Description      |
+| ------------------------------------ | ------ | ---------------- |
+| id<mark style="color:red;">\*</mark> | String | ID de la entidad |
 
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Bearer {token}
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
+| Name                                   | Type   | Description                             |
+| -------------------------------------- | ------ | --------------------------------------- |
+| type<mark style="color:red;">\*</mark> | String | Tipo de entidad "segments" o "services" |
 
-{% swagger-response status="200: OK" description="Encuesta" %}
+#### Headers
+
+| Name                                            | Type   | Description      |
+| ----------------------------------------------- | ------ | ---------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer {token}   |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json |
+
+{% tabs %}
+{% tab title="200: OK Encuesta" %}
 ```javascript
 {
   "form": [
@@ -94,9 +99,9 @@ application/json
   ]
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Error de entidad" %}
+{% tab title="400: Bad Request Error de entidad" %}
 ```javascript
 {
   "name": "BadRequest",
@@ -106,9 +111,9 @@ application/json
   "errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Encuesta no encontrada" %}
+{% tab title="400: Bad Request Encuesta no encontrada" %}
 ```javascript
 {
   "name": "NotFound",
@@ -118,68 +123,47 @@ application/json
   "errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="API Key inválido" %}
+{% tab title="401: Unauthorized API Key inválido" %}
 Referencia de errores en [autorización](autorizacion.md).
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="post" path="/public/video-contact-center/surveys" baseUrl="https://api.videsk.io" summary="Enviar encuesta" %}
-{% swagger-description %}
+## Enviar encuesta
+
+<mark style="color:green;">`POST`</mark> `https://api.videsk.io/public/video-contact-center/surveys`
+
 Podrás enviar una encuesta asociado a una llamada o agendamiento.
-{% endswagger-description %}
 
-{% swagger-parameter in="body" name="call" type="String" %}
-ID de la llamada
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="body" name="appointment" type="String" %}
-ID de agendamiento
-{% endswagger-parameter %}
+| Name                                            | Type   | Description      |
+| ----------------------------------------------- | ------ | ---------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer {token}   |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json |
 
-{% swagger-parameter in="body" name="values" type="Array" required="true" %}
-Listado de respuestas
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="values._id" required="true" type="String" %}
-ID de la respuesta
-{% endswagger-parameter %}
+| Name                                           | Type   | Description           |
+| ---------------------------------------------- | ------ | --------------------- |
+| call                                           | String | ID de la llamada      |
+| appointment                                    | String | ID de agendamiento    |
+| values<mark style="color:red;">\*</mark>       | Array  | Listado de respuestas |
+| values.\_id<mark style="color:red;">\*</mark>  | String | ID de la respuesta    |
+| values.value<mark style="color:red;">\*</mark> | String | Valor de la respuesta |
 
-{% swagger-parameter in="body" name="values.value" required="true" type="String" %}
-Valor de la respuesta
-{% endswagger-parameter %}
-
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Bearer {token}
-{% endswagger-parameter %}
-
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
-
-{% swagger-response status="201: Created" description="Encuesta recibida" %}
+{% tabs %}
+{% tab title="201: Created Encuesta recibida" %}
 ```javascript
 {
   "message": "The survey was saved successfully.",
   "success": true
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="ID entidad inválido" %}
-```javascript
-{
-  "name": "BadRequest",
-  "message": "Provide a call or appointment id.",
-  "code": 400,
-  "className": "bad-request",
-  "errors": {}
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="400: Bad Request" description="Encuesta respondida" %}
+{% tab title="400: Bad Request Encuesta respondida" %}
 ```javascript
 {
   "name": "BadRequest",
@@ -189,9 +173,9 @@ application/json
   "errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Error en los campos enviados" %}
+{% tab title="400: Bad Request Error en los campos enviados" %}
 ```javascript
 {
   "name": "BadRequest",
@@ -202,9 +186,9 @@ application/json
   "errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Campo inválido" %}
+{% tab title="400: Bad Request Campo inválido" %}
 ```javascript
 {
   "name": "BadRequest",
@@ -214,9 +198,9 @@ application/json
   "errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Campo requerido" %}
+{% tab title="400: Bad Request Campo requerido" %}
 Este es un campo vació requerido que funciona como honeypot a bots.
 
 ```javascript
@@ -228,9 +212,21 @@ Este es un campo vació requerido que funciona como honeypot a bots.
   "errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="API Key inválido" %}
+{% tab title="401: Unauthorized API Key inválido" %}
 Referencia de errores en [autorización](autorizacion.md).
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+
+{% tab title="400: Bad Request ID entidad inválido" %}
+```javascript
+{
+  "name": "BadRequest",
+  "message": "Provide a call or appointment id.",
+  "code": 400,
+  "className": "bad-request",
+  "errors": {}
+}
+```
+{% endtab %}
+{% endtabs %}

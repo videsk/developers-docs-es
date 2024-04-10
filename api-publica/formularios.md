@@ -40,28 +40,33 @@ Contamos con 3 niveles de validación:
 [forms.md](../sdks/forms.md)
 {% endcontent-ref %}
 
-{% swagger method="get" path="/public/video-contact-center/forms/:segmentId" baseUrl="https://api.videsk.io" summary="Obtener formulario de un segmento" %}
-{% swagger-description %}
+## Obtener formulario de un segmento
+
+<mark style="color:blue;">`GET`</mark> `https://api.videsk.io/public/video-contact-center/forms/:segmentId`
+
 Podrás obtener el formulario de un segmento mediante su ID
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="segmentId" type="String" required="true" %}
-ID del segmento
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-parameter in="query" name="version" type="String" required="true" %}
-Tipo de formulario "base" o "contact"
-{% endswagger-parameter %}
+| Name                                        | Type   | Description     |
+| ------------------------------------------- | ------ | --------------- |
+| segmentId<mark style="color:red;">\*</mark> | String | ID del segmento |
 
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Bearer {token}
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
+| Name                                      | Type   | Description                           |
+| ----------------------------------------- | ------ | ------------------------------------- |
+| version<mark style="color:red;">\*</mark> | String | Tipo de formulario "base" o "contact" |
 
-{% swagger-response status="200: OK" description="Formulario" %}
+#### Headers
+
+| Name                                            | Type   | Description      |
+| ----------------------------------------------- | ------ | ---------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer {token}   |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json |
+
+{% tabs %}
+{% tab title="200: OK Formulario" %}
 ```javascript
 {
    "form":[
@@ -158,9 +163,9 @@ application/json
    "provider":"turnstile"
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Error de entidad" %}
+{% tab title="400: Bad Request Error de entidad" %}
 ```javascript
 {
     "name": "NotFound",
@@ -170,9 +175,9 @@ application/json
     "errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Formulario no encontrado" %}
+{% tab title="400: Bad Request Formulario no encontrado" %}
 ```javascript
 {
     "name": "NotFound",
@@ -184,51 +189,39 @@ application/json
 ```
 
 Considera que es posible que tu cuenta no tengas configurado un formulario base o de contacto.
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="API Key inválido" %}
+{% tab title="401: Unauthorized API Key inválido" %}
 Referencia de errores en [autorización](autorizacion.md).
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="post" path="/public/video-contact-center/forms" baseUrl="https://api.videsk.io" summary="Enviar encuesta" %}
-{% swagger-description %}
+## Enviar encuesta
+
+<mark style="color:green;">`POST`</mark> `https://api.videsk.io/public/video-contact-center/forms`
+
 Podrás enviar un formulario el cuál se podrá adjuntar a una llamada o no.
-{% endswagger-description %}
 
-{% swagger-parameter in="body" name="segment" type="String" required="true" %}
-ID del segmento
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="body" name="type" type="String" required="true" %}
-Tipo de formulario "contact" o "pre-call"
-{% endswagger-parameter %}
+| Name                                            | Type   | Description      |
+| ----------------------------------------------- | ------ | ---------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Bearer {token}   |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json |
 
-{% swagger-parameter in="body" name="values" type="Array" required="true" %}
-Listado de campos
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="values._id" required="true" type="String" %}
-ID del campo
-{% endswagger-parameter %}
+| Name                                           | Type   | Description                               |
+| ---------------------------------------------- | ------ | ----------------------------------------- |
+| segment<mark style="color:red;">\*</mark>      | String | ID del segmento                           |
+| type<mark style="color:red;">\*</mark>         | String | Tipo de formulario "contact" o "pre-call" |
+| values<mark style="color:red;">\*</mark>       | Array  | Listado de campos                         |
+| values.\_id<mark style="color:red;">\*</mark>  | String | ID del campo                              |
+| values.value<mark style="color:red;">\*</mark> | String | Valor del campo                           |
+| token                                          | String | Token captcha (no backend)                |
 
-{% swagger-parameter in="body" name="values.value" required="true" type="String" %}
-Valor del campo
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="token" type="String" %}
-Token captcha (no backend)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Bearer {token}
-{% endswagger-parameter %}
-
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
-
-{% swagger-response status="201: Created" description="Encuesta recibida" %}
+{% tabs %}
+{% tab title="201: Created Encuesta recibida" %}
 ```json
 {
    "message":"The form was saved successfully.",
@@ -236,33 +229,9 @@ application/json
    "submission":"64a35822da9f12295c1d98dc"
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="No hay formulario configurado" %}
-```json
-{
-    "name": "NotFound",
-    "message": "Not form found in segment provided.",
-    "code": 404,
-    "className": "not-found",
-    "errors": {}
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="400: Bad Request" description="Captcha token requerido" %}
-```json
-{
-    "name": "BadRequest",
-    "message": "Please provide a valid \"token\", is mandatory.",
-    "code": 400,
-    "className": "bad-request",
-    "errors": {}
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="400: Bad Request" description="Captcha Inválido (no backend)" %}
+{% tab title="400: Bad Request Captcha Inválido (no backend)" %}
 ```json
 {
     "name": "Unprocessable",
@@ -275,33 +244,9 @@ application/json
     "errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="ID segmento inválido" %}
-```json
-{
-    "name": "BadRequest",
-    "message": "Please check the segment id provided.",
-    "code": 400,
-    "className": "bad-request",
-    "errors": {}
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="400: Bad Request" description="Tipo formulario inválido" %}
-```json
-{
-    "name": "BadRequest",
-    "message": "Provide a valid \"type\" form submission.",
-    "code": 400,
-    "className": "bad-request",
-    "errors": {}
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="400: Bad Request" description="Error en los campos enviados" %}
+{% tab title="400: Bad Request Error en los campos enviados" %}
 ```json
 {
   "name": "BadRequest",
@@ -312,9 +257,9 @@ application/json
   "errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Campo inválido" %}
+{% tab title="400: Bad Request Campo inválido" %}
 ```json
 {
   "name": "BadRequest",
@@ -324,9 +269,9 @@ application/json
   "errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Campo requerido" %}
+{% tab title="400: Bad Request Campo requerido" %}
 Este es un campo vació requerido que funciona como honeypot a bots.
 
 ```json
@@ -338,9 +283,57 @@ Este es un campo vació requerido que funciona como honeypot a bots.
   "errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="API Key inválido" %}
+{% tab title="401: Unauthorized API Key inválido" %}
 Referencia de errores en [autorización](autorizacion.md).
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+
+{% tab title="400: Bad Request Captcha token requerido" %}
+```json
+{
+    "name": "BadRequest",
+    "message": "Please provide a valid \"token\", is mandatory.",
+    "code": 400,
+    "className": "bad-request",
+    "errors": {}
+}
+```
+{% endtab %}
+
+{% tab title="400: Bad Request ID segmento inválido" %}
+```json
+{
+    "name": "BadRequest",
+    "message": "Please check the segment id provided.",
+    "code": 400,
+    "className": "bad-request",
+    "errors": {}
+}
+```
+{% endtab %}
+
+{% tab title="400: Bad Request Tipo formulario inválido" %}
+```json
+{
+    "name": "BadRequest",
+    "message": "Provide a valid \"type\" form submission.",
+    "code": 400,
+    "className": "bad-request",
+    "errors": {}
+}
+```
+{% endtab %}
+
+{% tab title="400: Bad Request No hay formulario configurado" %}
+```json
+{
+    "name": "NotFound",
+    "message": "Not form found in segment provided.",
+    "code": 404,
+    "className": "not-found",
+    "errors": {}
+}
+```
+{% endtab %}
+{% endtabs %}

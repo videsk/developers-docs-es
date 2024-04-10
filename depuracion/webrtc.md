@@ -57,8 +57,8 @@ Dependiendo de las políticas de tu red y caso de uso, deberás contar con al me
 
 Te sugerimos leer nuestra documentación de configuración de Firewalls.
 
-{% content-ref url="../seguridad/firewall.md" %}
-[firewall.md](../seguridad/firewall.md)
+{% content-ref url="../seguridad/firewall/" %}
+[firewall](../seguridad/firewall/)
 {% endcontent-ref %}
 
 En el caso que tus clientes y agentes (ambos) estén dentro de la misma red deberás contar con conexión `Host`.

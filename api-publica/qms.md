@@ -49,36 +49,35 @@ sequenceDiagram
 
 ```
 
-{% swagger method="post" path="/branches/:branch/queues/:queue" baseUrl="https://api.videsk.io/public/video-contact-center" summary="Solicitud de añadir a fila" %}
-{% swagger-description %}
+## Solicitud de añadir a fila
+
+<mark style="color:green;">`POST`</mark> `https://api.videsk.io/public/video-contact-center/branches/:branch/queues/:queue`
+
 Solicitar añadir a la fila un ticket de QMS
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Backend API Key
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-parameter in="body" name="integrationData" type="Mixed" %}
-Datos del ticket (Array, Object o String)
-{% endswagger-parameter %}
+| Name                                     | Type   | Description          |
+| ---------------------------------------- | ------ | -------------------- |
+| branch<mark style="color:red;">\*</mark> | String | ID de oficina        |
+| queue<mark style="color:red;">\*</mark>  | String | ID de fila (segment) |
 
-{% swagger-parameter in="path" name="branch" type="String" required="true" %}
-ID de oficina
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="path" name="queue" type="String" required="true" %}
-ID de fila (segment)
-{% endswagger-parameter %}
+| Name                                            | Type   | Description      |
+| ----------------------------------------------- | ------ | ---------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Backend API Key  |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json |
 
-{% swagger-parameter in="body" name="form" type="String" %}
-ID del formulario
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
+| Name            | Type   | Description                               |
+| --------------- | ------ | ----------------------------------------- |
+| integrationData | Mixed  | Datos del ticket (Array, Object o String) |
+| form            | String | ID del formulario                         |
 
-{% swagger-response status="201: Created" description="Ticket añadido a la fila" %}
+{% tabs %}
+{% tab title="201: Created Ticket añadido a la fila" %}
 ```json
 {
     "id": "652a1ae848880e168884e49b",
@@ -87,9 +86,9 @@ application/json
 ```
 
 La respuesta contiene el ID interno del ticket en la fila y el nombre del segmento (fila)
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="ID de oficina o segmento incorrecto" %}
+{% tab title="400: Bad Request ID de oficina o segmento incorrecto" %}
 ```json
 {
     "name": "NotFound",
@@ -99,33 +98,9 @@ La respuesta contiene el ID interno del ticket en la fila y el nombre del segmen
     "errors": {}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="406: Not Acceptable" description="Sin agentes disponibles" %}
-```json
-{
-    "name": "NotAcceptable",
-    "message": "Not agent available in the segment \"652a1ae848880e168884e49b\", please try later.",
-    "code": 406,
-    "className": "not-acceptable",
-    "errors": {}
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="422: Unprocessable Entity" description="No es posible procesar la solicitud" %}
-```json
-{
-    "name": "Unprocessable",
-    "message": "We're not able to request adding you to the queue, try again.",
-    "code": 422,
-    "className": "unprocessable",
-    "errors": {}
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="428: Precondition Required" description="Formulario obligatorio" %}
+{% tab title="428: Precondition Required Formulario obligatorio" %}
 ```json
 {
     "name": "PreconditionRequired",
@@ -137,8 +112,32 @@ La respuesta contiene el ID interno del ticket en la fila y el nombre del segmen
 ```
 
 Para más información de los errores generados por formulario visita la [documentación de formularios](formularios.md).
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+
+{% tab title="406: Not Acceptable Sin agentes disponibles" %}
+```json
+{
+    "name": "NotAcceptable",
+    "message": "Not agent available in the segment \"652a1ae848880e168884e49b\", please try later.",
+    "code": 406,
+    "className": "not-acceptable",
+    "errors": {}
+}
+```
+{% endtab %}
+
+{% tab title="422: Unprocessable Entity No es posible procesar la solicitud" %}
+```json
+{
+    "name": "Unprocessable",
+    "message": "We're not able to request adding you to the queue, try again.",
+    "code": 422,
+    "className": "unprocessable",
+    "errors": {}
+}
+```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 El valor `integrationData`será usado para ser enviado mediante nuestros webhooks, por lo que es útil en caso que desees enviar un ID interno, metadata, etc. para la sincronización. **Tiene un límite de 50 Kb**, recibe cualquier tipo de dato `String`, `Objetcs`, `Arrays`, etc.
@@ -148,20 +147,21 @@ El valor `integrationData`será usado para ser enviado mediante nuestros webhook
 Esto no se mostrará al agente, solo estará disponible en los webhooks de integración.
 {% endhint %}
 
-{% swagger method="get" path="/branches" baseUrl="https://api.videsk.io/public/video-contact-center" summary="Obtener listado de oficinas" %}
-{% swagger-description %}
+## Obtener listado de oficinas
+
+<mark style="color:blue;">`GET`</mark> `https://api.videsk.io/public/video-contact-center/branches`
+
 Listado de oficinas usando API Key
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Backend API Key
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
+| Name                                            | Type   | Description      |
+| ----------------------------------------------- | ------ | ---------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Backend API Key  |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json |
 
-{% swagger-response status="200: OK" description="Listado de oficinas" %}
+{% tabs %}
+{% tab title="200: OK Listado de oficinas" %}
 ```json
 [
     {
@@ -176,23 +176,24 @@ application/json
     }
 ]
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="get" path="/branches/:branch/queues" baseUrl="https://api.videsk.io/public/video-contact-center" summary="Obtener listado de filas" %}
-{% swagger-description %}
+## Obtener listado de filas
+
+<mark style="color:blue;">`GET`</mark> `https://api.videsk.io/public/video-contact-center/branches/:branch/queues`
+
 Listado de filas disponibles en la oficina
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Backend API Key
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
+| Name                                            | Type   | Description      |
+| ----------------------------------------------- | ------ | ---------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Backend API Key  |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json |
 
-{% swagger-response status="200: OK" description="Listado de filas disponibles" %}
+{% tabs %}
+{% tab title="200: OK Listado de filas disponibles" %}
 ```json
 [
     {
@@ -204,9 +205,9 @@ application/json
 ```
 
 La respuesta incluye `users` que corresponde al número de agentes disponibles para realizar un atención inmediata.
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="404: Not Found" description="Oficina no encontrada" %}
+{% tab title="404: Not Found Oficina no encontrada" %}
 ```json
 {
     "name": "NotFound",
@@ -216,23 +217,24 @@ La respuesta incluye `users` que corresponde al número de agentes disponibles p
     "errors": {}
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="get" path="/branches/:branch/queues/:queue" baseUrl="https://api.videsk.io/public/video-contact-center" summary="Obtener información fila" %}
-{% swagger-description %}
+## Obtener información fila
+
+<mark style="color:blue;">`GET`</mark> `https://api.videsk.io/public/video-contact-center/branches/:branch/queues/:queue`
+
 Obtén información de una fila individual
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Backend API Key
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %}
-application/json
-{% endswagger-parameter %}
+| Name                                            | Type   | Description      |
+| ----------------------------------------------- | ------ | ---------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | Backend API Key  |
+| Content-Type<mark style="color:red;">\*</mark>  | String | application/json |
 
-{% swagger-response status="200: OK" description="Información de la fila" %}
+{% tabs %}
+{% tab title="200: OK Información de la fila" %}
 ```json
 {
     "name": "Atención a clientes",
@@ -240,9 +242,9 @@ application/json
     "users": 1
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="404: Not Found" description="Oficina o segmento no encontrado" %}
+{% tab title="404: Not Found Oficina o segmento no encontrado" %}
 ```json
 {
     "name": "NotFound",
@@ -252,8 +254,8 @@ application/json
     "errors": {}
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 ## Postman collection
 
