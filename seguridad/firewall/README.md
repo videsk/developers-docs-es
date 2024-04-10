@@ -140,6 +140,10 @@ Evita capturar paquetes de forma activa para analisis de tráfico DPI (Deep Pack
 
 ## Subprocesadores
 
+{% hint style="info" %}
+**Es importante para entregar el mejor servicio, que nuestros sistemas de monitoreo no sean bloqueados por extensiones del navegador, equipo o redes. De lo contrario dificulta a nuestro equipo identificar y resolver problemas de forma proactiva.**
+{% endhint %}
+
 ### Cloudflare
 
 Nuestros servicios se encuentran detrás nuestro proxy WAF Cloudflare, la lista de servidores se encuentran en el siguiente enlace: [https://www.cloudflare.com/ips/](https://www.cloudflare.com/ips/)
@@ -159,7 +163,3 @@ Utilizamos un monitor de sesiones llamado LogRocket, actualmente no es posible l
 ```
 *.lr-ingest.io
 ```
-
-{% hint style="info" %}
-**Es importante para entregar el mejor servicio, que nuestros sistemas de monitoreo no sean bloqueados por extensiones del navegador, equipo o redes. De lo contrario dificulta a nuestro equipo identificar y resolver problemas de forma proactiva.**
-{% endhint %}
