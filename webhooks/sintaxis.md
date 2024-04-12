@@ -18,6 +18,8 @@ Por ejemplo, un `JSON` igual a `{ "name": "John Doe" }` te permitirá usar su va
 Podrás escribir sintaxis _mustache_ con o sin espacios entre las llaves o _curly braces_.
 {% endhint %}
 
+***
+
 ## Tipos de datos
 
 Dependiendo del tipo de dato podrás acceder mediante una sintaxis específica.
@@ -52,11 +54,13 @@ En el caso que el `Array` esté compuesto por `Object` podrás acceder a los val
 En el caso que el formato requerido sea un JSON te sugerimos utilizar helpers como [`#array`](helpers/array.md) u [`#object`](helpers/object.md), para que los valores de salida sean válidos.
 {% endhint %}
 
+***
+
 ## Helpers
 
 Los helpers son funciones que te ayudarán con estructura, tipo de datos, iteración sobre listados, etc.
 
-Estos se componen de una nomenclatura, la cual varía según su función.
+Estos se componen de una nomenclatura, la cual varía según su función. Existen dos tipos de helpers, algunos de ellos pueden ser simples o compuestos, y en algunos casos ambos al mismo tiempo.
 
 ### Simples
 
@@ -86,7 +90,25 @@ Por lo tanto, a modo de ficción si tenemos un helper compuesto llamado `mySuper
 
 Dentro del helper es posible añadir contenido, el cual como se mencionó es opcional. Dependiendo de cada helper podrás generar contenido dinámico. Para conocer las funciones de cada uno dirígete a la siguiente sección de [helpers](helpers/).
 
-## Contenido de un helper
+Existen casos como el helper parser, que es simple y compuesto, por lo tanto lo puedes usar de la siguiente manera:
+
+{% tabs %}
+{% tab title="Simple" %}
+```handlebars
+{{parser myValue}}
+```
+{% endtab %}
+
+{% tab title="Compuesto" %}
+```handlebars
+{{#parser}}
+    {{myValue}}
+{{/parser}}
+```
+{% endtab %}
+{% endtabs %}
+
+### Contenido
 
 Dentro del contenido podrás acceder a variables dependiendo de los helpers, pero existen dos los cuales son nativos y haran referencia a diferentes valores dependiendo del contexto.
 
@@ -114,5 +136,19 @@ Dentro del contenido podrás acceder a variables dependiendo de los helpers, per
  {{/each}}
 ]
 ```
+
+Adicionalmente, dentro de un helper compuesto es posible usar helpers anidados, es decir:
+
+```handlebars
+{{#array}}
+    {{#if}}...{{/if}}
+{{/array}}
+```
+
+{% hint style="info" %}
+No existe un límite de anidación, pero sugerimos mantener la simplicidad en orden de mantenibilidad.
+{% endhint %}
+
+***
 
 Ahora que ya conoces como utilizar la sintaxis `{{ mustache }}` y `helpers` te invitamos a continuar con el listado de [helpers disponibles](helpers/).
