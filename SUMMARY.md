@@ -102,6 +102,8 @@
   * [#get](webhooks/helpers/get.md)
   * [#date](webhooks/helpers/date.md)
   * [#url-param](webhooks/helpers/url-param.md)
+  * [#jwt](webhooks/helpers/jwt.md)
+  * [#phone](webhooks/helpers/phone.md)
 * [🎛️ Integraciones](webhooks/integraciones/README.md)
   * [Power BI](webhooks/integraciones/power-bi.md)
   * [Airtable](webhooks/integraciones/airtable.md)
