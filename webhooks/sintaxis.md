@@ -8,11 +8,11 @@ description: >-
 
 Para utilizar los webhooks personalizados debes conocer acerca de la sintaxis que utilizamos, la cual está basada en [M_ustache_](https://mustache.github.io/), una librería de código abierto que nos permite generar la estructura personalizada.
 
-Básicamente deberás utilizar llaves `{{ }}` o conocidos como "_curly braces"_. Esta sintaxis te permite acceder a valores que te entregamos para cada evento.
+Básicamente deberás utilizar llaves <mark style="color:purple;">`{{ }}`</mark> o conocidos como "_curly braces"_. Esta sintaxis te permite acceder a valores que te entregamos para cada evento.
 
 Como se menciona anteriormente en la sección de [variables](variables.md#variables-por-evento), cada evento posee sus propios valores. Todos estos valores provienen de un `JSON` que posteriormente son inyectados basado en las variables que hayas escrito.
 
-Por ejemplo, un `JSON` igual a `{ "name": "John Doe" }` te permitirá usar su variable `name` en sintaxis _mustache_, por lo que si deseo solo obtener el nombre (`name`) como texto plano deberé escribir `{{ name }}` , obteniendo como resultado `John Doe`.
+Por ejemplo, un `JSON` igual a `{ "name": "John Doe" }` te permitirá usar su variable `name` en sintaxis _mustache_, por lo que si deseo solo obtener el nombre (`name`) como texto plano deberé escribir <mark style="color:purple;">`{{ name }}`</mark> , obteniendo como resultado `John Doe`.
 
 {% hint style="info" %}
 Podrás escribir sintaxis _mustache_ con o sin espacios entre las llaves o _curly braces_.
