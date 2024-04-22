@@ -26,7 +26,7 @@ Para generar un JWT se requieren tres componentes principales cada uno de ellos 
     {
         "payload": (String|JSON),
         "privateKey": String,
-        "options": JSON,
+        "options": JSON
     }
 {{/jwt}}
 ```
@@ -51,7 +51,7 @@ Y más recomendado, el **modo estático** que te permitiría generar JWT sin nec
         "privateKey": {{ secrets.privateKey }},
         "options": {
             "expiresIn": "1m"
-        },
+        }
     }
 {{/jwt}}
 ```
@@ -93,7 +93,7 @@ El `privateKey` es el secreto con el cual se firmará el JWT. El tipo de dato de
 ```handlebars
 {{#jwt}}
     {
-        "privateKey": "...",
+        "privateKey": "..."
     }
 {{/jwt}}
 ```
