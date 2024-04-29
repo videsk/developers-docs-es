@@ -110,7 +110,7 @@ videsk.toggle();
 ```
 {% endtab %}
 
-{% tab title="On load web" %}
+{% tab title="On web load" %}
 ```javascript
 document.addEventListener('videsk-load', () => {
     const forceOpen = true;
