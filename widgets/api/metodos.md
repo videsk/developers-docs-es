@@ -111,11 +111,12 @@ videsk.toggle();
 {% endtab %}
 
 {% tab title="On load web" %}
-<pre class="language-javascript"><code class="lang-javascript">// Use window.__VIDESK_WIDGET_ONLOAD__ only for load events not for functions
-<strong>window.__VIDESK_WIDGET_ONLOAD__ = function() {
-</strong>    videsk.toggle();
-}
-</code></pre>
+```javascript
+document.addEventListener('videsk-load', () => {
+    const forceOpen = true;
+    videsk.toggle(forceOpen);
+});
+```
 {% endtab %}
 {% endtabs %}
 
