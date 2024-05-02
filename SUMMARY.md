@@ -111,6 +111,8 @@
 * [🐞 Errores](webhooks/errores.md)
 * [🔌 Integradores (3rd party)](webhooks/integradores-3rd-party.md)
 * [💱 Formatos locales](webhooks/formatos-locales.md)
+* [🫱 Ejemplos](webhooks/ejemplos/README.md)
+  * [Formularios](webhooks/ejemplos/formularios.md)
 
 ## 🐞 Depuración
 
