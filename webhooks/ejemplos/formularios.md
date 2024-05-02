@@ -38,7 +38,7 @@ Las keys que contienen el formulario actualmente son: `baseForm`, `agentForm`, `
 
 Si quisiera extraer u obtener el valor de un campo de un formulario individualmente, por ejemplo el nombre del cliente, debería hacer lo siguiente usando los helpers `get` y `find`.
 
-```
+```handlebars
 {{#get 'value'}}
     {{#find @root.submittedForm}}
       {{#isEqual this.name}}customer_name{{/isEqual}}
