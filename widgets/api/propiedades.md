@@ -122,3 +122,31 @@ document.addEventListener('videsk-load', () => {
 {% hint style="warning" %}
 Al usar el widget en modo `fullscreen` la burbuja desaparece, por lo tanto, deberás usar `videsk.toggle(true)` para forzar la visibilidad.
 {% endhint %}
+
+## `width`
+
+Con esta propiedad podrás configurar el ancho del widget sin necesidad de añadir CSS personalizado. El valor debe ser un `Integer`, el cual se configurará en pixeles.
+
+{% code lineNumbers="true" %}
+```javascript
+videsk.width // Obtendrás el ancho
+videsk.width = 360;
+```
+{% endcode %}
+
+Si deseas mantener la responsibidad sugerimos cambiar el ancho del elemento `.videsk-top-container` mediante CSS, para la propiedad `width`.
+
+## `height`
+
+Con esta propiedad podrás configurar la altura del widget sin necesidad de añadir CSS personalizado. El valor debe ser un `Integer`, el cual se configurará en pixeles.
+
+```javascript
+videsk.height // Obtendrás el ancho
+videsk.height = 650;
+```
+
+Si deseas mantener la responsibidad sugerimos cambiar la altura del elemento `.videsk-home-iframe` mediante CSS, para las propiedades `height` y `max-height`.
+
+{% hint style="warning" %}
+**Usar `width` o `height` mediante sus propiedades romperá con la responsividad**, sugerimos utilizar solo estas propiedades basado en compartamientos, no para fijar el estilo.
+{% endhint %}

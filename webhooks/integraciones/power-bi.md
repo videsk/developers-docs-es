@@ -235,9 +235,9 @@ Recuerda asignar el conjunto de datos creado a un informe nuevo o existente.
       "id" :{{parser id}},
       "duracion_acw": {{parser acwDuration}},
       "duracion_efectiva": {{parser effectiveDuration}},
-      "dia": {{#date startedAt}}{ "day": "numeric" }{{/date}},
-      "mes": {{#date startedAt}}{ "month": "numeric" }{{/date}},
-      "ano": {{#date startedAt}}{ "year": "numeric" }{{/date}}
+      "dia": {{#date startedAt 'es-CL'}}{ "day": "numeric" }{{/date}},
+      "mes": {{#date startedAt 'es-CL'}}{ "month": "numeric" }{{/date}},
+      "ano": {{#date startedAt 'es-CL'}}{ "year": "numeric" }{{/date}}
     }
 ]
 ```
