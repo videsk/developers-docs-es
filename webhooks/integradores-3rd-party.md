@@ -22,7 +22,61 @@ Dentro de cada webhook nuestros mismos clientes pueden definir el formato del cu
 
 Considerando que siempre se enviará la cabecera `Content-Type` adecuado.
 
-Si requieres un formato en particular para la integración, basta con entregarle a nuestro cliente un ejemplo del formato para que este pueda añadirlo dentro de su cuenta y reemplazar los valores con las variables disponibles.
+Si requieres un formato en particular para la integración, basta con entregarle a nuestro cliente un ejemplo del formato/esquema para que este pueda añadirlo dentro de su cuenta y reemplazar los valores con las variables disponibles. **Por ejemplo**, si el cuerpo de la solicitud debe ser un formato `XML`, `JSON`, `CSV`, `YAML`, etc. deberás enviarle algo como:
+
+{% tabs %}
+{% tab title="JSON" %}
+{% code lineNumbers="true" %}
+```json
+{
+  "id": "REPLACE_ID",
+  "values": [
+    { "id": "REPLACE_FIELD_ID", "value": "REPLACE_FIELD_VALUE" }
+  ]
+}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="XML" %}
+{% code lineNumbers="true" %}
+```xml
+<users>
+    <user>
+        <name>REPLACE_NAME</name>
+        <lastConnection>REPLACE_DATE</lastConnection>
+    </user>
+</users>
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="CSV" %}
+{% code lineNumbers="true" %}
+```csv
+customerName,customerEmail,customerPhone,salesUser,date
+REPLACE_NAME,REPLACE_EMAIL,REPLACE_PHONE,REPLACE_AGENT,REPLACE_DATE
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="YAML" %}
+```yaml
+apiVersion: v1
+kind: user
+spec:
+  properties:
+    - name: Customer Name
+      value: REPLACE_NAME
+      
+    - name: Customer email
+      value: REPLACE_EMAIL
+      
+    - name: Customer phone
+      value: REPLACE_PHONE
+```
+{% endtab %}
+{% endtabs %}
 
 ## Errores
 
