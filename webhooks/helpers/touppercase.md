@@ -21,6 +21,6 @@ Debes considerar que el valor a mutar debe ser un `String`, de lo contrario se r
 ## Ejemplos de uso
 
 ```handlebars
-{{toLowerCase name}}
+{{toUpperCase name}}
 // Output: JOHN DOE
 ```
