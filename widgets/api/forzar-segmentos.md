@@ -24,6 +24,10 @@ const segments = [...];
 window.localStorage.setItem('videsk-custom-segments', JSON.stringify(segments));
 ```
 
+{% hint style="warning" %}
+Este script personalizado debe ser añadido antes que el script del widget, de lo contrario no lo reconocerá.
+{% endhint %}
+
 ## Ejemplo
 
 Este ejemplo es funcional por lo que solo deberás cambiar el nombre del segmento y pegar el ID correspondiente.
