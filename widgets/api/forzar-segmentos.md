@@ -25,7 +25,7 @@ window.localStorage.setItem('videsk-custom-segments', JSON.stringify(segments));
 ```
 
 {% hint style="warning" %}
-Este script personalizado debe ser añadido y cargado antes que el script del widget, de lo contrario no lo reconocerá y cargando normalmente.
+Este script personalizado debe ser añadido y cargado antes que el script del widget, de lo contrario no lo reconocerá, cargando normalmente.
 {% endhint %}
 
 ## Ejemplo
