@@ -275,6 +275,17 @@ phone.on['transport-disconnect'] = () => {
 };
 ```
 
+## `beamport:create`
+
+Este evento se emite cuando el agente solicita realizar una conexión para transferencia de archivos usando [Beamport](../intercambio-archivos/).
+
+```javascript
+phone.on['beamport:create'] = (event) => {
+   const { accessToken, channel } = event;
+   // Activar crear Beamport
+};
+```
+
 ## Límites y usos
 
 {% hint style="danger" %}

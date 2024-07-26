@@ -8,6 +8,14 @@ Debes usar este método[^1] asíncrono para realizar la conexión con otro par `
 await port.connect(accessToken);
 ```
 
+### Ejemplo
+
+```
+phone.addEventListener('beamport:create', (event) => {
+    port.connect();
+});
+```
+
 ## `send`
 
 Este método asíncrono te permite enviar los archivos automáticamente al otro par `BeamPort`. Los argumentos que recibe este método son:
