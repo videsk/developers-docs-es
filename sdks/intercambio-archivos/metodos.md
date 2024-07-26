@@ -4,17 +4,36 @@
 
 Debes usar este método[^1] asíncrono para realizar la conexión con otro par `BeamPort`, entregando un `accessToken` que podrás obtener desde el evento `beamport:create` de `Phone SDK`.
 
+{% hint style="warning" %}
+Recuerda que debes conectar el `Beamport` solo 1 vez mientras esté conectado, de lo contrario se generará un error. Si existe una desconexión puedes volver a conectar.
+{% endhint %}
+
 ```javascript
 await port.connect(accessToken);
 ```
 
 ### Ejemplo
 
-```
+{% tabs %}
+{% tab title="Basado en evento" %}
+```javascript
 phone.addEventListener('beamport:create', (event) => {
-    port.connect();
+    const { accessToken, channel } = event;
+    port.connect(accessToken);
 });
 ```
+{% endtab %}
+
+{% tab title="Evento como promesa" %}
+<pre class="language-javascript"><code class="lang-javascript"><strong>await new Promise(resolve => phone.addEventListener('beamport:create', async (event) => {
+</strong>    const { accessToken, channel } = event;
+    await port.connect(accessToken);
+    resolve();
+}));
+// Código a continuación
+</code></pre>
+{% endtab %}
+{% endtabs %}
 
 ## `send`
 
