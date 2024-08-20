@@ -71,7 +71,7 @@ Solicitar añadir a la fila un ticket de QMS
 
 #### Request Body
 
-<table><thead><tr><th width="201">Name</th><th width="123">Type</th><th width="267">Description</th></tr></thead><tbody><tr><td>integrationData</td><td>Mixed</td><td>Datos del ticket (Array, Object o String)</td></tr><tr><td>form</td><td>String</td><td>ID del formulario</td></tr><tr><td>ticketId</td><td>String</td><td>Ticket ID legible por el cliente/agente</td></tr></tbody></table>
+<table><thead><tr><th width="201">Name</th><th width="117">Type</th><th>Description</th></tr></thead><tbody><tr><td>integrationData</td><td>Mixed</td><td>Datos del ticket (Array, Object o String)</td></tr><tr><td>form</td><td>String</td><td>ID del formulario</td></tr><tr><td>ticketId</td><td>String</td><td>Ticket ID legible por el cliente/agente</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="201: Created Ticket añadido a la fila" %}
