@@ -5,7 +5,7 @@ Nuestro widget posee una configuración o ajuste que contiene componentes como c
 Por defecto, el comportamiento es obtener el ajuste del widget que hayas configurado en tu cuenta mediante nuestra API.
 
 {% hint style="info" %}
-Recuerda que esta función permite sobre escribir los ajustes y diseños que hayas configurado desde tu cuenta.
+Recuerda que esta función permite **sobrescribir o fusionar** los ajustes y diseños que hayas configurado desde tu cuenta.
 {% endhint %}
 
 Pero también es posible forzar un ajuste propio añadiendo un poco de código en tu sitio web. Para ello deberás tener en cuenta que la estructura es la siguiente:
@@ -110,6 +110,23 @@ Refresca tu sitio y verás los cambios.
 
 {% hint style="warning" %}
 No modifiques el nombre clave `widget-custom-style`, de esta manera identificamos los parámetros personalizados.
+{% endhint %}
+
+### Funsionando ajustes
+
+Es posible solo definir solo ciertas keys en el objeto de ajustes personalizado, mientras que el resto se fusionará.
+
+En otras palabras puedes hacer lo siguiente:
+
+```javascript
+const widgetStyle = { services: ['on-demand', 'appointment'], orgName: 'Acme' };
+window.localStorage.setItem('widget-custom-style', JSON.stringify(widgetStyle));
+```
+
+En el ejemplo, solo se define `services` y `orgName`, mientras que el resto como `logo`, `colors`, `texts` y `settings` se fusionarán con estos valores.
+
+{% hint style="danger" %}
+**La fusión solo se realiza en primer nivel. Si modificas `logo`, `colors`, `texts` o `settings`, deberás añadir cada uno de los valores del objeto, de lo contrario se generarán errores.**
 {% endhint %}
 
 ## Ejemplo

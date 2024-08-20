@@ -60,6 +60,7 @@
   * [Eventos](widgets/api/eventos.md)
   * [Ajustes](widgets/api/diseno.md)
   * [Forzar segmentos](widgets/api/forzar-segmentos.md)
+  * [Forzar calendarios](widgets/api/forzar-calendarios.md)
 
 ## Seguridad
 
