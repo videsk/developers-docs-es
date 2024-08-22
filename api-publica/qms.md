@@ -196,7 +196,8 @@ Listado de filas disponibles en la oficina
     {
         "name": "Atención a clientes",
         "id": "652a1ae848880e168884e49b",
-        "users": 0
+        "users": 0,
+        "avgWaitingTime": 1.124
     }
 ]
 ```
@@ -236,7 +237,8 @@ Obtén información de una fila individual
 {
     "name": "Atención a clientes",
     "id": "652a1ae848880e168884e49b",
-    "users": 1
+    "users": 1,
+    "avgWaitingTime": 1.124
 }
 ```
 {% endtab %}
