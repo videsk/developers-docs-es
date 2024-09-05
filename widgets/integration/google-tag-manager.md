@@ -66,6 +66,10 @@ Puedes ver nuestro video en la parte superior donde explicamos cómo definir un 
 
 Para realizar medición de eventos equivalentes a interacciones de un usuario con el widget a través de Google Tag Manager debes seguir los siguientes pasos:
 
+{% hint style="warning" %}
+Google Tag Manager debe estar integrado en el mismo sitio y nivel que el widget. Para verificar esto abre DevTools de tu navegador y escribe en Console, `window.dataLayer` el cual debe retornar la instancia GTM.
+{% endhint %}
+
 ### 1. Crear `trigger`
 
 Debe ir al menú lateral llamado **Triggers**.
