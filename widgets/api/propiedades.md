@@ -17,6 +17,26 @@ document.addEventListener('videsk-load', () => {
 ```
 {% endhint %}
 
+## `customers`
+
+{% hint style="info" %}
+Esta propiedad no está diseñada para hacer bypass a los formularios, solo rellenará con los datos que proporciones.
+{% endhint %}
+
+Esta propiedad de solo escritura permite definir los valores que se inyectarán por defecto en los formularios que tengas configurado para segmentos y calendarios. Estos valores dependerán de la propiedad `name` de cada campo de formulario, por ejemplo:
+
+```javascript
+videsk.customers = {
+    firstname: 'John',
+    lastname: 'Doe',
+    dni: 'ABC123456'
+}
+```
+
+El nombre de cada key dependerá de cómo está configurado la propiedad `name` de cada campo en el editor de formulario. Si la key no coincide el campo quedará vacío para que el cliente lo rellene manualmente.
+
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
 ## `constraints`
 
 Esta propiedad de lectura y escritura permite sobreescribir los valores por defecto de cámara y/o micrófono.

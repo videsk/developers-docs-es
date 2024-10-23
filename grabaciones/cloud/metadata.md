@@ -2,7 +2,7 @@
 
 Una vez que la integración para sincronizar las grabaciones esté completada y correcta, se comenzarán a enviar con metadata asociada a la llamada, lo que te permitirá buscar grabaciones de una manera enriquecida.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Por defecto, adjuntamos:
 
