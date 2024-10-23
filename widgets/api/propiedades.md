@@ -17,7 +17,7 @@ document.addEventListener('videsk-load', () => {
 ```
 {% endhint %}
 
-## `customers`
+## `customer`
 
 {% hint style="info" %}
 Esta propiedad no está diseñada para hacer bypass a los formularios, solo rellenará con los datos que proporciones.
@@ -26,7 +26,7 @@ Esta propiedad no está diseñada para hacer bypass a los formularios, solo rell
 Esta propiedad de solo escritura permite definir los valores que se inyectarán por defecto en los formularios que tengas configurado para segmentos y calendarios. Estos valores dependerán de la propiedad `name` de cada campo de formulario, por ejemplo:
 
 ```javascript
-videsk.customers = {
+videsk.customer = {
     firstname: 'John',
     lastname: 'Doe',
     dni: 'ABC123456'
