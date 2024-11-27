@@ -97,15 +97,19 @@ Deberás añadir nuestro dominio wilcard de servidores TURN a una lista blanca:
 
 <table><thead><tr><th>Dominio</th><th>Puertos<select multiple><option value="GM38pJf93M67" label="443" color="blue"></option><option value="tk4djYnk7Vye" label="80" color="blue"></option></select></th><th>Protocolos<select multiple><option value="89qidyIvf46g" label="DTLS (UDP)" color="blue"></option><option value="6s6hQGOgJskD" label="TLS (TCP)" color="blue"></option><option value="Dn7DuapYZgkx" label="TCP" color="blue"></option></select></th><th data-type="checkbox">TLS</th></tr></thead><tbody><tr><td>*.turn.videsk.io</td><td><span data-option="GM38pJf93M67">443, </span><span data-option="tk4djYnk7Vye">80</span></td><td><span data-option="6s6hQGOgJskD">TLS (TCP), </span><span data-option="89qidyIvf46g">DTLS (UDP), </span><span data-option="Dn7DuapYZgkx">TCP</span></td><td>true</td></tr></tbody></table>
 
+#### Listado de IPs
+
+{% hint style="danger" %}
+Sugerimos no utilizar direcciones IP, ya que nuestra infraestructura varía dependiendo de la posición geográfica, por lo que podemos incrementar el número de servidores o disminuirlos según la demanda, **no recomendamos utilizar las IPs**.
+{% endhint %}
+
+<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><strong>JSON</strong></td><td><a href="https://160de75b-d923-4dbd-9fe8-4885b2f46f42.videsk.io">Link</a></td><td></td></tr><tr><td><strong>CSV</strong></td><td><a href="https://160de75b-d923-4dbd-9fe8-4885b2f46f42.videsk.io/?format=csv">Link</a></td><td></td></tr><tr><td><strong>Plain text</strong></td><td><a href="https://160de75b-d923-4dbd-9fe8-4885b2f46f42.videsk.io/?format=text">Link</a></td><td></td></tr></tbody></table>
+
 ### Infraestructura lógica y UI
 
 Para las demás aplicaciones como nuestras API, dashboard, consola, etc. se encuentran como subdominios de primer nivel **`*.videsk.io`** todos con conexiones cifradas por TLS.
 
 <table><thead><tr><th>Dominio</th><th>Puerto(s)<select multiple><option value="DTwwaEFvNwks" label="443" color="blue"></option><option value="RdIkk9tF540D" label="80" color="blue"></option></select></th><th>Protocolo(s)<select multiple><option value="n7YofN8rBhAg" label="UDP" color="blue"></option><option value="vZmKZSGky8fz" label="TCP" color="blue"></option></select></th><th>Descripción</th></tr></thead><tbody><tr><td>api.videsk.io</td><td><span data-option="DTwwaEFvNwks">443</span></td><td><span data-option="vZmKZSGky8fz">TCP</span></td><td>Core API</td></tr><tr><td>app.videsk.io</td><td><span data-option="DTwwaEFvNwks">443</span></td><td><span data-option="vZmKZSGky8fz">TCP</span></td><td>Dashboard admin</td></tr><tr><td>console.videsk.io</td><td><span data-option="DTwwaEFvNwks">443</span></td><td><span data-option="vZmKZSGky8fz">TCP</span></td><td>Consola agente</td></tr><tr><td>cdn.videsk.io</td><td><span data-option="DTwwaEFvNwks">443</span></td><td><span data-option="vZmKZSGky8fz">TCP</span></td><td>Recursos CDN</td></tr><tr><td>agamotto.videsk.io</td><td><span data-option="DTwwaEFvNwks">443</span></td><td><span data-option="vZmKZSGky8fz">TCP</span></td><td>API grabación</td></tr><tr><td>exchange.videsk.io</td><td><span data-option="DTwwaEFvNwks">443</span></td><td><span data-option="vZmKZSGky8fz">TCP</span></td><td>API señalización</td></tr><tr><td>rt.videsk.io</td><td><span data-option="DTwwaEFvNwks">443</span></td><td><span data-option="vZmKZSGky8fz">TCP</span></td><td>API Websocket</td></tr><tr><td>assets.videsk.io</td><td><span data-option="DTwwaEFvNwks">443</span></td><td><span data-option="vZmKZSGky8fz">TCP</span></td><td>Recursos CDN (en transición)</td></tr></tbody></table>
-
-{% hint style="danger" %}
-Sugerimos no utilizar direcciones IP, ya que nuestra infraestructura varía dependiendo de la posición geográfica, por lo que podemos incrementar el número de servidores o disminuirlos según la demanda, **no recomendamos utilizar las IPs**.
-{% endhint %}
 
 #### Extras
 
