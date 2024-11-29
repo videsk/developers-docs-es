@@ -157,4 +157,5 @@ Utilizamos un monitor de sesiones llamado LogRocket, actualmente no es posible l
 
 ```
 *.lr-ingest.io
+*.lrkt-in.com
 ```
