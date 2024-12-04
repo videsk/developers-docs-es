@@ -37,22 +37,22 @@ flowchart TB
         
         %% Conexiones dentro del VPC
         TMS <--> |Access temp backup| VS
-        TMS <--> |Exchanges credentials\nin execution time| API
-        API <--> |Call end,\nget credentials| DB
+        TMS <--> |Exchanges credentials in execution time| API
+        API <--> |Call end, get credentials| DB
         VS <--> |Temp backup| PMS
     end
     
     %% Conexiones externas
-    TMS --> |Upload files,\npurge credentials\nand backup*| ES
-    API <--> |TLS| External[Input external\nstorage credentials]
-    PMS <--> |TLS| Participants[Receive streams from\nparticipants]
+    TMS --> |Upload files, purge credentials and backup| ES
+    API <--> |TLS| External[Input external storage credentials]
+    PMS <--> |TLS| Participants[Receive streams from participants]
     
     %% Notas sobre cifrado y clusters
     classDef cluster fill:#f9f,stroke:#333,stroke-width:2px
     class TMS,VS,PMS,API,DB cluster
     
     %% Notas
-    note["* Depending you setup the backup can be persist on our storage.\n** This behavior ensure the files persist and not lose if external storage fails."]
+    note["Depending you setup the backup can be persist on our storage. This behavior ensure the files persist and not lose if external storage fails."]
     
     %% Estilo
     classDef storage fill:#DC3545,color:white
