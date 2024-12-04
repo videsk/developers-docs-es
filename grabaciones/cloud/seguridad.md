@@ -26,7 +26,7 @@ En el siguiente esquema explicamos como se realiza el proceso de almacenamiento 
 
 ```mermaid
 flowchart TB
-    ES[External Storage\naws, gcp, azure, ftp] 
+    ES[External Storage:<br>aws, gcp, azure, ftp] 
     
     subgraph VPC["VPC Network"]
         TMS[Transcoder Media Server]
@@ -36,23 +36,23 @@ flowchart TB
         DB[(Database)]
         
         %% Conexiones dentro del VPC
-        TMS <--> |Access temp backup| VS
-        TMS <--> |Exchanges credentials in execution time| API
-        API <--> |Call end, get credentials| DB
+        TMS <--> |Access temp<br>backup| VS
+        TMS <--> |Exchanges credentials<br>in execution time| API
+        API <--> |Call end,<br>get credentials| DB
         VS <--> |Temp backup| PMS
     end
     
     %% Conexiones externas
-    TMS --> |Upload files, purge credentials and backup| ES
-    API <--> |TLS| External[Input external storage credentials]
-    PMS <--> |TLS| Participants[Receive streams from participants]
+    TMS --> |Upload files,<br>purge credentials<br>and backup*| ES
+    API <--> |TLS| External[Input external storage<br>credentials]
+    PMS <--> |TLS| Participants[Receive streams from<br>participants]
     
     %% Notas sobre cifrado y clusters
     classDef cluster fill:#f9f,stroke:#333,stroke-width:2px
     class TMS,VS,PMS,API,DB cluster
     
     %% Notas
-    note["Depending you setup the backup can be persist on our storage. This behavior ensure the files persist and not lose if external storage fails."]
+    note["*Depending you setup the<br>backup can be persist on<br> our storage.<br>**This behavior ensure<br>the files persist and not lose<br>if external storage fails."]
     
     %% Estilo
     classDef storage fill:#DC3545,color:white
