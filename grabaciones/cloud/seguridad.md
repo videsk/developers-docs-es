@@ -24,7 +24,45 @@ El cifrado y descifrado utilizado para el almacenamiento de credenciales en repo
 
 En el siguiente esquema explicamos como se realiza el proceso de almacenamiento y transacción de las credenciales.
 
-{% @figma/embed fileId="0vs8s1P47jsMfMMA2Ktpgt" nodeId="101:2" url="https://www.figma.com/file/0vs8s1P47jsMfMMA2Ktpgt/Recordings?node-id=101%3A2" %}
+```mermaid
+flowchart TB
+    ES[External Storage\naws, gcp, azure, ftp] 
+    
+    subgraph VPC["VPC Network"]
+        TMS[Transcoder Media Server]
+        VS[Videsk Storage]
+        PMS[Proxy Media Server]
+        API[Core API]
+        DB[(Database)]
+        
+        %% Conexiones dentro del VPC
+        TMS <--> |Access temp backup| VS
+        TMS <--> |Exchanges credentials\nin execution time| API
+        API <--> |Call end,\nget credentials| DB
+        VS <--> |Temp backup| PMS
+    end
+    
+    %% Conexiones externas
+    TMS --> |Upload files,\npurge credentials\nand backup*| ES
+    API <--> |TLS| External[Input external\nstorage credentials]
+    PMS <--> |TLS| Participants[Receive streams from\nparticipants]
+    
+    %% Notas sobre cifrado y clusters
+    classDef cluster fill:#f9f,stroke:#333,stroke-width:2px
+    class TMS,VS,PMS,API,DB cluster
+    
+    %% Notas
+    note["* Depending you setup the backup can be persist on our storage.\n** This behavior ensure the files persist and not lose if external storage fails."]
+    
+    %% Estilo
+    classDef storage fill:#DC3545,color:white
+    classDef component fill:#0D6EFD,color:white
+    classDef note fill:#fff,stroke:#333,stroke-dasharray: 5 5
+    
+    class ES storage
+    class TMS,VS,PMS,API,DB component
+    class note note
+```
 
 {% hint style="info" %}
 Las credenciales tienen un límite de 5000 caracteres como máximo.
