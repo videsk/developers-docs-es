@@ -144,6 +144,10 @@ El valor `integrationData`será usado para ser enviado mediante nuestros webhook
 Esto no se mostrará al agente, solo estará disponible en los webhooks de integración.
 {% endhint %}
 
+{% hint style="info" %}
+El valor `ticketId` tiene un límite de 50 caracteres, mínimo 1.
+{% endhint %}
+
 ## Obtener listado de oficinas
 
 <mark style="color:blue;">`GET`</mark> `https://api.videsk.io/public/video-contact-center/branches`
