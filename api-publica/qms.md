@@ -57,10 +57,10 @@ Solicitar añadir a la fila un ticket de QMS
 
 #### Path Parameters
 
-| Name                                     | Type   | Description          |
-| ---------------------------------------- | ------ | -------------------- |
-| branch<mark style="color:red;">\*</mark> | String | ID de oficina        |
-| queue<mark style="color:red;">\*</mark>  | String | ID de fila (segment) |
+| Name                                     | Type   | Description                          |
+| ---------------------------------------- | ------ | ------------------------------------ |
+| branch<mark style="color:red;">\*</mark> | String | ID de oficina o integrationId        |
+| queue<mark style="color:red;">\*</mark>  | String | ID de fila (segment) o integrationId |
 
 #### Headers
 
