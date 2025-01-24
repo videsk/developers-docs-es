@@ -72,7 +72,38 @@ Los posibles errores que pueden surgir es agendar unos segundos antes de la hora
 También es posible que se niege el agendamiento si alguien más ha toma la hora al mismo tiempo, solo si hay 1 agente u hora disponible.
 {% endhint %}
 
-{% @figma/embed fileId="I4Pe99i1sfDlqRhyl2sgnh" nodeId="0:1" url="https://www.figma.com/file/I4Pe99i1sfDlqRhyl2sgnh/Calendar-flow?node-id=0:1&t=QQPfsWmKEvrPVXfc-1" %}
+```mermaid
+flowchart LR
+    A["Listado de servicios\n(calendarios)"]
+    B["Listado de agentes\npor servicio"]
+    C1["Cargar días del mes"]
+    C2["Cargar horas del día"]
+    D["Formulario de datos"]
+    E["Confirmación"]
+    F1["Envío correo\nconfirmación-cliente"]
+    F2["Envío correo\nconfirmación-agente"]
+    G1["Envío correo\nrecordatorio-cliente"]
+    G2["Envío correo\nrecordatorio-agente"]
+
+    A --> B
+    B -->|"Selección manual"| C1
+    B -->|"Selección manual"| C2
+    C1 --> D
+    C2 --> D
+    D -->|"No error"| E
+    D -->|"Si error"| A
+    E -.-> F1
+    E -.-> F2
+    F1 -.->|"Previo reunión"| G1
+    F2 -.-> G2
+    G1 -.-> E
+    G2 -.-> E
+
+    A -->|"Selección inteligente"| C2
+    D -->|"Error disponibilidad"| C2
+```
+
+
 
 ### Modificación
 
@@ -82,4 +113,31 @@ Este flujo corresponde al momento en que un cliente desea cancelar o reagendar u
 Este flujo siempre se debe realizar con los tokens enviados por correo electrónico u otro medio seleccionado. Por seguridad no existen PINs, claves o búsqueda por correo para efectuar modificaciones.
 {% endhint %}
 
-{% @figma/embed fileId="I4Pe99i1sfDlqRhyl2sgnh" nodeId="9:44" url="https://www.figma.com/file/I4Pe99i1sfDlqRhyl2sgnh/Calendar-flow?node-id=9:44&t=QQPfsWmKEvrPVXfc-1" %}
+```mermaid
+flowchart LR
+    A1["Reagendar"]
+    A2["Cancelar"]
+    B1["Cargar días del mes"]
+    B2["Cargar horas del día"]
+    C["Confirmación"]
+    D1["Envío correo\nconfirmación-cliente"]
+    D2["Envío correo\nconfirmación-agente"]
+    E1["Envío correo\ncancelación-cliente"]
+    E2["Envío correo\ncancelación-agente"]
+    F1["Envío correo\nrecordatorio-cliente"]
+    F2["Envío correo\nrecordatorio-agente"]
+
+    A1 --> B1
+    A1 --> B2
+    B1 --> C
+    B2 --> C
+    A2 --> E1
+    A2 --> E2
+    C -.-> D1
+    C -.-> D2
+    D1 -.->|"Previo reunión"| F1
+    D2 -.-> F2
+    F1 -.-> C
+    F2 -.-> C
+```
+
