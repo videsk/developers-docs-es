@@ -143,3 +143,9 @@
 * [Encuestas](api-publica/encuestas.md)
 * [Formularios](api-publica/formularios.md)
 * [QMS](api-publica/qms.md)
+
+## Apps
+
+* [Introducción](apps/introduccion.md)
+* [Integraciones](apps/integraciones/README.md)
+  * [Power Apps](apps/integraciones/power-apps.md)
