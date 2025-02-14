@@ -170,3 +170,19 @@ Si deseas mantener la responsibidad sugerimos cambiar la altura del elemento `.v
 {% hint style="warning" %}
 **Usar `width` o `height` mediante sus propiedades romperá con la responsividad**, sugerimos utilizar solo estas propiedades basado en compartamientos, no para fijar el estilo.
 {% endhint %}
+
+## `referrer`
+
+Con esta propiedad podrás configurar la URL del sitio web de referencia el cual almacenaremos para indicar desde donde se realizó la llamada o agendamiento. Debes considera que debe ser una url válida que debe incluir el protocolo `https://` .
+
+{% hint style="warning" %}
+Ten en consideración que la URL para el **caso de agendamiento** debe si o si tener integrado el widget o SDK, de lo contrario tus clientes no se podrán unir a la reunión.
+{% endhint %}
+
+```javascript
+videsk.referrer = 'https://myportal.videsk.io';
+```
+
+{% hint style="info" %}
+Recuerda que desde el dashboard puede personalizar la plantilla de correo para agendamiento donde también puedes sobrescribir la URL de destino.
+{% endhint %}
