@@ -4,77 +4,75 @@ Phone SDK posee un listado de eventos que te ayudarán a ejecutar acciones sobre
 
 ```mermaid
 flowchart TB
-    %% Definición de estilos
-    classDef interface fill:#4169E1,color:white
-    classDef process fill:#D3D3D3,color:black
-
-    %% Nodos principales
-    Start[Vista de múltiples segmentos]:::interface
-    F2[Verificar cantidad de agentes disponibles]:::process
-    
-    %% Rama superior
-    F3[Verificar si existe formulario de contacto]:::process
-    F4[Obtener formulario de contacto]:::process
-    F5[Renderizar formulario]:::interface
-    F17[Validar envío de formulario con captcha]:::process
-
-    %% Rama media
-    F6[Verificar si existe formulario base]:::process
-    F8[Llamar]:::process
-    F9[Ingresar a la fila]:::interface
-    F12[Ingresar a la videollamada]:::interface
-    F13[Verificar si existe encuesta]:::process
-    
-    %% Rama inferior
-    F7[Obtener formulario base]:::process
-    F10[Renderizar formulario base]:::interface
-    F11[Validar envío de formulario con captcha]:::process
-    F22[Actualización posición fila]:::interface
-    
-    %% Rama de abandono
-    F14[Abandono de fila]:::process
-    F25[Obtener razones de abandono]:::process
-    F26[Renderizar razones de abandono]:::interface
-    
-    %% Rama final
-    F24[Obtener encuesta del segmento]:::process
-    F27[Renderizar encuesta]:::interface
-    End[Mensaje de final]:::interface
-
-    %% Conexiones
-    Start --> F2
-    F2 --> F3
-    F2 --> F6
-    F2 --> F7
-    
-    %% Rama superior
-    F3 --> F4
-    F4 --> F5
-    F5 --> F17
-    F17 --> End
-    
-    %% Rama media
-    F6 --> F8
-    F8 --> F9
-    F9 --> F12
-    F12 --> F13
-    F13 --> F24
-    
-    %% Rama inferior
-    F7 --> F10
-    F10 --> F11
-    F11 --> F22
-    F22 --> F9
-    F22 --> F14
-    
-    %% Rama de abandono
-    F14 --> F25
-    F25 --> F26
-    F26 --> End
-    
-    %% Rama final
-    F24 --> F27
-    F27 --> End
+ %% Definición de estilos
+classDef interface fill:#4169E1,color:white
+classDef process fill:#D3D3D3,color:black
+%% Nodos principales
+ Start[Vista de múltiples segmentos]:::interface
+ F2[Verificar cantidad de agentes disponibles]:::process
+%% Rama superior - No hay agentes disponibles
+ F3[Verificar si existe formulario de contacto]:::process
+ F4[Obtener formulario de contacto]:::process
+ F5[Renderizar formulario]:::interface
+ F17[Validar envío de formulario con captcha]:::process
+%% Rama media - Hay agentes disponibles
+ F6[Verificar si existe formulario base]:::process
+ F8[Llamar]:::process
+ F9[Ingresar a la fila]:::interface
+ F22[Actualización posición fila]:::interface
+ F12[Ingresar a la videollamada]:::interface
+ F13[Verificar si existe encuesta]:::process
+%% Rama inferior - Tiene formulario base
+ F7[Obtener formulario base]:::process
+ F10[Renderizar formulario base]:::interface
+ F11[Validar envío de formulario con captcha]:::process
+%% Rama de abandono
+ F14[Abandono de fila]:::process
+ F25[Obtener razones de abandono]:::process
+ F26[Renderizar razones de abandono]:::interface
+%% Rama final
+ F24[Obtener encuesta del segmento]:::process
+ F27[Renderizar encuesta]:::interface
+End[Mensaje de final]:::interface
+%% Conexiones
+ Start --> F2
+ 
+ %% Rama NO hay agentes disponibles
+ F2 -- No hay agentes disponibles --> F3
+ F3 --> F4
+ F4 --> F5
+ F5 --> F17
+ F17 --> End
+ 
+ %% Rama SÍ hay agentes disponibles
+ F2 -- Hay agentes disponibles --> F6
+ 
+ %% NO hay formulario base
+ F6 -- No existe formulario base --> F8
+ 
+ %% SÍ hay formulario base
+ F6 -- Existe formulario base --> F7
+ F7 --> F10
+ F10 --> F11
+ F11 --> F8
+ 
+ %% Secuencia común después de llamar
+ F8 --> F9
+ F9 --> F22
+ F22 --> F12
+ F12 --> F13
+ 
+ %% Opción de abandono desde actualización de fila
+ F22 --> F14
+ F14 --> F25
+ F25 --> F26
+ F26 --> End
+ 
+ %% Rama final después de videollamada
+ F13 -- Existe encuesta --> F24
+ F13 -- No existe encuesta --> End
+ F24 --> F27
+ F27 --> End
 ```
 
 
