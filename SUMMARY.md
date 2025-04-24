@@ -144,6 +144,21 @@
 * [Formularios](api-publica/formularios.md)
 * [QMS](api-publica/qms.md)
 
+***
+
+* [Exportación](exportacion/README.md)
+  * [Llamadas](exportacion/llamadas.md)
+  * [Filas](exportacion/filas.md)
+  * [Metadatos](exportacion/metadatos.md)
+  * [Comentarios](exportacion/comentarios.md)
+  * [Etiquetas](exportacion/etiquetas.md)
+  * [Reuniones](exportacion/reuniones.md)
+  * [Grabaciones](exportacion/grabaciones.md)
+  * [Tópicos IA](exportacion/topicos-ia.md)
+  * [Sentimientos IA](exportacion/sentimientos-ia.md)
+  * [Formularios](exportacion/formularios.md)
+  * [Encuestas](exportacion/encuestas.md)
+
 ## Apps
 
 * [Introducción](apps/introduccion.md)
