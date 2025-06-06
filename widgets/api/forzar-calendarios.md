@@ -8,8 +8,8 @@ Lo primero de debes hacer es buscar el o los ID de los calendrios en tu cuenta d
 
 ```javascript
 [
-    { name: "Nombre del calendario", id: "635c836300f9e8246a0f95f2" },
-    { name: "Nombre del calendario 2", id: "635c837e2f38b41ad2143b71" },
+    { title: "Nombre del calendario", id: "635c836300f9e8246a0f95f2", automatic: true },
+    { title: "Nombre del calendario 2", id: "635c837e2f38b41ad2143b71", automatic: false },
 ]
 ```
 
@@ -20,8 +20,8 @@ Deberás reemplazar el nombre en `name` y pegar el ID del calendario en `id`.
 Finalmente deberás usar el listado y guardarlo en el almacenamiento local `localStorage`.
 
 ```javascript
-const segments = [...];
-window.localStorage.setItem('videsk-custom-calendars', JSON.stringify(segments));
+const calendars = [...];
+window.localStorage.setItem('videsk-custom-calendars', JSON.stringify(calendars));
 ```
 
 {% hint style="warning" %}
@@ -41,7 +41,7 @@ Recuerda que puedes usar uno o más calendarios.
 {% code title="Pure javascript" lineNumbers="true" %}
 ```javascript
 const calendars = [
-    { name: "Mi calendario", id: "635c843f35f1254a417612d9" }
+    { title: "Mi calendario", id: "635c843f35f1254a417612d9" }
 ];
 window.localStorage.setItem('videsk-custom-calendars', JSON.stringify(calendars));
 ```
@@ -52,7 +52,7 @@ window.localStorage.setItem('videsk-custom-calendars', JSON.stringify(calendars)
 ```html
 <script>
 const calendars = [
-    { name: "Mi calendario", id: "635c843f35f1254a417612d9" }
+    { title: "Mi calendario", id: "635c843f35f1254a417612d9" }
 ];
 window.localStorage.setItem('videsk-custom-calendars', JSON.stringify(calendars));
 </script>
