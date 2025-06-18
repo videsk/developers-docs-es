@@ -8,6 +8,14 @@ description: Almacena tus grabaciones en un entorno propio alojado en Azure Blob
 Una vez ingresadas las credenciales no podrán ser vistas nuevamente, por lo que solo podrás sobrescribir.
 {% endhint %}
 
+## Crear Azure Blob
+
+{% @arcade/embed flowId="3yGt3vDhbMVMQGy0tEot" url="https://app.arcade.software/share/3yGt3vDhbMVMQGy0tEot" %}
+
+## Crear credenciales de lectura
+
+{% @arcade/embed flowId="PB0OiGffzg4tn4XRRmDr" url="https://app.arcade.software/share/PB0OiGffzg4tn4XRRmDr" %}
+
 Las credenciales necesarias para conectar las grabaciones con tu entorno Azure son:
 
 ## Opción 1
