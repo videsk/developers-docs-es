@@ -74,9 +74,8 @@
 
 * [Kioskos](integraciones/kioskos/README.md)
   * [Modo Kiosko](integraciones/kioskos/modo-kiosko.md)
-  * [Tips para ambientes](integraciones/kioskos/tips-para-ambientes/README.md)
-    * [Electron](integraciones/kioskos/tips-para-ambientes/electron.md)
-    * [Chrome/Chromium](integraciones/kioskos/tips-para-ambientes/chrome-chromium.md)
+  * [Electron](integraciones/kioskos/electron.md)
+  * [Chrome/Chromium](integraciones/kioskos/chrome-chromium.md)
 * [Frameworks](integraciones/frameworks/README.md)
   * [Angular](integraciones/frameworks/angular.md)
 
