@@ -57,7 +57,7 @@ Ya en Webhooks deberás dar clic en el botón azul ![](<../../.gitbook/assets/im
 Luego, deberás seleccionar qué tipo de evento quieres enviar a PowerBI.
 
 {% hint style="info" %}
-**Para este ejemplo utilizaremos los datos del evento de llamada creada,** pero recuerda que las instrucciones aplican para cualquier otro evento**.**
+**Para este ejemplo utilizaremos los datos del evento de llamada creada,** pero recuerda que las instrucciones aplican para cualquier otro event&#x6F;**.**
 {% endhint %}
 
 ![](<../../.gitbook/assets/image (35).png>)

@@ -1,8 +1,8 @@
 ---
-description: Descubre como realizar la integración con kioskos físicos
+description: Descubre cómo puedes configurar el modo kiosko en cualquier dispositivo.
 ---
 
-# Kioskos
+# Modo Kiosko
 
 ## Modo kiosko en Chrome
 
@@ -46,7 +46,7 @@ Si deseas que Chrome se abra cada vez que Windows se inicie, deberás añadir es
 2. Escribe `Shell:startup`
 3. Descarga este archivo en la carpeta abierta:
 
-{% file src="../.gitbook/assets/kiosk.cmd" %}
+{% file src="../../.gitbook/assets/kiosk.cmd" %}
 
 {% hint style="info" %}
 En caso que no puedas descargar el archivo por bloqueos de seguridad en la red, abre un block de notas, pega el siguiente contenido, pégalo y guárdalo con el nombre `kiosk.cmd`.
@@ -83,7 +83,7 @@ Si deseas que Chrome se abra cada vez que Linux se inicie, deberás añadir este
 
 1. Descarga este archivo en cualquier ubicación
 
-{% file src="../.gitbook/assets/kiosk.service" %}
+{% file src="../../.gitbook/assets/kiosk.service" %}
 
 {% hint style="info" %}
 En caso que no puedas descargar el archivo debido a bloqueos de seguridad en la red, copia el siguiente contenido y pégalo en un archivo llamado `kiosk.service`

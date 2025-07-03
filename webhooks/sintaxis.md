@@ -6,7 +6,7 @@ description: >-
 
 # 🦰 Sintaxis
 
-Para utilizar los webhooks personalizados debes conocer acerca de la sintaxis que utilizamos, la cual está basada en [M_ustache_](https://mustache.github.io/), una librería de código abierto que nos permite generar la estructura personalizada.
+Para utilizar los webhooks personalizados debes conocer acerca de la sintaxis que utilizamos, la cual está basada en [&#x4D;_&#x75;stache_](https://mustache.github.io/), una librería de código abierto que nos permite generar la estructura personalizada.
 
 Básicamente deberás utilizar llaves <mark style="color:purple;">`{{ }}`</mark> o conocidos como "_curly braces"_. Esta sintaxis te permite acceder a valores que te entregamos para cada evento.
 
