@@ -9,3 +9,7 @@ description: >-
 {% content-ref url="electron.md" %}
 [electron.md](electron.md)
 {% endcontent-ref %}
+
+{% content-ref url="chrome-chromium.md" %}
+[chrome-chromium.md](chrome-chromium.md)
+{% endcontent-ref %}
