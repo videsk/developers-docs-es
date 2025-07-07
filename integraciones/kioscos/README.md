@@ -178,7 +178,7 @@ Si necesitas obtener ID dinámicos, deberás diseñar tu propia solución donde 
 
 {% code lineNumbers="true" %}
 ```javascript
-class Storage {
+class CustomStorage {
   
   static storageKey = 'kiosk-id';
   
@@ -200,7 +200,7 @@ class Storage {
   
 }
 
-Storage.id // Obtener ID de segmento automáticamente por storage, URL y window
-Storage.save(id) // Almancenar en storage local del navegador
+CustomStorage.save(id) // Almancenar en storage local del navegador
+CustomStorage.id // Obtener ID de segmento automáticamente por storage, URL y window
 ```
 {% endcode %}
