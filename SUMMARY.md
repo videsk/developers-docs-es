@@ -72,10 +72,10 @@
 
 ## 🖇️ Integraciones
 
-* [Kioskos](integraciones/kioskos/README.md)
-  * [Modo Kiosko](integraciones/kioskos/modo-kiosko.md)
-  * [Electron](integraciones/kioskos/electron.md)
-  * [Chrome/Chromium](integraciones/kioskos/chrome-chromium.md)
+* [Kioscos](integraciones/kioscos/README.md)
+  * [Modo Kiosko](integraciones/kioscos/modo-kiosko.md)
+  * [Electron](integraciones/kioscos/electron.md)
+  * [Chrome/Chromium](integraciones/kioscos/chrome-chromium.md)
 * [Frameworks](integraciones/frameworks/README.md)
   * [Angular](integraciones/frameworks/angular.md)
 
