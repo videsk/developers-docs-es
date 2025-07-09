@@ -17,7 +17,7 @@ Dependiendo de la configuración de tu sitio web y dónde esté alojado deberás
 Esta cabecera define donde y que tipos de características del navegador se pueden utilizan en tu sitio, como cámara, micrófono, GPS, giroscopio, batería, etc. Si tienes activada esta cabecera deberás añadir al listado:
 
 ```
-Feature-Policy: microphone 'self'; camera 'self'; autoplay 'self'; ...
+Feature-Policy: microphone 'self'; camera 'self'; autoplay 'self'; fullscreen 'self'; picture-in-picture 'self'
 Permissions-Policy: autoplay=(self), camera=(self), fullscreen=(self), microphone=(self), picture-in-picture=(self)
 ```
 
@@ -38,7 +38,7 @@ Si configuras el valor en `DENY` podrías perder ciertas funcionalidades de Vide
 Esta cabecera (CSP) permite definir que tipo de contenido se tiene permitido cargar para cada servicio y tipo de recursos registrados en esta cabecera.
 
 ```
-connect-src 'self' *.videsk.io; script-src 'self' *.videsk.io; style-src 'self' *.videsk.io; prefetch-src 'self' *.videsk.io; media-src 'self' *.videsk.io; object-src 'self' *.videsk.io;
+Content-Security-Policy: media-src 'self' *.videsk.io; connect-src 'self' *.videsk.io; default-src 'self' 'unsafe-inline' *.videsk.io
 ```
 
 {% hint style="warning" %}
