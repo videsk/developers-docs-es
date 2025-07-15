@@ -2,6 +2,10 @@
 
 Nuestro widget ya cuenta con integraciones nativas con las siguientes herramientas de analytics.
 
+{% hint style="info" %}
+Recuerda que estos son integraciones existentes en nuestro widget, para personalizadas puedes seguir usando los [eventos nativos del widget](../api/eventos.md).
+{% endhint %}
+
 ## Compatibles Plug\&Play
 
 {% content-ref url="google-analytics-tag-manager.md" %}
