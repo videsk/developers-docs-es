@@ -8,7 +8,7 @@ Recuerda que estos son integraciones existentes en nuestro widget, para personal
 
 ## Compatibles Plug\&Play
 
-<table data-view="cards"><thead><tr><th data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="adobe-experience-cloud.md">adobe-experience-cloud.md</a></td><td><a href="../../.gitbook/assets/Adobe-Experience-Cloud-logo.jpg">Adobe-Experience-Cloud-logo.jpg</a></td></tr><tr><td><a href="google-analytics-tag-manager.md">google-analytics-tag-manager.md</a></td><td><a href="../../.gitbook/assets/image001.jpg">image001.jpg</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><a href="adobe-experience-cloud.md">adobe-experience-cloud.md</a></td><td><a href="../../.gitbook/assets/Adobe-Experience-Cloud-logo.jpg">Adobe-Experience-Cloud-logo.jpg</a></td><td><a href="adobe-experience-cloud.md">adobe-experience-cloud.md</a></td></tr><tr><td><a href="google-analytics-tag-manager.md">google-analytics-tag-manager.md</a></td><td><a href="../../.gitbook/assets/image001.jpg">image001.jpg</a></td><td><a href="google-analytics-tag-manager.md">google-analytics-tag-manager.md</a></td></tr></tbody></table>
 
 ## Eventos
 
