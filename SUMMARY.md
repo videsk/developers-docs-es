@@ -61,6 +61,9 @@
   * [Ajustes](widgets/api/diseno.md)
   * [Forzar segmentos](widgets/api/forzar-segmentos.md)
   * [Forzar calendarios](widgets/api/forzar-calendarios.md)
+* [📡 Analytics](widgets/analytics/README.md)
+  * [Google Analytics/Tag Manager](widgets/analytics/google-analytics-tag-manager.md)
+  * [Adobe Experience Cloud](widgets/analytics/adobe-experience-cloud.md)
 
 ## Seguridad
 
