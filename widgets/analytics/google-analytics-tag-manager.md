@@ -22,11 +22,7 @@ layout:
 
 Nuestro widget es compatible de forma nativa y por defecto con los distintos productos de Google para analítica dentro de ellos están:
 
-* Google Analytics 3 y 4 (`gtag`)
-* Google Analytics via GTM
-* Google Tag Manager
-* Google Ads
-* Universal Analytics (deprecado)
+<table><thead><tr><th width="525.111083984375">Nombre</th><th data-type="checkbox">Compatibilidad</th></tr></thead><tbody><tr><td>Google Analytics 3 y 4 (<code>gtag</code>)</td><td>true</td></tr><tr><td>Google Analytics via GTM</td><td>true</td></tr><tr><td>Google Tag Manager</td><td>true</td></tr><tr><td>Google Ads</td><td>true</td></tr><tr><td>Universal Analytics (deprecado)</td><td>true</td></tr></tbody></table>
 
 Para realizar medición de eventos equivalentes a interacciones de un usuario con el widget a través de Google Tag Manager debes seguir los siguientes pasos:
 
