@@ -136,6 +136,7 @@
   * [Azure](grabaciones/cloud/azure.md)
   * [GCP](grabaciones/cloud/gcp.md)
   * [SFTP](grabaciones/cloud/sftp.md)
+  * [OIDC](grabaciones/cloud/oidc.md)
 * [Local](grabaciones/local/README.md)
   * [Ubicación de descargas](grabaciones/local/ubicacion-de-descargas.md)
   * [Google Drive / FileStream](grabaciones/local/google-drive-filestream.md)
