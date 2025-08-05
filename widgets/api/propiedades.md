@@ -20,7 +20,7 @@ document.addEventListener('videsk-load', () => {
 ## `customer`
 
 {% hint style="info" %}
-Esta propiedad no está diseñada para hacer bypass a los formularios, solo rellenará con los datos que proporciones.
+Esta propiedad rellenará el formulario automáticamente con los datos que proporciones, no los envía automáticamente. Esto debido a que formularios tiene una protección anti-bot que se activa con 1 clic en el botón inferior del formulario.
 {% endhint %}
 
 Esta propiedad de solo escritura permite definir los valores que se inyectarán por defecto en los formularios que tengas configurado para segmentos y calendarios. Estos valores dependerán de la propiedad `name` de cada campo de formulario, por ejemplo:
