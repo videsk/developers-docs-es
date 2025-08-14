@@ -175,3 +175,4 @@
 ## VPaaS
 
 * [Introducción](vpaas/introduccion.md)
+* [Rooms](vpaas/rooms.md)
