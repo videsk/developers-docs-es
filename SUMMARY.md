@@ -171,3 +171,7 @@
 * [Introducción](apps/introduccion.md)
 * [Integraciones](apps/integraciones/README.md)
   * [Power Apps](apps/integraciones/power-apps.md)
+
+## VPaaS
+
+* [Introducción](vpaas/introduccion.md)
