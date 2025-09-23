@@ -104,11 +104,26 @@ port.addEventListener('canceled', event => {
 
 ## `received`
 
-Este evento se dispara cuando se recibe un archivo [**en su totalidad**](#user-content-fn-3)[^3] envíado por el par remoto. El valor recibido corresponde a un [`BeamPortFile`](beamportfile.md).
+Este evento se dispara cuando se recibe un archivo [**en su totalidad**](#user-content-fn-3)[^3] enviado por el par remoto. El valor recibido corresponde a un [`BeamPortFile`](beamportfile.md).
 
 ```javascript
 port.addEventListener('received', event => {
     const file = event.detail;
+});
+```
+
+## `sent`
+
+Este evento se dispara cuando se envió un archivo [en su totalidad](#user-content-fn-4)[^4], confirmado por el par remoto. Los valores son:
+
+* `crc32`: valor de integridad total del archivo
+* `filename`: nombre del archivo incluyendo extensión
+* `file`: archivo de tipo [File](https://developer.mozilla.org/en-US/docs/Web/API/File)
+
+```javascript
+port.addEventListener('sent', event => {
+    const { crc32, filename, file } = event.detail;
+    // Do something
 });
 ```
 
@@ -155,3 +170,5 @@ port.addEventListener(eventName, () => {
 [^2]: Ya sea cancelado local o remotamente.
 
 [^3]: Ya se han recibido todos los bytes del archivo. El porcentaje será 100%.
+
+[^4]: Ya se han enviado todos los bytes del archivo. El porcentaje será 100%.
