@@ -187,12 +187,12 @@ videsk.referrer = 'https://myportal.videsk.io';
 Recuerda que desde el dashboard puede personalizar la plantilla de correo para agendamiento donde también puedes sobrescribir la URL de destino.\`
 {% endhint %}
 
-## `isTotem`&#x20;
+## `totem`&#x20;
 
 Esta propiedad permite deshabilitar comportamientos del widget en modo web para que en un kiosco o totem no interrumpan una experiencia continua. Esto deshabilita:
 
 1. Redirección "Usamos Videsk"
 
 ```javascript
-videsk.isTotem = true;
+videsk.totem = true;
 ```
