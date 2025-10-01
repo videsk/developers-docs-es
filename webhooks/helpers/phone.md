@@ -55,7 +55,7 @@ Salida: `2345678900`
 ### `code`
 
 ```handlebars
-{{phone 12345678900 'US' 'national' }}
+{{phone 12345678900 'US' 'code' }}
 ```
 
 Salida: `1`
@@ -63,7 +63,7 @@ Salida: `1`
 ### `code-plus`
 
 ```handlebars
-{{phone 12345678900 'US' 'national' }}
+{{phone 12345678900 'US' 'code-plus' }}
 ```
 
 Salida: `+1`
