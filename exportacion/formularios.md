@@ -8,10 +8,10 @@ Podrás usar este endpoint para exportar los registros de formularios de tu cuen
 
 **Headers**
 
-| Name          | Value                |
-| ------------- | -------------------- |
-| Content-Type  | `application/json`   |
-| Authorization | `Bearer <api-token>` |
+| Name         | Value                |
+| ------------ | -------------------- |
+| Content-Type | `application/json`   |
+| X-API-Token  | `Bearer <api-token>` |
 
 **Body**
 
