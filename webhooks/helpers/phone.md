@@ -10,11 +10,11 @@ Este helper debe recibir tres valores en el siguiente orden:
 
 1. `phone`: Número de teléfono que deberás extraer desde los datos
 2. `country`: Código del país, que deberás extraer desde los datos
-3. `format`: El formato de salida que esperas. Los valores disponibles son: `code`, `code-plus`, `international` y `national`.
+3. `format`: El formato de salida que esperas. Los valores disponibles son: `code`, `code-plus`, `international` y `national`. Por defecto, es `international`.
 
 {% code title="Ejemplo" %}
 ```handlebars
-{{phone customer.phone location.countryCode 'international' }}
+{{phone-number customer.phone location.countryCode 'international' }}
 ```
 {% endcode %}
 
@@ -23,9 +23,9 @@ En el caso de este ejemplo, la salida sería `+12345678900`.
 {% code title="Ejemplo full" %}
 ```handlebars
 {
-    "code": {{phone customer.phone location.countryCode 'code' }},
-    "number": {{phone customer.phone location.countryCode 'national' }},
-    "fullNumber": {{phone customer.phone location.countryCode 'international' }},
+    "code": {{phone-number customer.phone location.countryCode 'code' }},
+    "number": {{phone-number customer.phone location.countryCode 'national' }},
+    "fullNumber": {{phone-number customer.phone location.countryCode 'international' }},
 }
 ```
 {% endcode %}
@@ -39,7 +39,7 @@ El valor del número de teléfono puede ser con o sin código de país, con o si
 ### `international`
 
 ```handlebars
-{{phone 12345678900 'US' 'international' }}
+{{phone-number 12345678900 'US' 'international' }}
 ```
 
 Salida: `+12345678900`
@@ -47,7 +47,7 @@ Salida: `+12345678900`
 ### `national`
 
 ```handlebars
-{{phone 12345678900 'US' 'national' }}
+{{phone-number 12345678900 'US' 'national' }}
 ```
 
 Salida: `2345678900`
@@ -55,7 +55,7 @@ Salida: `2345678900`
 ### `code`
 
 ```handlebars
-{{phone 12345678900 'US' 'code' }}
+{{phone-number 12345678900 'US' 'code' }}
 ```
 
 Salida: `1`
@@ -63,7 +63,7 @@ Salida: `1`
 ### `code-plus`
 
 ```handlebars
-{{phone 12345678900 'US' 'code-plus' }}
+{{phone-number 12345678900 'US' 'code-plus' }}
 ```
 
 Salida: `+1`
