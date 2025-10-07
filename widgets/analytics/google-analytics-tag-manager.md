@@ -1,21 +1,6 @@
 ---
 cover: ../../.gitbook/assets/image001.jpg
 coverY: -1.2426938508686265
-layout:
-  width: default
-  cover:
-    visible: true
-    size: hero
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Google Analytics/Tag Manager

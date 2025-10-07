@@ -1,21 +1,6 @@
 ---
 cover: ../../.gitbook/assets/Adobe-Experience-Cloud-logo.jpg
 coverY: 14.035092002467106
-layout:
-  width: default
-  cover:
-    visible: true
-    size: hero
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Adobe Experience Cloud
