@@ -1,18 +1,28 @@
 ---
 description: >-
-  A continuación, podrás encontrar como usar nuestros endpoints de exportación
+  A continuación, podrás encontrar cómo usar nuestros endpoints de exportación
   de datos.
 ---
 
 # Exportación
 
 {% hint style="info" %}
-Considera que este endpoint debe ser usado con un medio de Autorización válido, recomendado usando API Token.
+Considera que este endpoint debe ser usado con un medio de autorización válido, recomendado usando API Token.
 {% endhint %}
 
 {% hint style="warning" %}
-Recuerda que existe un límite de 5000 registros por solicitud.
+Existe un límite de 5000 registros por solicitud.
 {% endhint %}
+
+## Tabla de decisión
+
+Nuestra API de exportación está diseñada para casos de uso específicos y no para acceso a datos en tiempo real.
+
+De forma general, si los campos de exportación son suficientes y no requeridos en vivo, la API de exportación es ideal; en caso contrario, requieres la mayor cantidad de datos posible que no están en la API de exportación y/o deben ser en tiempo real, prefiere usar [Webhooks](broken-reference).
+
+El principal beneficio de nuestros Webhooks es que cuentan con tecnología Zero-ETL que permite adaptar los datos al destino, evitando procesos ETL intermedios que pueden incrementar el costo y mantenimiento.&#x20;
+
+<table><thead><tr><th>Caso de uso</th><th data-type="checkbox">API exportación</th><th data-type="checkbox">Webhooks</th></tr></thead><tbody><tr><td>Batch de datos cada 24hrs</td><td>true</td><td>false</td></tr><tr><td>Dashboard BI por día, semana o mes</td><td>true</td><td>false</td></tr><tr><td>Dashboard en tiempo real</td><td>false</td><td>true</td></tr><tr><td>Automatizaciones basada en eventos</td><td>false</td><td>true</td></tr><tr><td>Datos anidados no tabulados</td><td>false</td><td>true</td></tr><tr><td>Zero-ETL</td><td>false</td><td>true</td></tr></tbody></table>
 
 ## Endpoints
 
@@ -62,7 +72,11 @@ Recuerda que existe un límite de 5000 registros por solicitud.
 
 ## Columnas
 
-A continuación, tenemos un listado de las columnas que pueden usar para traducir y permtir que estén en tu idioma. Esto es completamente opcional.
+A continuación, tenemos un listado de las columnas que pueden usar para traducir y permitir que estén en tu idioma.
+
+{% hint style="info" %}
+Esto es completamente opcional.
+{% endhint %}
 
 {% code lineNumbers="true" %}
 ```json
