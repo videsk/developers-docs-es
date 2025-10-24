@@ -174,5 +174,7 @@
 
 ## VPaaS
 
+* [Qué es?](vpaas/que-es.md)
 * [Introducción](vpaas/introduccion.md)
-* [Rooms](vpaas/rooms.md)
+* [Rooms API](vpaas/rooms-api.md)
+* [Browser SDK](vpaas/browser-sdk.md)

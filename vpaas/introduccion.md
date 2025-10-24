@@ -1,153 +1,119 @@
 # Introducción
 
-VPaaS (Video Platform as a Service) es la solución de infraestructura de video empresarial de Videsk que permite a los desarrolladores integrar capacidades de comunicación por video de alta calidad y escalables directamente en sus aplicaciones. Construido sobre tecnología WebRTC, VPaaS proporciona la infraestructura de video fundamental sin la complejidad de gestionar servidores de señalización, servidores TURN/STUN o enrutamiento de medios.
+Antes de comenzar, debes saber que el diseño de nuestra API VPaaS está diseñado para simplificar el desarrollo de aplicaciones de videollamada. Por ello entregamos los siguientes mecanismos únicos en su clase:
 
-## Propuestas de Valor Clave
 
-### Para desarrolladores
 
-* **Integración Rápida**: Video funcionando en minutos, no meses
-* **Cero Gestión de Infraestructura**: Enfócate en tu producto core mientras nosotros manejamos la complejidad del video
-* **Listo para Producción**: Infraestructura probada en batalla que escala automáticamente
-* **Agnóstico de Framework**: Funciona con cualquier stack tecnológico web
-
-### Para empresas
-
-* **Costo-Efectivo**: Paga solo por lo que usas con precios transparentes por minuto
-* **Alcance Global**: Infraestructura distribuida asegura baja latencia mundialmente
-* **Seguridad Empresarial**: Encriptación end-to-end y arquitectura lista para compliance
-* **Escalado Predecible**: Escalado automático desde 1 hasta 1000+ participantes concurrentes
-
-## Arquitectura Técnica
-
-#### Componentes Core
-
-**Gestión de Salas**
-
-* Creación dinámica de salas y gestión del ciclo de vida
-* Políticas flexibles de expiración y controles de acceso
-* Autorización y seguimiento de participantes en tiempo real
-
-**Infraestructura de Señalización**
-
-* Servidores de señalización WebRTC de alto rendimiento
-* Failover automático y balanceo de carga
-* Red edge global para calidad óptima de conexión
-
-**Enrutamiento de Medios**
-
-* Selección inteligente de servidores TURN basada en geografía
-* Selección adaptativa de bitrate y codec
-* Optimización de condiciones de red
-
-#### Diseño API-First
-
-* API RESTful para gestión y configuración de salas
-* Autenticación basada en JWT con permisos granulares
-* Seguimiento de eventos en tiempo real y analytics
-* Sistema integral de webhooks para integración
-
-## Casos de Uso
-
-#### Plataformas de Soporte al Cliente
-
-Transforma el soporte basado en texto en conversaciones cara a cara con salas de video embebidas que se lanzan instantáneamente desde tickets de soporte.
-
-#### Aplicaciones de Telemedicina
-
-Habilita consultas de video seguras y compatibles con funciones como salas de espera, grabación de sesiones y controles de privacidad del paciente.
-
-#### Soluciones EdTech
-
-Potencia aulas virtuales, sesiones de tutoría 1:1 y experiencias de aprendizaje interactivo con infraestructura de video confiable.
-
-#### Mejora de Productos SaaS
-
-Agrega funciones de video colaborativo a productos existentes - desde revisiones de diseño hasta standups de equipo - sin reconstruir tu arquitectura.
-
-#### Apps de Comunicación Personalizadas
-
-Construye aplicaciones de video especializadas para industrias o flujos de trabajo específicos mientras aprovechas infraestructura probada.
-
-## Enfoque de Integración
-
-#### Patrón de Integración Simple
-
-{% code lineNumbers="true" %}
-```javascript
-// 1. Crear una sala via API
-const room = await fetch('/vpaas/rooms', {
-  method: 'POST',
-  headers: {
-    'Authorization': 'Bearer tu-api-token',
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    name: 'Sesión de Soporte al Cliente',
-    externalId: 'ticket-soporte-12345'
-  })
-});
-
-// 2. Unir participantes con tokens generados
-const joinResponse = await fetch(`/vpaas/rooms/${room.id}/join`, {
-  method: 'POST',
-  headers: { 'Authorization': 'Bearer tu-api-token' }
-});
-
-// 3. Usar access token en tu cliente de video
-const { accessToken } = joinResponse;
-```
-{% endcode %}
-
-#### Ciclo de Vida Flexible de Salas
-
-* **Creación Bajo Demanda**: Salas creadas cuando se necesitan, limpieza automática
-* **Sesiones Programadas**: Pre-crear salas con horas específicas de inicio/fin
-* **Salas Persistentes**: Salas de larga duración para colaboración continua
-* **Mapeo de ID Externos**: Vincular salas a tus entidades de negocio existentes
-
-## Modelo de Precios
-
-**Precios Transparentes Basados en Uso**
-
-* Cobro por minuto-participante de uso activo de video
-* Sin tarifas de configuración o mínimos mensuales
-* Descuentos por volumen disponibles para uso empresarial
-* Seguimiento y reporte de uso en tiempo real
-
-**Funciones Incluidas**
-
-* Creación y gestión ilimitada de salas
-* Infraestructura global TURN/STUN
-* Analytics y monitoreo básico
-* Soporte estándar y documentación
-
-## Seguridad y Compliance
-
-#### Seguridad de Nivel Empresarial
-
-* Autenticación basada en JWT con expiración configurable
-* Restricciones de acceso basadas en IP y geofencing
-* Encriptación WebRTC end-to-end
-* Infraestructura compatible con SOC 2 Type II
-
-#### Controles de Privacidad
-
-* Ningún contenido de video/audio almacenado en servidores Videsk
-* Controles de permisos granulares por integración
-* Marcos de compliance GDPR y HIPAA disponibles
-* Logs de auditoría completos para todas las interacciones API
-
-## Por Qué Elegir VPaaS
-
-**Tecnología Probada**: Construido sobre la misma infraestructura que potencia la plataforma de comunicación empresarial de Videsk, manejando millones de minutos de video mensualmente.
-
-**Experiencia de Desarrollador**: Diseñado por desarrolladores, para desarrolladores. APIs limpias, excelente documentación y comportamiento predecible.
-
-**Continuidad de Negocio**: Elimina el video como punto único de falla en la arquitectura de tu aplicación con nuestro SLA de 99.9% uptime.
-
-**A Prueba de Futuro**: Actualizaciones regulares con nuevas funciones WebRTC y optimizaciones, asegurando que tu integración se mantenga actualizada con estándares web.
+* Stateless: puedes usar tus propios IDs al crear salas, pudiendo buscar salas y volver a generar tokens usando tu propio ID.
+* &#x20;Expirable: Indicando fecha de inicio (opcional) y término (opcional), automáticamente concederemos o denegaremos acceso a las salas basado en las fechas indicadas.
 
 ***
 
-_¿Listo para integrar video en tu aplicación? Contacta a nuestro equipo para acceso API y consulta técnica._
+## Límites
+
+Por defecto, permitimos un acceso máximo de 3 horas por sala, el cual se puede sobreescribir hasta 72 horas con la key `exp` en los endpoints: [#post-vpaas-rooms](rooms-api.md#post-vpaas-rooms "mention") y [#patch-vpaas-rooms-roomid](rooms-api.md#patch-vpaas-rooms-roomid "mention").
+
+La fecha de expiración es 3 horas después de la fecha de solicitud de creación de sala. Puedes reemplazar este comportamiento definiendo `exp` como fecha. Al mismo tiempo, `nbf` por defecto se define en la fecha de creación de la sala.
+
+#### Rate limit
+
+Actualmente, para todos los clientes, el límite de solicitudes por segundo es de 20. Esta restricción la podrás leer directamente desde nuestras cabeceras:
+
+
+
+* `Ratelimit-Limit`: indica req/s de tu cuenta, defecto: 20
+* `Ratelimit-Remaining`: total de solicitudes disponibles en la siguiente ventana de 1 s
+* `Ratelimit-Reset`: indica la ventana de tiempo en que se restablecerá el límite, defecto: 1
+* `Ratelimit-Policy`: Indica la política en formato 2020 [estándar propuesto](https://www.ietf.org/archive/id/draft-polli-ratelimit-headers-02.html).
+
+{% hint style="info" %}
+En caso de que tengas un aumento de solicitudes por segundo, puedes contactar con soporte o tu ejecutivo de ventas para ampliar este límite.
+{% endhint %}
+
+***
+
+## Seguridad
+
+Puedes limitar qué IPs pueden realizar la creación de salas a través de los endpoints disponibles[rooms-api.md](rooms-api.md "mention").
+
+Este formato pueden ser IPv4s, IPv6s o bien CIDRs, lo cual validaremos en cada solicitud.
+
+{% hint style="info" %}
+Recomendamos que, para ambientes de desarrollo, evites definir una lista blanca; de esta manera podrás testear localmente sin restricciones.
+{% endhint %}
+
+{% hint style="warning" %}
+En caso que evidencies alguna vulnerabilidad puedes contactarnos a [security@videsk.io](mailto:security@videsk.io), o bien podrás encontrar nuestros contactos en las cabeceras HTTP `X-Security-Report` y `X-Security-Site` en todos nuestros dominios y subdominios.      &#x20;
+{% endhint %}
+
+***
+
+## Casos de uso
+
+### Salas on-demand
+
+Este caso de uso describe el flujo de crear una sala on-demand para acceso inmediato, lo que consigues usando nuestro endpoint [#post-vpaas-rooms](rooms-api.md#post-vpaas-rooms "mention").
+
+```mermaid
+sequenceDiagram
+    participant YB as Your Backend
+    participant VV as Videsk VPaaS
+    participant VU as Video User
+    
+    YB->>VV: 1. POST /vpaas/rooms
+    VV->>YB: 2. accessToken<br/>(opcional: guardar en DB)
+    YB->>VU: 3. send accessToken
+```
+
+
+
+### Salas agendadas
+
+Este caso describe cómo crear una sala para el futuro, donde podrás indicar opcionalmente la fecha de inicio y fin, asegurando que no se pueda ingresar antes de la fecha de inicio y que se pueda expulsar automáticamente después de la fecha indicada.
+
+Esto se consigue definiendo el cuerpo de la solicitud para el [#post-vpaas-rooms](rooms-api.md#post-vpaas-rooms "mention")
+
+```json
+{
+    "exp": "2042-08-14T18:00:00.000Z", // Fecha de término
+    "bnf": "2042-08-14T16:50:00.000Z" // Fecha de inicio
+}
+```
+
+```mermaid
+sequenceDiagram
+    participant YB as Your Backend
+    participant VV as Videsk VPaaS
+    participant VU as Video User
+    
+    YB->>VV: 1. POST /vpaas/rooms
+    VV->>YB: 2. accessToken<br/>(opcional: guardar en DB)
+    VU->>YB: 3. solicita unirse
+    YB->>VV: 4. GET /vpaas/rooms/{roomId}
+    VV->>YB: 5. accessToken<br/>(opcional: guardar en DB)
+    YB->>VU: 6. send accessToken
+```
+
+### Actualizar fecha de inicio
+
+Este caso describe la situación de crear una sala y posteriormente la necesidad de actualizar la fecha de inicio a través del endpoint [#patch-vpaas-rooms-roomid](rooms-api.md#patch-vpaas-rooms-roomid "mention").
+
+```json
+{
+    "nbf": "2042-08-17T09:25:00.000Z"
+}
+```
+
+```mermaid
+sequenceDiagram
+    participant YB as Your Backend
+    participant VV as Videsk VPaaS
+    participant VU as Video User
+    
+    YB->>VV: 1. POST /vpaas/rooms
+    VV->>YB: 2. accessToken<br/>(opcional: guardar en DB)
+    VU->>YB: 3. solicita cambiar fecha
+    YB->>VV: 4. PATCH /vpaas/rooms/{roomId}<br/>{nbf: ...}
+    VV->>YB: 5. accessToken<br/>(opcional: guardar en DB)
+    YB->>VU: 6. fecha cambiada
+```
