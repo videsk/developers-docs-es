@@ -12,6 +12,8 @@
   * [Demo](sdks/phone/demo.md)
 * [📹 WebRTC](sdks/webrtc/README.md)
   * [Métodos](sdks/webrtc/metodos.md)
+  * [Eventos](sdks/webrtc/eventos.md)
+  * [Stats](sdks/webrtc/stats.md)
 * [📄 Formularios](sdks/forms.md)
 * [🤖 Captcha](sdks/captcha.md)
 * [✨ Ejemplos](sdks/ejemplos/README.md)
