@@ -4,17 +4,67 @@ description: SDK para crear una instancia de conexión de videollamada WebRTC.
 
 # 📹 WebRTC
 
-Con este SDK podrás una instancia de conexión de videollamada WebRTC de una manera muy simple.
-
-{% hint style="warning" %}
-Este SDK lo deberás utilizar con nuestro [Phone SDK](../phone/).
-{% endhint %}
+Con este SDK podrás crear una instancia de conexión de videollamada WebRTC de forma muy sencilla.
 
 ## Instalación
 
-Para comenzar deberás instalar nuestro SDK en tu sitio web o aplicación móvil. Tienes las siguientes alternativas.
+Para comenzar, deberás instalar nuestro SDK en tu sitio web o aplicación móvil. Tienes las siguientes alternativas.
+
+{% hint style="info" %}
+Si estás utilizando frameworks como React, Vue, Angular, etc., te recomendamos usar "Dynamic import".
+{% endhint %}
 
 {% tabs %}
+{% tab title="ESM" %}
+```html
+<script type="module">
+    import WebRTC from "https://cdn.videsk.io/sdk/webrtc.esm.js";
+    // ...
+</script>
+```
+{% endtab %}
+
+{% tab title="Dynamic import" %}
+#### Vue
+
+```javascript
+onMounted(async () => {
+  const { default: WebRTC } = await import("https://cdn.videsk.io/sdk/webrtc.esm.js");
+  // ...
+});
+```
+
+#### React
+
+```javascript
+useEffect(() => {
+  import("https://cdn.videsk.io/sdk/webrtc.esm.js")
+    .then(({ default: WebRTC }) => {
+      const webrtc = new WebRTC();
+      // ...
+    });
+}, []);
+```
+
+#### Angular
+
+```javascript
+async ngOnInit() {
+  const { default: WebRTC } = await import("https://cdn.videsk.io/sdk/webrtc.esm.js");
+  // ...
+}
+```
+
+#### Svelte
+
+```javascript
+onMount(async () => {
+    const { default: WebRTC } = await import("https://cdn.videsk.io/sdk/webrtc.esm.js");
+    // ...
+  });
+```
+{% endtab %}
+
 {% tab title="HTML" %}
 {% code lineNumbers="true" %}
 ```html
@@ -38,7 +88,7 @@ No almacenes el contenido de nuestro SDK en tu servidor, **esto infringe nuestro
 
 ## Uso
 
-Nuestro SDK es un componente web, lo que permite que accedas como cualquier elemento HTML o nodo DOM que estás acostumbrado.
+Nuestro SDK es un componente web, lo que permite que accedas a él como a cualquier elemento HTML o nodo DOM al que estás acostumbrado.
 
 {% code lineNumbers="true" %}
 ```html
@@ -53,7 +103,7 @@ Puedes ver más información de nuestro componente web en el siguiente link:
 {% endcontent-ref %}
 
 {% hint style="info" %}
-Deberás cargar el script de nuestro CDN, de lo contrario será un tag vacío.
+Deberás cargar el script de nuestro CDN, de lo contrario, será un tag vacío.
 {% endhint %}
 
 Posteriormente, deberás crear una instancia `WebRTC` la cual **te permitirá realizar la conexión**.
