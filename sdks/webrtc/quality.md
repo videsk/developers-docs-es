@@ -95,6 +95,7 @@ Se emite cuando se detecta un problema de calidad en **la conexión del peer rem
 | `origin`    | string | `local`, `video`, `audio`                                            | Origen o categoría del problema  |
 | `value`     | number | -                                                                    | Valor numérico de la métrica     |
 | `timestamp` | number | -                                                                    | Timestamp Unix (ms) del evento   |
+| `status`    | string | `issues` o `recovered`                                               | Estado del problema detectado    |
 
 ```javascript
 webrtc.addEventListener('peer:quality', (event) => {
