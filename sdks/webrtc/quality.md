@@ -88,6 +88,7 @@ Se emite cuando se detecta un problema de calidad en **la conexión del peer rem
 
 | Propiedad   | Tipo   | Valores Posibles                                                     | Descripción                      |
 | ----------- | ------ | -------------------------------------------------------------------- | -------------------------------- |
+| `status`    | string | `issues` o `recovered`                                               | Estado del problema detectado    |
 | `peerId`    | string | -                                                                    | ID del peer con problemas        |
 | `alias`     | string | -                                                                    | Alias del peer (si fue asignado) |
 | `type`      | string | `packetLoss`, `latency`, `jitter`, `bandwidth-limitation`, `freezes` | Tipo de problema detectado       |
@@ -95,11 +96,10 @@ Se emite cuando se detecta un problema de calidad en **la conexión del peer rem
 | `origin`    | string | `local`, `video`, `audio`                                            | Origen o categoría del problema  |
 | `value`     | number | -                                                                    | Valor numérico de la métrica     |
 | `timestamp` | number | -                                                                    | Timestamp Unix (ms) del evento   |
-| `status`    | string | `issues` o `recovered`                                               | Estado del problema detectado    |
 
 ```javascript
 webrtc.addEventListener('peer:quality', (event) => {
-    const { peerId, alias, type, severity, origin, value, timestamp } = event.detail;
+    const { status, peerId, alias, type, severity, origin, value, timestamp } = event.detail;
     // Do something...
 });
 ```
