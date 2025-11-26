@@ -50,6 +50,10 @@ webrtc.layout = 'sidebar';  // Vista con sidebar
 
 Alias legible para identificar al usuario actual. Este alias se propaga a través de los eventos y facilita la identificación de peers en la UI.
 
+{% hint style="warning" %}
+Debes utilizar `alias` antes de usar el método [create](metodos.md#create) de WebRTC. De lo contrario, observarás un UUID.
+{% endhint %}
+
 ```javascript
 // Asignar alias
 webrtc.alias = 'John Doe';
