@@ -40,6 +40,8 @@
   * [Propiedades](componentes-web/webrtc/propiedades.md)
   * [Métodos](componentes-web/webrtc/metodos.md)
   * [Eventos](componentes-web/webrtc/eventos.md)
+  * [Estilos (CSS)](componentes-web/webrtc/estilos-css.md)
+  * [Subcomponentes](componentes-web/webrtc/subcomponentes.md)
 * [🗃️ Fileshare](componentes-web/fileshare/README.md)
   * [Slots](componentes-web/fileshare/slots.md)
   * [Propiedades](componentes-web/fileshare/propiedades.md)
