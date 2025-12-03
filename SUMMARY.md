@@ -2,6 +2,7 @@
 
 * [👋 Bienvenido](README.md)
 * [‼️ Consideraciones](consideraciones.md)
+* [Terminal](terminal.md)
 * [☝️ Conceptos](conceptos.md)
 
 ## SDKs
