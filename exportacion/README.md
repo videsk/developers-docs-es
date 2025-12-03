@@ -18,7 +18,7 @@ Existe un límite de 5000 registros por solicitud.
 
 Nuestra API de exportación está diseñada para casos de uso específicos y no para acceso a datos en tiempo real.
 
-De forma general, si los campos de exportación son suficientes y no requeridos en vivo, la API de exportación es ideal; en caso contrario, requieres la mayor cantidad de datos posible que no están en la API de exportación y/o deben ser en tiempo real, prefiere usar [Webhooks](broken-reference).
+De forma general, si los campos de exportación son suficientes y no requeridos en vivo, la API de exportación es ideal; en caso contrario, requieres la mayor cantidad de datos posible que no están en la API de exportación y/o deben ser en tiempo real, prefiere usar [Webhooks](/broken/pages/GV2kMmI12V03vOJMI49S).
 
 El principal beneficio de nuestros Webhooks es que cuentan con tecnología Zero-ETL que permite adaptar los datos al destino, evitando procesos ETL intermedios que pueden incrementar el costo y mantenimiento.&#x20;
 

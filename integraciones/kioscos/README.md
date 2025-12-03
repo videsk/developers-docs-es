@@ -147,7 +147,7 @@ graph TD
 Para estos casos que requieren una clara segmentación ya sea por tipo de cliente, productos, servicios o ubicación geográfica, deberás asignar los IDs de los segmentos correspondientes en cada kiosco, de manera que al momento de realizar la llamada se identifique el origen. Para realizar esto tienes varias maneras dependiendo de las capacidades y formas de integración de tus kioscos:
 
 {% hint style="info" %}
-Recuerda que puedes obtener manualmente los IDs de segmento y calendarios desde el dashboard, también usando nuestra [Rest API](broken-reference).
+Recuerda que puedes obtener manualmente los IDs de segmento y calendarios desde el dashboard, también usando nuestra [Rest API](/broken/pages/LoxoOYmF6QEjjDHGYu2Q).
 {% endhint %}
 
 ### Widgets
@@ -160,7 +160,7 @@ Si estás usando nuestros widgets en tus kioscos, basta con usar el modelo de di
 
 ### SDKs y Rest API
 
-Si estás usando nuestros SDKs y/o Rest API en tus kioscos, tendrás que obtener el ID de segmento ya sea manualmente desde nuestro dashboard o bien programáticamente con el SDK ([Phone](../../sdks/phone/) o [Calendar](../../sdks/calendario/)) o vía [Rest API](broken-reference). Por lo tanto los pasos son:
+Si estás usando nuestros SDKs y/o Rest API en tus kioscos, tendrás que obtener el ID de segmento ya sea manualmente desde nuestro dashboard o bien programáticamente con el SDK ([Phone](../../sdks/phone/) o [Calendar](../../sdks/calendario/)) o vía [Rest API](/broken/pages/LoxoOYmF6QEjjDHGYu2Q). Por lo tanto los pasos son:
 
 1. Obtener ID segmento(s) o calendario(s)
 2. Almacenar vía URL, localStorage, etc. **La forma que obtengan y guardes estos IDs dependerá de tu elección técnica**.

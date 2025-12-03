@@ -20,7 +20,7 @@ Debido a la nomenclatura de sistemas QMS se menciona `queue`como referencia a se
 
 Debes considerar que la forma de comunicación entre nuestro ACD y POCs (puntos de contactos) se realiza de forma automática. Cuando un ticket (llamada) se asigna a un ejecutivo y este contesta se dispara nuestro webhook QMS el cual se configura en cada cuenta.
 
-Puedes ver más información en la [documentación de Webhooks](broken-reference).
+Puedes ver más información en la [documentación de Webhooks](/broken/pages/GV2kMmI12V03vOJMI49S).
 
 ### Flujo de integración
 

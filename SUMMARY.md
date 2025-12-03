@@ -2,7 +2,6 @@
 
 * [👋 Bienvenido](README.md)
 * [‼️ Consideraciones](consideraciones.md)
-* [Terminal](terminal.md)
 * [☝️ Conceptos](conceptos.md)
 
 ## SDKs
@@ -33,6 +32,7 @@
 * [🔇 Cancelación de ruido](sdks/cancelacion-de-ruido/README.md)
   * [Métodos](sdks/cancelacion-de-ruido/metodos.md)
   * [Propiedades](sdks/cancelacion-de-ruido/propiedades.md)
+* [🖼️ Fondo virtual](sdks/fondo-virtual.md)
 
 ## Componentes web
 
