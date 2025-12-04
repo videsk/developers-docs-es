@@ -1,184 +1,199 @@
 # 🖼️ Fondo virtual
 
-SDK para procesar y reemplazar el fondo de un stream de video en tiempo real mediante segmentación basada en ML.
+SDK propietario de **Videsk** para procesar y reemplazar el fondo de un stream de video en tiempo real mediante segmentación basada en Machine Learning y renderizado acelerado por hardware (WebGL2).
 
 {% hint style="warning" %}
-**Este SDK es diseñado y propiedad de Videsk, uso no autorizado será sancionado por ley.**&#x20;
-{% endhint %}
+**⚠️ Aviso Legal**
 
-***
+Este SDK es propiedad intelectual de Videsk. El uso no autorizado o por parte de terceros sin relación contractual está prohibido y será sancionado por ley. El uso de este SDK es monitoreado activamente.
+{% endhint %}
 
 ## Instalación
 
-El SDK se distribuye a través de CDN.
-
-{% hint style="success" %}
-Para acceder al SDK (`URL`), favor de contactar con tu ejecutivo de cuenta.
+{% hint style="info" %}
+El SDK se distribuye a través de CDN. Para obtener la `URL` de acceso, contacte a su ejecutivo de cuenta.
 {% endhint %}
 
-{% hint style="warning" %}
-Está prohibido el uso de este SDK por parte de terceros que no tengan relación contractual con Videsk.&#x20;
-
-**Cualquier uso no autorizado será sancionado por ley.**
-
-🚨 El uso de este SDK está monitoreado activamente.
-{% endhint %}
-
-#### ESM (Recomendado)
-
-Para proyectos modernos, importa el módulo directamente desde la URL:
-
+{% tabs %}
+{% tab title="ESM (Recomendado)" %}
 ```javascript
-import VirtualBackground from 'URL';
+import VirtualBackground from 'URL_DEL_SDK';
 ```
 
-#### IIFE (Legacy)
+Para proyectos modernos con bundlers (Vite, Webpack) o módulos nativos de navegador:
+{% endtab %}
 
-Si necesitas usarlo mediante etiqueta `<script>` clásica (expone `window.VirtualBackground`):
-
-```javascript
-<script src="URL"></script>
+{% tab title="IIFE (Legacy)" %}
+```html
+<script src="URL_DEL_SDK"></script>
 ```
+
+Para inclusión directa mediante etiqueta script (expone `window.VirtualBackground`):
+
+
+{% endtab %}
+{% endtabs %}
 
 ***
 
 ## Uso Básico
 
-El flujo de trabajo estándar requiere: Importar, Configurar y Procesar.
+El flujo de trabajo estándar consta de 3 fases: **Configuración**, **Renderizado** y **Consumo**.
 
-#### 1. Inicialización y Configuración
+#### 1. Inicialización
 
 ```javascript
-import VirtualBackground from 'URL';
+import VirtualBackground from 'URL_DEL_SDK';
 
-// Instanciar
-const virtualBackground = new VirtualBackground({ frameRate: 15 }); // 15 FPS recomendado
-
-// Opción A: Aplicar Blur (Intensidad numérica)
-virtualBackground.blur = 7;
-
-// Opción B: Aplicar Imagen (URL)
-// virtualBackground.image = 'https://mi-cdn.com/fondo.jpg';
+// Se recomienda limitar los FPS para controlar el consumo de CPU/GPU
+const { frameRate } = VirtualBackground.getRecommendedSettings();
+const virtualBackground = new VirtualBackground({ frameRate });
 ```
 
-#### 2. Renderizar y Comenzar
+#### 2. Configuración del Efecto
 
-El SDK intercepta el `MediaStream` de la cámara y devuelve uno nuevo procesado.
+Puedes cambiar el efecto en cualquier momento (incluso durante el stream).
 
 ```javascript
-// 1. Obtener stream original de la cámara
-const cameraStream = await navigator.mediaDevices.getUserMedia({ 
-    video: { width: 640, height: 480 } 
+// Opción A: Blur (Desenfoque)
+// Valor numérico: 0 (sin blur) a 20+ (muy borroso)
+virtualBackground.blur = 7;
+
+// Opción B: Imagen de Fondo
+// Acepta URL absoluta o relativa (debe cumplir con CORS)
+virtualBackground.image = 'https://mi-cdn.com/fondo.jpg';
+
+// Para quitar la imagen y volver al blur:
+virtualBackground.image = null;
+```
+
+#### 3. Procesamiento y Salida
+
+El método `render()` Inicializa los Workers y el contexto WebGL. El método `start()` devuelve el nuevo `MediaStream`.
+
+```javascript
+// 1. Obtener stream de la cámara del usuario
+const cameraStream = await navigator.mediaDevices.getUserMedia({
+    video: { width: 640, height: 480 } // Resolución recomendada: VGA
 });
 
-// 2. Preparar el worker (Render)
-// Solo es necesario si no hay un input activo
-if (!virtualBackground.input?.active) {
+// 2. Preparar el motor de renderizado (si no está activo)
+if (!virtualBackground.isActive) {
     await virtualBackground.render(cameraStream);
 }
 
-// 3. Iniciar el procesamiento y obtener el nuevo stream
-const outputStream = virtualBackground.start();
+// 3. Iniciar el bucle de procesamiento y obtener el stream procesado
+virtualBackground.start();
 
-// 4. Usar el stream resultante (ej. en un elemento <video>)
-document.querySelector('#my-video').srcObject = outputStream;
+// 4. Inyectar en el elemento de video
+document.querySelector('#my-video').srcObject = virtualBackground.stream;
 ```
 
 ***
 
-## Métodos y Propiedades
+### API Reference
 
-| **Método/Propiedad** | **Tipo**      | **Descripción**                                             |
-| -------------------- | ------------- | ----------------------------------------------------------- |
-| `blur`               | `number`      | Define la intensidad del desenfoque. Activa modo blur.      |
-| `image`              | `string`      | URL de la imagen de fondo. Activa modo imagen.              |
-| `render(stream)`     | `Promise`     | Inicializa el Worker y Canvas con el stream de origen.      |
-| `start()`            | `MediaStream` | Inicia el bucle de procesamiento y retorna el stream final. |
-| `pause()`            | `Promise`     | Detiene el procesamiento (reduce consumo CPU a 0).          |
+### Propiedades
+
+| `blur`     | `number`  | Define la intensidad del desenfoque gaussiano. Si es `0`, el fondo se ve nítido. |
+| ---------- | --------- | -------------------------------------------------------------------------------- |
+| `image`    | `string`  | URL de la imagen de fondo. Si se establece, tiene prioridad sobre el `blur`.     |
+| `isActive` | `boolean` | (Read-only) Indica si el SDK tiene un stream de entrada activo.                  |
+| `options`  | `object`  | Objeto de configuración inicial (ej. `{ frameRate: 15 }`).                       |
+
+### Métodos
+
+| `render(stream)`         | `Promise<void>`                          | Inicializa los Web Workers, transfiere el `OffscreenCanvas` y carga los modelos de ML. Es el paso más pesado.                                         |
+| ------------------------ | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `start()`                | `MediaStream`                            | Inicia el bucle de procesamiento de frames y devuelve el stream resultante (mezcla de audio original y video procesado).                              |
+| `pause()`                | `MediaStream`                            | Detiene el procesamiento para reducir el consumo de CPU/GPU a casi cero, devolviendo el stream original sin procesar temporalmente.                   |
+| `getRecommendedSettings` | `{ frameRate: Number, backend: String }` | Método estático que provee recomiendación del `frameRate` dependiendo de la arquitectura y compatibilidad del dispositivo (alterna entre 15 y 30 fps) |
 
 ***
 
-## Ejemplo Completo (ESM)
+## Tabla de Compatibilidad
 
-Puedes copiar y pegar este bloque en un archivo HTML para probarlo rápidamente (requiere servidor local o contexto seguro HTTPS).
+El SDK utiliza tecnologías avanzadas del navegador para lograr rendimiento en tiempo real:
+
+1. **Web Workers:** Para separar el procesamiento de la UI.
+2. **OffscreenCanvas:** Para renderizar gráficos fuera del hilo principal.
+3. **WebGL 2.0:** Para aceleración por hardware (GPU).
+4. **WASM / SIMD:** Para la inferencia del modelo de IA.
+
+| Navegador                 | Estado      | Versión Mínima | Notas Técnicas                                                                                             |
+| ------------------------- | ----------- | -------------- | ---------------------------------------------------------------------------------------------------------- |
+| **Chrome / Chromium**     | ✅ Soportado | 90+            | Motor V8 optimizado. Mejor rendimiento en `ImageBitmap` y `OffscreenCanvas`.                               |
+| **Edge**                  | ✅ Soportado | 90+            | Basado en Chromium. Rendimiento idéntico a Chrome.                                                         |
+| **Firefox**               | ✅ Soportado | 105+           | Soporte completo de `OffscreenCanvas` añadido en v105.                                                     |
+| **Safari (macOS)**        | ⚠️ Parcial  | 16.4+          | Requiere Safari 16.4+ para soporte estable de `OffscreenCanvas` en Workers. Versiones anteriores fallarán. |
+| **Safari (iOS / iPadOS)** | ⛔ No Rec.   | -              | Aunque técnicamente carga en 16.4+, la gestión térmica de iOS suele bloquear el proceso tras unos minutos. |
+| **Chrome (Android)**      | ⚠️ Exp.     | -              | Funciona en gama alta. En gama media/baja puede causar sobrecalentamiento rápido.                          |
+
+{% hint style="info" %}
+**Nota sobre WebGL2:** Si el dispositivo no soporta WebGL2 (necesario para los Shaders 300 es), el SDK intentará hacer fallback a renderizado por CPU, lo cual incrementará drásticamente el uso del procesador.
+{% endhint %}
+
+***
+
+## Rendimiento y Requisitos
+
+Esta funcionalidad realiza segmentación de video _frame a frame_ en tiempo real utilizando redes neuronales.
+
+#### Consumo Estimado
+
+* **CPU:** Alto (\~2 a 4 Cores dedicados si falla la GPU).
+* **RAM:** +500 MB (Modelos TFLite + Buffers de video).
+* **GPU:** Moderado (Inferencia de texturas WebGL).
+
+#### Hardware Recomendado (para 15 FPS estables)
+
+* **CPU:** Intel Core i5 8va Gen / AMD Ryzen 5 o superior (arquitectura x64 recomendada).
+* **Resolución de entrada:** Se recomienda encarecidamente **VGA (640x480)**.
+  * _Advertencia:_ Usar resoluciones HD (720p/1080p) cuadruplica la cantidad de píxeles a procesar, lo que puede causar latencia alta y desincronización de audio/video en la mayoría de las laptops.
+
+***
+
+## Ejemplo Completo (HTML + ES Modules)
 
 ```html
-<video id="preview" autoplay playsinline style="width: 640px; height: 480px; background: #000;"></video>
+<!DOCTYPE html>
+<html lang="es">
+<body>
+    <video id="preview" autoplay playsinline muted style="width: 640px; height: 480px; background: #000;"></video>
+    <button id="btn-start">Iniciar Cámara</button>
 
-<script type="module">
-  import VirtualBackground from 'URL';
+    <script type="module">
+        import VirtualBackground from 'URL_DEL_SDK';
 
-  const run = async () => {
-    try {
-      // 1. Configuración inicial
-      const vb = new VirtualBackground({ frameRate: 15 });
-      const videoEl = document.getElementById('preview');
+        const videoEl = document.getElementById('preview');
+        const btn = document.getElementById('btn-start');
+        
+        // Instancia global
+        const frameRate = VirtualBackground.getRecommendedSettings().frameRate;
+        const vb = new VirtualBackground({ frameRate });
 
-      // 2. Obtener cámara (resolución moderada para mejor performance)
-      const stream = await navigator.mediaDevices.getUserMedia({ 
-        video: { width: 640, height: 480 } 
-      });
+        btn.addEventListener('click', async () => {
+            try {
+                // 1. Obtener media
+                const stream = await navigator.mediaDevices.getUserMedia({ 
+                    video: { width: 640, height: 480 } 
+                });
 
-      // 3. Configurar efecto
-      vb.blur = 8; 
+                // 2. Configurar
+                vb.blur = 10; 
 
-      // 4. Iniciar SDK
-      await vb.render(stream);
-      const processedStream = vb.start();
+                // 3. Renderizar y reemplazar
+                await vb.render(stream);
+                vb.start();
 
-      // 5. Visualizar
-      videoEl.srcObject = processedStream;
-
-    } catch (error) {
-      console.error('Error al iniciar Virtual Background:', error);
-    }
-  };
-
-  run();
-</script>
+                videoEl.srcObject = vb.stream;
+                
+            } catch (err) {
+                console.error("Error:", err);
+                alert("No se pudo iniciar el Virtual Background");
+            }
+        });
+    </script>
+</body>
+</html>
 ```
-
-***
-
-## ⚠️ Rendimiento y Requisitos
-
-Esta funcionalidad realiza segmentación de video _frame a frame_ en tiempo real. El consumo de recursos es intensivo.
-
-#### Estimación de Consumo de Recursos
-
-{% hint style="info" %}
-Los valores a continuación son aproximados y pueden variar significativamente según la arquitectura del dispositivo y la carga del sistema.
-{% endhint %}
-
-| **Recurso** | **Impacto** | **Consumo Estimado (Aprox.)** | **Notas**                                                            |
-| ----------- | ----------- | ----------------------------- | -------------------------------------------------------------------- |
-| CPU         | Alto        | \~2 a 4 Cores dedicados       | El procesamiento de máscaras ocurre principalmente en CPU.           |
-| RAM         | Alto        | +500 MB                       | Memoria adicional requerida solo para este proceso (Workers/Canvas). |
-| GPU         | Moderado    | N/A                           | Utilizado para la inferencia del modelo TFLite.                      |
-
-#### Requisitos Mínimos Recomendados (para 15 FPS estables)
-
-| **Componente** | **Especificación Mínima** | **Recomendación de Configuración**                               |
-| -------------- | ------------------------- | ---------------------------------------------------------------- |
-| Procesador     | 4 Cores Físicos           | Intel Core i5 8va Gen / Ryzen 5 o superior.                      |
-| Memoria        | 8 GB RAM Total            | Asegurar al menos 1 GB libre antes de iniciar la llamada.        |
-| Resolución     | VGA (640x480)             | Crucial: Resoluciones HD (720p+) pueden causar latencia extrema. |
-
-{% hint style="info" %}
-Nota sobre Móviles: Aunque la funcionalidad ha sido testeada técnicamente en dispositivos móviles, no se recomienda su uso en producción. La combinación del procesamiento de video nativo de la videollamada más la segmentación por IA suele saturar la capacidad térmica y de batería de la mayoría de los smartphones, degradando la experiencia de usuario.
-{% endhint %}
-
-***
-
-### Compatibilidad de Navegadores
-
-El SDK requiere soporte robusto para `OffscreenCanvas`, `Web Workers` y `WebAssembly`.
-
-| **Navegador**     | **Estado**       | **Versión Mínima** | **Notas**                                                                          |
-| ----------------- | ---------------- | ------------------ | ---------------------------------------------------------------------------------- |
-| Chrome / Chromium | ✅ Soportado      | 90+                | Mejor rendimiento (motor V8 optimizado).                                           |
-| Edge              | ✅ Soportado      | 90+                | Basado en Chromium, rendimiento idéntico a Chrome.                                 |
-| Firefox           | ✅ Soportado      | 105+               | Soporte completo de OffscreenCanvas añadido recientemente.                         |
-| Safari (macOS)    | ⚠️ Parcial       | 16.4+              | Requiere las últimas versiones para soporte estable de OffscreenCanvas en workers. |
-| Safari (iOS)      | ⛔ No Recomendado | -                  | Restricciones térmicas y de gestión de memoria severas.                            |
-| Chrome (Android)  | ⚠️ Experimental  | -                  | Funciona técnicamente, pero no recomendado por performance.                        |
