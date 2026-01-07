@@ -29,3 +29,6 @@ Los eventos disponibles son casi equivalentes a los que se describen en la [secc
 | onSurvey          | videsk.survey          | Se dispara cuando el cliente envía la encuesta post-llamada. Retorna `survey` (object) y `date`                                                        |
 | onReconnected     | videsk.reconnected     | Se dispara cuando se reconecta a una llamada activa tras recargar/cerrar ventana. Retorna `date`                                                       |
 | onConnectionError | videsk.connectionerror | Se dispara cuando hay errores de conexión antes de la llamada. Retorna `date`                                                                          |
+| onFormSubmission  | videsk.formsubmission  | Se dispara cuando un cliente envía un formulario ya sea en una llamada en vivo o agendamiento.                                                         |
+| onDateSelected    | videsk.dateselected    | Se dispara cuando un cliente selecciona una fecha y hora para agendar.                                                                                 |
+| onScheduled       | videsk.scheduled       | Se dispara cuando un cliente agenda exitosamente en un calendario.                                                                                     |

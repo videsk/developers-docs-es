@@ -23,19 +23,22 @@ document.addEventListener('videsk-load', () => {
 Puedes acceder a nuestra variable global mediante `window.videsk` o `videsk`.
 {% endhint %}
 
-* onToggle $$f$$&#x20;
-* onFullToggle $$f$$&#x20;
-* onSelected $$f$$
-* onUnavailable $$f$$
-* onQueued $$f$$
-* onQueueUpdated $$f$$
-* onQueueAbandoned $$f$$
-* onDismissed $$f$$
-* onStart $$f$$&#x20;
-* onEnd $$f$$&#x20;
-* onSurvey $$f$$&#x20;
-* onReconnected $$f$$
-* onConnectionError $$f$$&#x20;
+* [onToggle](eventos.md#ontoggle) $$f$$&#x20;
+* [onFullToggle](eventos.md#onfulltoggle) $$f$$&#x20;
+* [onSelected](eventos.md#onselected) $$f$$
+* [onUnavailable](eventos.md#onunavailable) $$f$$
+* [onQueued](eventos.md#onqueued) $$f$$
+* [onQueueUpdated](eventos.md#onqueueupdated) $$f$$
+* [onQueueAbandoned](eventos.md#onqueueabandoned) $$f$$
+* [onDismissed](eventos.md#ondismissed) $$f$$
+* [onStart](eventos.md#onstart) $$f$$&#x20;
+* [onEnd](eventos.md#onend) $$f$$&#x20;
+* [onSurvey](eventos.md#onsurvey) $$f$$&#x20;
+* [onReconnected](eventos.md#onreconnected) $$f$$
+* [onConnectionError](eventos.md#onconnectionerror) $$f$$&#x20;
+* [onFormSubmission](eventos.md#onformsubmission)  $$f$$&#x20;
+* [onDateSelected](eventos.md#ondateselected)  $$f$$&#x20;
+* [onScheduled](eventos.md#onscheduled)  $$f$$&#x20;
 
 {% hint style="info" %}
 Mantenemos compatibilidad con versiones anteriores para definir eventos mediante `videsk.events.onEventName = () => {}`.
@@ -62,7 +65,7 @@ Habitualmente este evento se gatilla por parámeteros presentes en la URL. Y es 
 {% endhint %}
 
 ```javascript
-videsk.addEventListener('onToggle', ({ status, date }) => {
+videsk.addEventListener('onFullToggle', ({ status, date }) => {
     // Do something here with status and date
 });
 ```
@@ -101,10 +104,10 @@ videsk.addEventListener('onUnavailable', () => {
 
 Este evento permite escuchar cuando el cliente ha sido añadido a la fila virtual.
 
-El evento retornará la posición del cliente en la fila de espera como `number` y la fecha como `datetime`.
+El evento retornará la posición del cliente en la fila de espera como `number` , la fecha como `datetime` `audio` y `video` como boolean para indicar el estado de cada dispositivo de entrada.
 
 ```javascript
-videsk.addEventListener('onQueued', ({ position, date }) => {
+videsk.addEventListener('onQueued', ({ position, date, audio, video }) => {
     // Do something here with position and date
 });
 ```
@@ -220,6 +223,63 @@ El evento retornará la fecha en la cual se se ha generad el error de conexión 
 ```javascript
 videsk.addEventListener('onConnectionError', ({ date }) => {
     // Do something with survey and date
+});
+```
+
+## onFormSubmission
+
+Este evento permite escuchar cuando se envía un formulario ya sea previo a llamada, agendamiento o no disponible (contacto). Los argumentos son:
+
+Llamada en vivo:
+
+* `values`: valores del formulario
+* `type`: tipo de formulario (`pre-call` o `contact`)
+* `segment`: id del segmento
+* `id`: id único del envío
+
+Agendamiento:
+
+* `values`: valores del formulario
+* `startAt`: fecha y hora seleccionada
+* `timezone`: zona horaria del usuario
+* `service`: id del calendario
+* `id`: id único del envío
+
+```javascript
+videsk.addEventListener('onFormSubmission', event => {
+    // Do something with submission
+});
+```
+
+## onDateSelected
+
+Este evento permite escuchar cuando se selecciona una fecha y hora a agendar. Los argumentos son:
+
+* `startAt`: fecha y hora seleccionada
+* `timezone`: zona horaria del usuario
+
+```javascript
+videsk.addEventListener('onDateSelected', event => {
+    // Do something with the selection
+});
+```
+
+## onScheduled
+
+Este evento permite escuchar cuando se agenda una hora en un calendario. Los argumentos son:
+
+* `title`: título del evento
+* `description`: descripción del evento
+* `start`: fecha en la que inicia el evento
+* `end`: fecha en la que finaliza el evento
+* `duration`: duración del evento en minutos
+* `url`: enlace desde donde se agendó
+* `location`: ubicación
+* `guests`: emails de invitados incluyendo usuario que agendó
+
+```javascript
+videsk.addEventListener('onScheduled', event => {
+    // Do something with the appointment
 });
 ```
 
