@@ -15,6 +15,56 @@ La documentación y recursos necesarios para utilizar `BeamPort` está estrictam
 Para utilizar el intercambio de archivo necesitas cargar:
 
 {% tabs %}
+{% tab title="ESM" %}
+```html
+<script type="module">
+    import BeamPort from "https://cdn.videsk.io/sdk/beamport.esm.js";
+    // ...
+</script>
+```
+{% endtab %}
+
+{% tab title="Dynamic import" %}
+#### Vue
+
+```javascript
+onMounted(async () => {
+  const { default: BeamPort } = await import("https://cdn.videsk.io/sdk/beamport.esm.js");
+  // ...
+});
+```
+
+#### React
+
+```javascript
+useEffect(() => {
+  import("https://cdn.videsk.io/sdk/beamport.esm.js")
+    .then(({ default: BeamPort }) => {
+      const beamport = new beamPort();
+      // ...
+    });
+}, []);
+```
+
+#### Angular
+
+```javascript
+async ngOnInit() {
+  const { default: BeamPort } = await import("https://cdn.videsk.io/sdk/beamport.esm.js");
+  // ...
+}
+```
+
+#### Svelte
+
+```javascript
+onMount(async () => {
+    const { default: BeamPort } = await import("https://cdn.videsk.io/sdk/beamport.esm.js");
+    // ...
+  });
+```
+{% endtab %}
+
 {% tab title="HTML" %}
 ```html
 <script src="https://cdn.videsk.io/sdk/beamport.min.js" async></script>
