@@ -177,6 +177,7 @@
 
 * [Introducción](apps/introduccion.md)
 * [Integraciones](apps/integraciones/README.md)
+  * [Iframes](apps/integraciones/iframes.md)
   * [Power Apps](apps/integraciones/power-apps.md)
 
 ## VPaaS
