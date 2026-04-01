@@ -34,6 +34,12 @@ Content-Security-Policy: frame-ancestors 'self' https://*.videsk.io https://cons
 Es recomendable, para una mejor experiencia, permitir el uso de nuestros subdominios wildcard.
 {% endhint %}
 
+En caso de que requieras migrar de `X-Frame-Options` a `Content-Security-Policy`, simplemente elimina de las cabeceras `X-Frame-Options` y configura `Content-Security-Policy` con:
+
+```
+Content-Security-Policy: frame-ancestors 'self';
+```
+
 ## Cookies
 
 En caso de que la aplicación a embeber tenga un inicio de sesión para acceder, lo recomendable es configurar las cookies de la siguiente manera:
@@ -56,7 +62,7 @@ Es mandatorio que la aplicación a embeber sea servida cifrada (TLS), es decir, 
 
 ## Compatibilidad
 
-En las apps embebidas se pueden configurar los valores de `allow` que el iframe debe tener; de esa manera, la aplicación tendrá acceso al micrófono, la cámara, el GPS, etc.
+En las apps embebidas se pueden configurar los valores de `allow`  que el iframe debe tener; de esa manera, la aplicación tendrá acceso al micrófono, la cámara, el GPS, etc.
 
 Los atributos por defecto que se inyectan son:
 
