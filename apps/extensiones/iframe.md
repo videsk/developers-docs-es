@@ -43,7 +43,6 @@ Al crear una extension via `POST /extensions`:
   "name": "Mi App",
   "kind": "iframe",
   "placement": "call-panel",
-  "segments": ["635c843f35f1254a417612d9"],
   "iframe": {
     "url": "https://app.example.com/embed",
     "allow": ["camera", "microphone", "clipboard-write"],
@@ -53,6 +52,18 @@ Al crear una extension via `POST /extensions`:
   },
   "contextScopes": ["user", "segment", "call"]
 }
+```
+
+Luego, asocia la extension al segmento o servicio (calendario) que corresponda:
+
+```
+PATCH /segments/:id
+{ "extensions": ["<extension_id>"] }
+```
+
+```
+PATCH /services/:id
+{ "extensions": ["<extension_id>"] }
 ```
 
 ### Campos de `iframe`
@@ -125,11 +136,18 @@ El iframe resultante en la consola sera similar a:
 />
 ```
 
-## Segmentos
+## Asociacion por entidad
 
-El campo `segments` controla en que segmentos aparece la extension:
+Las extensiones se asocian a **segmentos** y/o **servicios** (calendarios) desde la propia entidad:
 
-- `[]` (vacio) = disponible en **todos** los segmentos de la cuenta
-- `["id1", "id2"]` = solo disponible en esos segmentos
+```
+PATCH /segments/:segmentId
+{ "extensions": ["ext_id_1", "ext_id_2"] }
+```
 
-Esto permite que distintos equipos tengan extensiones diferentes segun su funcion.
+```
+PATCH /services/:serviceId
+{ "extensions": ["ext_id_1"] }
+```
+
+Una misma extension puede estar asociada a multiples segmentos y servicios. Cada entidad controla que extensiones tiene habilitadas, lo que permite configuraciones flexibles por equipo o tipo de calendario.
