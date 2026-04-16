@@ -1,7 +1,8 @@
 ---
 description: >-
   Como configurar extensiones de tipo iframe en la Consola de Videsk,
-  incluyendo permisos, sandbox y requisitos de seguridad.
+  incluyendo permisos, sandbox, templating dinamico de URL y requisitos de
+  seguridad.
 ---
 
 # Iframe
@@ -44,7 +45,7 @@ Al crear una extension via `POST /extensions`:
   "kind": "iframe",
   "placement": "call-panel",
   "iframe": {
-    "url": "https://app.example.com/embed",
+    "url": "https://app.example.com/embed?call={{encode call.id}}&agent={{encode user.email}}",
     "allow": ["camera", "microphone", "clipboard-write"],
     "sandbox": ["allow-scripts", "allow-same-origin", "allow-forms"],
     "width": "100%",
@@ -70,11 +71,64 @@ PATCH /services/:id
 
 | Campo | Tipo | Requerido | Descripcion |
 | --- | --- | --- | --- |
-| `url` | String | Si | URL HTTPS de la pagina a embeber |
+| `url` | String | Si | URL HTTPS, admite templating handlebars |
 | `allow` | String[] | No | Permisos del atributo `allow` del iframe |
 | `sandbox` | String[] | No | Valores del atributo `sandbox` del iframe |
 | `width` | String | No | Ancho CSS (default: `100%`) |
 | `height` | String | No | Alto CSS (default: `100%`) |
+
+## Templating dinamico de URL
+
+El campo `iframe.url` admite expresiones [handlebars](https://handlebarsjs.com/) que se resuelven en la Consola justo antes de montar el iframe, usando el contexto de la llamada activa.
+
+### Variables disponibles
+
+| Variable | Descripcion |
+| --- | --- |
+| `user.id` | ID del agente que contesta |
+| `user.email` | Email del agente |
+| `user.firstname`, `user.lastname` | Nombre del agente |
+| `segment._id`, `segment.name` | Segmento de la llamada |
+| `call.id` | ID de la llamada |
+| `account` | ID de la cuenta |
+| `extraData.*` | Datos extra del cliente (IP, browser, location, etc.) |
+| `form` | Valores del formulario base (completado por el cliente) |
+| `agentForm` | Valores del formulario del agente |
+| `tags` | Tags asociados a la llamada |
+
+### Helpers
+
+Se registran automaticamente todos los helpers del paquete `@videsk/handlebars-helpers` (los mismos que usan los webhooks: `#if`, `#each`, `#date`, `#phone`, `#jwt`, etc.).
+
+Adicionalmente, para templating de URL:
+
+| Helper | Descripcion |
+| --- | --- |
+| `{{encode valor}}` | URL-encode del valor (alias: `{{urlEncode valor}}`) |
+
+{% hint style="warning" %}
+La URL se compila con `noEscape: true` (sin HTML-escaping) porque no es HTML. Usa siempre `{{encode ...}}` en valores que puedan contener caracteres reservados en URLs (`&`, `=`, `?`, `/`, espacios, etc.).
+{% endhint %}
+
+### Ejemplos
+
+```
+https://app.ejemplo.com/embed?
+  call={{encode call.id}}
+  &agent={{encode user.email}}
+  &segmento={{encode segment.name}}
+  &ip={{encode extraData.ip}}
+```
+
+```
+https://crm.ejemplo.com/contactos/{{encode call.id}}?rut={{encode form.rut}}
+```
+
+### Cuando se resuelve
+
+La URL se resuelve **una sola vez** al momento de montar el iframe (inicio de la llamada o al habilitarse la extension). No se recompila cuando cambian valores reactivos (por ejemplo, mientras el agente llena el `agentForm`).
+
+Si necesitas enviar datos a la app embebida en tiempo real durante la llamada, usa el protocolo `postMessage`.
 
 ## Permisos `allow`
 
@@ -128,7 +182,7 @@ El iframe resultante en la consola sera similar a:
 
 ```html
 <iframe
-  src="https://app.example.com/embed"
+  src="https://app.example.com/embed?call=68123abc&agent=matias%40videsk.io"
   allow="camera; microphone; display-capture; clipboard-write; autoplay"
   sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-downloads"
   referrerpolicy="no-referrer"
