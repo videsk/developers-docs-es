@@ -1,7 +1,8 @@
 ---
 description: >-
   Las extensiones permiten embeber aplicaciones externas (iframe o web
-  components) dentro de los productos de Videsk, configurables por segmento.
+  components) dentro de los productos de Videsk, configurables por segmento
+  y servicio (calendario).
 ---
 
 # Extensiones
@@ -15,10 +16,15 @@ Las extensiones son aplicaciones embebidas que se renderizan dentro de la Consol
 
 ## Caracteristicas
 
-- **Configurables por segmento**: cada extension puede estar disponible solo para ciertos segmentos, o para todos (si no se especifica ninguno).
+- **Asociables por entidad**: cada extension se asocia desde el segmento o servicio (calendario) que la necesita, mediante su campo `extensions[]`. Esto permite configuraciones flexibles por equipo o tipo de calendario.
 - **Placement flexible**: pueden renderizarse en el panel de llamada (`call-panel`), la barra lateral (`sidebar`) o como pagina independiente (`standalone`).
 - **Permisos controlados**: los iframes reciben atributos `sandbox` y `allow` validados contra una lista blanca del backend.
 - **Contexto de host**: la extension recibe datos del contexto actual (usuario, segmento, llamada, contacto) segun los scopes configurados.
+
+## Flujo de configuracion
+
+1. Crear la extension via `POST /extensions` (define que es: nombre, tipo, URL, permisos).
+2. Asociar la extension al segmento o servicio via `PATCH /segments/:id` o `PATCH /services/:id` agregando el ID al campo `extensions[]`.
 
 ## Tipos de extension
 
