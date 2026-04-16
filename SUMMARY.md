@@ -179,6 +179,10 @@
 * [Integraciones](apps/integraciones/README.md)
   * [Iframes](apps/integraciones/iframes.md)
   * [Power Apps](apps/integraciones/power-apps.md)
+* [Extensiones](apps/extensiones/README.md)
+  * [Iframe](apps/extensiones/iframe.md)
+  * [Web Components](apps/extensiones/web-components.md)
+  * [Protocolo postMessage](apps/extensiones/postmessage.md)
 
 ## VPaaS
 
