@@ -6,10 +6,6 @@ description: Descubre como realizar la integración con kioskos físicos
 
 Disponemos de recursos para que puedas utilizar Videsk en kioscos bajo diferentes ambientes.
 
-{% content-ref url="modo-kiosko.md" %}
-[modo-kiosko.md](modo-kiosko.md)
-{% endcontent-ref %}
-
 ## Arquitectura
 
 Para el caso de los kioscos debes considerar que dependiendo de tu necesidad podrías requerir ajustar la forma de generar llamadas o agendamientos.
