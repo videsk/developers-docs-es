@@ -70,7 +70,7 @@ window.addEventListener('message', event => {
 
 El broker resuelve dos casos de uso muy distintos. Identifica primero cuál aplica a tu app antes de diseñar el flujo.
 
-### Patrón A — Broker como _habilitador_
+### Patrón A: broker como _habilitador_
 
 El broker entrega un dato puntual (token, sessionId, id de cliente) y, a partir de ahí, tu app **vive sola**: hace sus propias llamadas a tu backend, autentica al usuario, etc. La consola es solo el detonante.
 
@@ -91,7 +91,7 @@ window.addEventListener('message', event => {
 });
 ```
 
-### Patrón B — Broker como _canal continuo_
+### Patrón B: broker como _canal continuo_
 
 La app y el host conversan durante toda la llamada. La app emite eventos cuando ocurren cosas relevantes (ej. "lead creado", "ticket cerrado") y/o ajusta su altura cuando su contenido cambia.
 
