@@ -1,12 +1,16 @@
+---
+description: >-
+  Guías para integrar productos de terceros como apps embebidas en Videsk.
+---
+
 # Integraciones
 
-{% hint style="info" %}
-Esta sección en construcción.
-{% endhint %}
+Si tu objetivo es **embeber una herramienta de terceros** (Power Apps, dashboards de BI, una herramienta SaaS con URL de embed pública), aquí encontrarás las guías específicas. Para todo lo relacionado con servir tu propia URL, parte por la [Configuración](../configuracion.md) y el [Broker](../broker.md).
 
-El tipo de apps externas permite embeber soluciones como las que se presentan a continuación:
+{% content-ref url="iframes.md" %}
+[iframes.md](iframes.md)
+{% endcontent-ref %}
 
 {% content-ref url="power-apps.md" %}
 [power-apps.md](power-apps.md)
 {% endcontent-ref %}
-
