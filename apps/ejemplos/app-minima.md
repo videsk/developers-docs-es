@@ -14,6 +14,10 @@ Este ejemplo es el "Hello World" de una app Videsk. Hace tres cosas:
 
 Servi este HTML desde `https://tu-app.com/embed` (HTTPS obligatorio) y confíguralo como `iframe.url` en tu app.
 
+{% hint style="info" %}
+¿Quieres probarlo sin levantar nada? Usa la versión hospedada en `https://sdbx.videsk.io/iframes/broker/postmessage` como `iframe.url` y vas a ver el `videsk:init` y el `context` recibidos en pantalla. Detalles en [Sandbox para QA](./#sandbox-para-qa).
+{% endhint %}
+
 ```html
 <!doctype html>
 <html lang="es">
