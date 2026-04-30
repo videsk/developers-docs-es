@@ -94,7 +94,7 @@ Description=Open Google Chrome after reboot
 
 [Service]
 Type=simple
-ExecStart=/bin/bash google-chrome --kiosk --fullscreen -tab https://example.com
+ExecStart=/usr/bin/google-chrome --kiosk --fullscreen -tab https://example.com
 ```
 {% endcode %}
 
@@ -106,7 +106,7 @@ ExecStart=/bin/bash google-chrome --kiosk --fullscreen -tab https://example.com
 $ cd /etc/systemd/system
 $ sudo mv /<REPLACE_DOWNLOAD_FILEPATH> ./
 $ sudo chmod 644 ./kiosk.service
-$ sudo service enable kiosk.service
+$ sudo systemctl enable kiosk.service
 ```
 
 4\. Listo! Ahora cuando Linux reinicie se abrirá Google Chrome automáticamente.
