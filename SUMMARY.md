@@ -95,7 +95,7 @@
 * [🔒 Seguridad](webhooks/seguridad.md)
 * [🦱 Variables](webhooks/variables.md)
 * [🦰 Sintaxis](webhooks/sintaxis.md)
-* [🤟 Helpers](webhooks/helpers/README.md)
+* [🦟 Helpers](webhooks/helpers/README.md)
   * [parser](webhooks/helpers/parser.md)
   * [toLowerCase](webhooks/helpers/tolowercase.md)
   * [toUpperCase](webhooks/helpers/touppercase.md)
@@ -125,7 +125,7 @@
 * [🐞 Errores](webhooks/errores.md)
 * [🔌 Integradores (3rd party)](webhooks/integradores-3rd-party.md)
 * [💱 Formatos locales](webhooks/formatos-locales.md)
-* [🫱 Ejemplos](webhooks/ejemplos/README.md)
+* [🫁 Ejemplos](webhooks/ejemplos/README.md)
   * [Formularios](webhooks/ejemplos/formularios.md)
 
 ## 🐞 Depuración
@@ -176,6 +176,13 @@
 ## Apps
 
 * [Introducción](apps/introduccion.md)
+* [Configuración](apps/configuracion.md)
+* [Plantillas y contexto](apps/plantillas.md)
+* [Broker (postMessage)](apps/broker.md)
+* [Ejemplos](apps/ejemplos/README.md)
+  * [App mínima](apps/ejemplos/app-minima.md)
+  * [Habilitar sesión externa](apps/ejemplos/sesion-externa.md)
+  * [Eventos en vivo](apps/ejemplos/eventos-en-vivo.md)
 * [Integraciones](apps/integraciones/README.md)
   * [Iframes](apps/integraciones/iframes.md)
   * [Power Apps](apps/integraciones/power-apps.md)
