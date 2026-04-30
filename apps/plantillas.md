@@ -22,17 +22,48 @@ La URL se resuelve **una sola vez** al montar el iframe. Si necesitas datos que 
 
 ## Helpers
 
-Además de la sintaxis estándar de Handlebars, tienes disponibles:
+Además de la sintaxis estándar de Handlebars, los siguientes helpers están disponibles en la URL de tu app.
+
+### Específicos de apps
 
 | Helper | Uso | Notas |
 | --- | --- | --- |
 | `encode` | `{{encode user.email}}` | Aplica `encodeURIComponent`. Úsalo siempre en valores que van a query string. |
 | `urlEncode` | `{{urlEncode user.email}}` | Alias de `encode`. |
-| Helpers de [`@videsk/handlebars-helpers`](https://www.npmjs.com/package/@videsk/handlebars-helpers) | fechas, strings, math | Ver el README del paquete. |
 
 La plantilla se compila con `noEscape: true`, es decir, **no** se hace HTML-escape automático. Para query strings usa `encode` explícito.
 
 Si una variable no existe en el contexto actual, Handlebars la renderiza como string vacío (sin error).
+
+### Compartidos con webhooks
+
+Los mismos helpers documentados en [Webhooks › Helpers](../webhooks/helpers/) están disponibles aquí. Cada uno tiene su página con sintaxis y ejemplos.
+
+| Helper | Para qué sirve |
+| --- | --- |
+| [`parser`](../webhooks/helpers/parser.md) | Parsea valores anidados o serializados. |
+| [`toLowerCase`](../webhooks/helpers/tolowercase.md) | Convierte un string a minúsculas. |
+| [`toUpperCase`](../webhooks/helpers/touppercase.md) | Convierte un string a mayúsculas. |
+| [`#if`](../webhooks/helpers/if.md) | Renderiza un bloque condicionalmente. |
+| [`#each`](../webhooks/helpers/each.md) | Itera sobre un array u objeto. |
+| [`#array`](../webhooks/helpers/array.md) | Construye un array inline. |
+| [`#object`](../webhooks/helpers/object.md) | Construye un objeto inline. |
+| [`#isEqual`](../webhooks/helpers/isequal.md) | Compara igualdad. |
+| [`#isNot`](../webhooks/helpers/isnot.md) | Compara desigualdad. |
+| [`#includes`](../webhooks/helpers/includes.md) | Verifica si un valor está contenido. |
+| [`#gte/gt`](../webhooks/helpers/gte-gt.md) | Mayor o igual / mayor que. |
+| [`#lte/lt`](../webhooks/helpers/lte-lt.md) | Menor o igual / menor que. |
+| [`#some`](../webhooks/helpers/some.md) | True si al menos un elemento cumple. |
+| [`#every`](../webhooks/helpers/every.md) | True si todos los elementos cumplen. |
+| [`#filter`](../webhooks/helpers/filter.md) | Filtra elementos de un array. |
+| [`#concat`](../webhooks/helpers/concat.md) | Concatena strings o arrays. |
+| [`#find`](../webhooks/helpers/find.md) | Busca el primer elemento que cumple. |
+| [`#get`](../webhooks/helpers/get.md) | Obtiene un valor por path. |
+| [`#date`](../webhooks/helpers/date.md) | Formatea fechas. |
+| [`#relative`](../webhooks/helpers/relative.md) | Fecha relativa al momento actual. |
+| [`#url-param`](../webhooks/helpers/url-param.md) | Lee un parámetro de la URL actual. |
+| [`#jwt`](../webhooks/helpers/jwt.md) | Lee claims de un JWT. |
+| [`#phone`](../webhooks/helpers/phone.md) | Formatea números de teléfono. |
 
 ## Variables comunes (llamadas y reuniones)
 
