@@ -61,9 +61,9 @@ start chrome --kiosk --fullscreen -tab https://example.com
 ```
 {% endcode %}
 
-4\. Abre el archivo con block de notas, cambia la URL por tu sitio web y guarda los cambios.
+**4.** Abre el archivo con block de notas, cambia la URL por tu sitio web y guarda los cambios.
 
-5\. Listo! Reinicia Windows y Chrome se abrirá automáticamente al inicio.
+**5.** Listo! Reinicia Windows y Chrome se abrirá automáticamente al inicio.
 
 {% hint style="info" %}
 Para eliminar la apertura automática deberás eliminar el archivo de la carpeta de inicio.
@@ -98,9 +98,9 @@ ExecStart=/usr/bin/google-chrome --kiosk --fullscreen -tab https://example.com
 ```
 {% endcode %}
 
-2\. Abre la terminal con la combinación de teclas <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>
+**2.** Abre la terminal con la combinación de teclas <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>
 
-3\. Ejecuta los siguentes comandos, uno tras otro:
+**3.** Ejecuta los siguentes comandos, uno tras otro:
 
 ```
 $ cd /etc/systemd/system
@@ -109,7 +109,7 @@ $ sudo chmod 644 ./kiosk.service
 $ sudo systemctl enable kiosk.service
 ```
 
-4\. Listo! Ahora cuando Linux reinicie se abrirá Google Chrome automáticamente.
+**4.** Listo! Ahora cuando Linux reinicie se abrirá Google Chrome automáticamente.
 
 {% hint style="info" %}
 Si deseas obtener más detalles de otros argumentos disponibles para abrir Google Chrome o navegadores basados en Chromium ingresa a [este enlace](https://peter.sh/experiments/chromium-command-line-switches/).
