@@ -11,19 +11,19 @@ description: >-
 * Acceso de administrador a tu entorno de Power Apps.
 * Cuenta de Videsk con permisos para registrar apps.
 
-## Paso 1 — Habilitar el embebido en Power Apps
+## Paso 1. Habilitar el embebido en Power Apps
 
 1. Entra al portal: [https://make.powerapps.com](https://make.powerapps.com).
 2. Selecciona la Power App que quieres integrar.
 3. Ve a **Configuración → Configuración de acceso web**.
 4. Habilita **Permitir que esta aplicación se ejecute en un iframe**.
 
-## Paso 2 — Obtener la URL de embebido
+## Paso 2. Obtener la URL de embebido
 
 1. En la misma pantalla de configuración, ubica la sección **URL de embebido**.
 2. Copia la URL completa (debe comenzar con `https://apps.powerapps.com/play/...`).
 
-## Paso 3 — Registrar la app en Videsk
+## Paso 3. Registrar la app en Videsk
 
 1. Entra a tu panel de administración en Videsk.
 2. Abre **Configuración de Apps** y selecciona **Agregar nueva aplicación**.
