@@ -67,7 +67,7 @@ Tu URL **debe** servirse por HTTPS. Contenido sobre `http://` será bloqueado po
 
 ## `contextScopes`
 
-Determina qué bloques del contexto recibe tu app — tanto en las variables Handlebars de la URL como en el payload del broker.
+Determina qué bloques del contexto recibe tu app, tanto en las variables Handlebars de la URL como en el payload del broker.
 
 ```json
 "contextScopes": ["user", "segment", "call", "form"]
