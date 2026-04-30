@@ -22,13 +22,14 @@ La URL se resuelve **una sola vez** al montar el iframe. Si necesitas datos que 
 
 ## Helpers
 
-Además de la sintaxis estándar de Handlebars, tienes disponibles:
+Además de la sintaxis estándar de Handlebars, están disponibles dos helpers específicos para apps:
 
 | Helper | Uso | Notas |
 | --- | --- | --- |
 | `encode` | `{{encode user.email}}` | Aplica `encodeURIComponent`. Úsalo siempre en valores que van a query string. |
 | `urlEncode` | `{{urlEncode user.email}}` | Alias de `encode`. |
-| Helpers de [`@videsk/handlebars-helpers`](https://www.npmjs.com/package/@videsk/handlebars-helpers) | fechas, strings, math | Ver el README del paquete. |
+
+Más todos los helpers compartidos documentados en [Webhooks › Helpers](../webhooks/helpers/).
 
 La plantilla se compila con `noEscape: true`, es decir, **no** se hace HTML-escape automático. Para query strings usa `encode` explícito.
 
