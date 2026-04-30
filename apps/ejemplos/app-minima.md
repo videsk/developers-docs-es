@@ -42,7 +42,7 @@ Servi este HTML desde `https://tu-app.com/embed` (HTTPS obligatorio) y confígur
 
       const { context } = event.data;
       document.getElementById('status').textContent =
-        `Hola ${context.user?.email ?? 'agente'} — segmento ${context.segment?.name ?? '—'}`;
+        `Hola ${context.user?.email ?? 'agente'}, segmento ${context.segment?.name ?? '-'}`;
       document.getElementById('ctx').textContent =
         JSON.stringify(context, null, 2);
     });
