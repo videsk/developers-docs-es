@@ -82,11 +82,11 @@ Disponible cuando la app se renderiza durante una reunión agendada.
 | `{{tags}}` | array | Etiquetas configuradas en el servicio. |
 | `{{selectedTags}}` | array | Etiquetas seleccionadas en la reunión. |
 
-## Formularios — `form` y `agentForm`
+## Formularios: `form` y `agentForm`
 
 Los campos de formulario se exponen como **objetos clave-valor**, indexados por el nombre que les diste al configurarlos. Eso te permite referenciar cualquier campo directamente.
 
-### Formulario del cliente — `form`
+### Formulario del cliente: `form`
 
 Respuestas que el cliente final envió antes de entrar a la cola o reunión.
 
@@ -94,7 +94,7 @@ Respuestas que el cliente final envió antes de entrar a la cola o reunión.
 {{form.<nombreDelCampo>}}
 ```
 
-### Formulario del agente — `agentForm`
+### Formulario del agente: `agentForm`
 
 Valores que llena el agente durante la atención (o que llegan pre-llenados por una integración).
 
