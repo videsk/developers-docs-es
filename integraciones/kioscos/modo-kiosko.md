@@ -16,7 +16,7 @@ El siguiente comando es un ejemplo que contiene los argumentos como:
 
 * `--kiosk`, abrirá Chrome con funciones de interacción limitadas
 * `--fullscreen`, abrirá Chrome en pantalla completa
-* `-tab`, indicará que sitio web deberá abrir&#x20;
+* `-tab`, indicará qué sitio web deberá abrir
 
 {% code title="Ejemplo" %}
 ```
@@ -50,8 +50,6 @@ Si deseas que Chrome se abra cada vez que Windows se inicie, deberás añadir es
 
 {% hint style="info" %}
 En caso que no puedas descargar el archivo por bloqueos de seguridad en la red, abre un block de notas, pega el siguiente contenido, pégalo y guárdalo con el nombre `kiosk.cmd`.
-
-
 
 **Deberás asegurarte de guardar con la extensión "Todos los archivos", no como `.txt`**
 {% endhint %}
@@ -96,19 +94,19 @@ Description=Open Google Chrome after reboot
 
 [Service]
 Type=simple
-ExecStart=/bin/bash google-chrome --kiosk --fullscreen -tab https://example.com
+ExecStart=/usr/bin/google-chrome --kiosk --fullscreen -tab https://example.com
 ```
 {% endcode %}
 
-2\. Abre la terminal con la combinación de teclas <mark style="background-color:blue;">Ctrl</mark> + <mark style="background-color:blue;">Alt</mark> + <mark style="background-color:blue;">T</mark>&#x20;
+2\. Abre la terminal con la combinación de teclas <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>
 
 3\. Ejecuta los siguentes comandos, uno tras otro:
 
 ```
 $ cd /etc/systemd/system
-$ sudo mv /{REPLACE_DOWNLOAD_FILEPATH} ./
+$ sudo mv /<REPLACE_DOWNLOAD_FILEPATH> ./
 $ sudo chmod 644 ./kiosk.service
-$ sudo service enable kiosk.service
+$ sudo systemctl enable kiosk.service
 ```
 
 4\. Listo! Ahora cuando Linux reinicie se abrirá Google Chrome automáticamente.
