@@ -83,7 +83,6 @@
 ## 🖇️ Integraciones
 
 * [Kioscos](integraciones/kioscos/README.md)
-  * [Modo Kiosko](integraciones/kioscos/modo-kiosko.md)
   * [Electron](integraciones/kioscos/electron.md)
   * [Chrome/Chromium](integraciones/kioscos/chrome-chromium.md)
 * [Frameworks](integraciones/frameworks/README.md)
