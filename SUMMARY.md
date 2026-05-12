@@ -94,7 +94,7 @@
 * [🔒 Seguridad](webhooks/seguridad.md)
 * [🦱 Variables](webhooks/variables.md)
 * [🦰 Sintaxis](webhooks/sintaxis.md)
-* [🦟 Helpers](webhooks/helpers/README.md)
+* [🤟 Helpers](webhooks/helpers/README.md)
   * [parser](webhooks/helpers/parser.md)
   * [toLowerCase](webhooks/helpers/tolowercase.md)
   * [toUpperCase](webhooks/helpers/touppercase.md)

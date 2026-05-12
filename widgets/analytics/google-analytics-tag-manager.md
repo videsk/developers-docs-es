@@ -25,7 +25,7 @@ Luego deberás dar crear un nuevo trigger desde el botón ![](<../../.gitbook/as
 
 Luego en el campo Event name debes escribir `videsk.*` lo que capturará todos los eventos. Recuerda que deberás activar la opción Use regex matching.
 
-<figure><img src="../../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 En caso que no desees escuchar todos los eventos, deberás escribir el evento manualmente como `videsk.toggle`, `videsk.load`, `videsk.selected`, etc.

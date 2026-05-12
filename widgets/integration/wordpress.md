@@ -36,8 +36,6 @@ Posteriormente deberás buscar una parte de la plantilla que contenga el nombre 
 
 <figure><img src="../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
 
-
-
 ### 2. Añadir bloque HTML
 
 Ya dentro del bloque footer, deberás dar clic en el botón azul + ubicado en la parte superior izquierda del editor, para posteriormente buscar el elemento **Custom HTML**.
@@ -46,7 +44,7 @@ Ya dentro del bloque footer, deberás dar clic en el botón azul + ubicado en la
 
 Deberás arrastrar el elemento en cualquier parte del pie de página o footer y dentro de la caja de texto pegarás el script de tu cuenta.
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 Solo queda dar clic en el botón **Guardar** ubicado en la parte superior derecha.
 
@@ -64,6 +62,6 @@ En el menú lateral izquierdo, deberás buscar **Aspecto** y luego haz clic en *
 
 Luego deberás buscar el elemento **HTML Personalizado** y arrastrarlo a cualquier recuadro que contenga el título **Footer o pie de página**.
 
-<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Con el elemento en **Footer** solo falta pegar el script que obtuviste de tu cuenta, y dar clic en el botón **Guardar**.
