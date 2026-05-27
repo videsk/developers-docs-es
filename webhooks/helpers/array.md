@@ -32,13 +32,13 @@ Por defecto, no es posible seleccionar un `Array` con sintaxis mustache, por lo 
 
 {% tabs %}
 {% tab title="Con #array" %}
-#### Sintaxis
+**Sintaxis**
 
 ```handlebars
 {{#arrray elements}}{{/array}}
 ```
 
-#### Resultado
+**Resultado**
 
 ```javascript
 [
@@ -52,13 +52,13 @@ Por defecto, no es posible seleccionar un `Array` con sintaxis mustache, por lo 
 {% endtab %}
 
 {% tab title="Sin #array" %}
-#### Sintaxis
+**Sintaxis**
 
 ```handlebars
 {{elements}}
 ```
 
-#### Resultado
+**Resultado**
 
 ```json
 [object Object]
@@ -79,7 +79,7 @@ Por ejemplo, si necesitas que el resultado sea un `Array` de objetos, donde cada
 
 {% tabs %}
 {% tab title="Array de objetos" %}
-#### Sintaxis
+**Sintaxis**
 
 {% code title="Usando comillas dobles" %}
 ```handlebars
@@ -87,7 +87,7 @@ Por ejemplo, si necesitas que el resultado sea un `Array` de objetos, donde cada
 ```
 {% endcode %}
 
-#### Resultado
+**Resultado**
 
 ```json
 [
@@ -100,12 +100,8 @@ Por ejemplo, si necesitas que el resultado sea un `Array` de objetos, donde cada
 
 De esta forma se transformó el objeto original pero el resultado sigue siendo un `Array` con objetos.
 
-
-
 {% hint style="info" %}
 También puedes complementar helpers en conjunto como `#array` con `parser`.
-
-
 
 **De esta forma te aseguras que el valor sea válido y no ocurra que un `object`, `array`, `boolean`, etc. esté entre comillas dobles.**
 {% endhint %}
@@ -122,13 +118,13 @@ También puedes complementar helpers en conjunto como `#array` con `parser`.
 Solo podrás definir una `key` de cada objeto si es un `Array` de objetos.
 {% endhint %}
 
-#### Sintaxis
+**Sintaxis**
 
 ```handlebars
 {{#array fields}}name{{/array}}
 ```
 
-#### Resultado
+**Resultado**
 
 ```json
 ["Customer Service"]

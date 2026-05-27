@@ -28,13 +28,13 @@ Por defecto, no es posible seleccionar un `Object` con sintaxis mustache, por lo
 
 {% tabs %}
 {% tab title="Con #object" %}
-#### Sintaxis
+**Sintaxis**
 
 ```handlebars
 {{#object user}}{{/object}}
 ```
 
-#### Resultado
+**Resultado**
 
 ```json
 {
@@ -48,13 +48,13 @@ Por defecto, no es posible seleccionar un `Object` con sintaxis mustache, por lo
 {% endtab %}
 
 {% tab title="Sin #object" %}
-#### Sintaxis
+**Sintaxis**
 
 ```handlebars
 {{user}}
 ```
 
-#### Resultado
+**Resultado**
 
 ```javascript
 [object Object]
@@ -68,13 +68,13 @@ Este helper no solo ayuda a retonar un `Object` válido, si no que también sele
 
 {% tabs %}
 {% tab title="Selección individual" %}
-#### Sintaxis
+**Sintaxis**
 
 ```handlebars
 {{#object user}}id{{/object}}
 ```
 
-#### Resultado
+**Resultado**
 
 ```json
 {
@@ -84,13 +84,13 @@ Este helper no solo ayuda a retonar un `Object` válido, si no que también sele
 {% endtab %}
 
 {% tab title="Selección multiple" %}
-#### Sintaxis
+**Sintaxis**
 
 ```handlebars
 {{#object user}}id,email,enabled{{/object}}
 ```
 
-#### Resultado
+**Resultado**
 
 ```json
 {

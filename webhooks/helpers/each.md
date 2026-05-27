@@ -37,7 +37,7 @@ Este helper retornará los valores como texto plano, por lo que debes tener cuid
 
 {% tabs %}
 {% tab title="XML" %}
-#### Sintaxis
+**Sintaxis**
 
 ```handlebars
 <users>
@@ -50,7 +50,7 @@ Este helper retornará los valores como texto plano, por lo que debes tener cuid
 </users>
 ```
 
-#### Resultado
+**Resultado**
 
 ```xml
 <users>
@@ -73,7 +73,7 @@ Para el caso de formato `JSON` te sugerimos utilizar el helper [`#array`](array.
 {% endtab %}
 
 {% tab title="Markdown" %}
-#### Sintaxis
+**Sintaxis**
 
 ```handlebars
 # Usuarios
@@ -84,7 +84,7 @@ Para el caso de formato `JSON` te sugerimos utilizar el helper [`#array`](array.
 {{/each}}
 ```
 
-#### Resultado
+**Resultado**
 
 ```markdown
 # Usuarios

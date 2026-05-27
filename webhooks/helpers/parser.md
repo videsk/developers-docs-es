@@ -12,7 +12,7 @@ Con `parser` permite que cualquier dato sea transformado a su tipo de dato corre
 Utiliza este helper principalmente cuando el formato debe ser `JSON`.
 {% endhint %}
 
-La forma de utilizarlo es `{{parser`` `<mark style="color:blue;">**`value`**</mark>`}}` donde <mark style="color:blue;">**value**</mark> es la clave que vas a utilizar. <mark style="color:red;"></mark>&#x20;
+La forma de utilizarlo es ` {{parser`` `` `<mark style="color:blue;">**`value`**</mark>`}}` donde <mark style="color:blue;">**value**</mark> es la clave que vas a utilizar.
 
 #### Estructura original
 
@@ -24,7 +24,7 @@ La forma de utilizarlo es `{{parser`` `<mark style="color:blue;">**`value`**</ma
 
 {% tabs %}
 {% tab title="Con parser" %}
-#### Sintaxis
+**Sintaxis**
 
 ```handlebars
 {
@@ -33,7 +33,7 @@ La forma de utilizarlo es `{{parser`` `<mark style="color:blue;">**`value`**</ma
 }
 ```
 
-#### Resultado
+**Resultado**
 
 ```handlebars
 {
@@ -46,7 +46,7 @@ La forma de utilizarlo es `{{parser`` `<mark style="color:blue;">**`value`**</ma
 {% endtab %}
 
 {% tab title="Sin parser" %}
-#### Sintaxis
+**Sintaxis**
 
 ```handlebars
 {
@@ -55,7 +55,7 @@ La forma de utilizarlo es `{{parser`` `<mark style="color:blue;">**`value`**</ma
 }
 ```
 
-#### Resultado
+**Resultado**
 
 ```handlebars
 {

@@ -25,7 +25,7 @@ Para utilizar el intercambio de archivo necesitas cargar:
 {% endtab %}
 
 {% tab title="Dynamic import" %}
-#### Vue
+**Vue**
 
 ```javascript
 onMounted(async () => {
@@ -34,7 +34,7 @@ onMounted(async () => {
 });
 ```
 
-#### React
+**React**
 
 ```javascript
 useEffect(() => {
@@ -46,7 +46,7 @@ useEffect(() => {
 }, []);
 ```
 
-#### Angular
+**Angular**
 
 ```javascript
 async ngOnInit() {
@@ -55,7 +55,7 @@ async ngOnInit() {
 }
 ```
 
-#### Svelte
+**Svelte**
 
 ```javascript
 onMount(async () => {
@@ -116,8 +116,6 @@ sequenceDiagram
 5. El límite del tamaño del archivo está dado por la memoria del dispositivo emisor y receptor. Recomendamos enviar archivos no superiores a 2GB.
 6. El envío finaliza cuando el cálculo de CRC-32 es equivalente al del par emisor.
 7. `BeamPort` realizará reconexiones automáticas cuando existan desconexiones por red.
-
-
 
 Para enviar archivos deberás conocer más de los métodos, eventos y propiedades de `BeamPort`:
 

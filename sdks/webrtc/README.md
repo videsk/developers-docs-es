@@ -25,7 +25,7 @@ Si estás utilizando frameworks como React, Vue, Angular, etc., te recomendamos 
 {% endtab %}
 
 {% tab title="Dynamic import" %}
-#### Vue
+**Vue**
 
 ```javascript
 onMounted(async () => {
@@ -34,7 +34,7 @@ onMounted(async () => {
 });
 ```
 
-#### React
+**React**
 
 ```javascript
 useEffect(() => {
@@ -46,7 +46,7 @@ useEffect(() => {
 }, []);
 ```
 
-#### Angular
+**Angular**
 
 ```javascript
 async ngOnInit() {
@@ -55,7 +55,7 @@ async ngOnInit() {
 }
 ```
 
-#### Svelte
+**Svelte**
 
 ```javascript
 onMount(async () => {

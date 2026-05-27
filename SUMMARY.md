@@ -159,20 +159,21 @@
 * [Formularios](api-publica/formularios.md)
 * [QMS](api-publica/qms.md)
 
-***
+## API Privada
 
-* [Exportación](exportacion/README.md)
-  * [Llamadas](exportacion/llamadas.md)
-  * [Filas](exportacion/filas.md)
-  * [Metadatos](exportacion/metadatos.md)
-  * [Comentarios](exportacion/comentarios.md)
-  * [Etiquetas](exportacion/etiquetas.md)
-  * [Reuniones](exportacion/reuniones.md)
-  * [Grabaciones](exportacion/grabaciones.md)
-  * [Tópicos IA](exportacion/topicos-ia.md)
-  * [Sentimientos IA](exportacion/sentimientos-ia.md)
-  * [Formularios](exportacion/formularios.md)
-  * [Encuestas](exportacion/encuestas.md)
+* [Exportación](api-privada/exportacion/README.md)
+  * [Llamadas](api-privada/exportacion/llamadas.md)
+  * [Filas](api-privada/exportacion/filas.md)
+  * [Metadatos](api-privada/exportacion/metadatos.md)
+  * [Comentarios](api-privada/exportacion/comentarios.md)
+  * [Etiquetas](api-privada/exportacion/etiquetas.md)
+  * [Reuniones](api-privada/exportacion/reuniones.md)
+  * [Grabaciones](api-privada/exportacion/grabaciones.md)
+  * [Tópicos IA](api-privada/exportacion/topicos-ia.md)
+  * [Sentimientos IA](api-privada/exportacion/sentimientos-ia.md)
+  * [Formularios](api-privada/exportacion/formularios.md)
+  * [Encuestas](api-privada/exportacion/encuestas.md)
+* [Subida de archivos](api-privada/subida-de-archivos.md)
 
 ## Apps
 

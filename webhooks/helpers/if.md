@@ -26,7 +26,7 @@ Ten en cuenta que el valor a comparar solo puede ser tipo `Boolean`.
 
 {% tabs %}
 {% tab title="if" %}
-#### Sintaxis
+**Sintaxis**
 
 ```handlebars
 {{#if isOnline}}
@@ -34,7 +34,7 @@ Ten en cuenta que el valor a comparar solo puede ser tipo `Boolean`.
 {{/if}}
 ```
 
-#### Resultado
+**Resultado**
 
 ```json
 [{ "id": "61d3905e6ee6a2321c88f7af" }, ...]
@@ -42,7 +42,7 @@ Ten en cuenta que el valor a comparar solo puede ser tipo `Boolean`.
 {% endtab %}
 
 {% tab title="if/else" %}
-#### Sintaxis
+**Sintaxis**
 
 ```handlebars
 {{#if isAvailable}}
@@ -52,11 +52,10 @@ Ten en cuenta que el valor a comparar solo puede ser tipo `Boolean`.
 {{/if}}
 ```
 
-#### Resultado
+**Resultado**
 
 ```json
 { message: "The user is not available" }
 ```
 {% endtab %}
 {% endtabs %}
-
