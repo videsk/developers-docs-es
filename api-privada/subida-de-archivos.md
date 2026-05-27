@@ -240,7 +240,7 @@ const result = await subirAVidesk({
 });
 
 console.log(result);
-// { mime, bytes, sha256, bucket, key, provider, credentialId }
+// { mime, bytes, sha256, key }
 ```
 {% endtab %}
 
