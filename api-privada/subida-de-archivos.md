@@ -1,3 +1,7 @@
+---
+description: Sube archivos (documentos, audio, video, imágenes) a Videsk usando tu API Key.
+---
+
 # Subida de archivos
 
 Las subidas son un flujo de **dos pasos**:
@@ -291,8 +295,8 @@ El servicio ignora el `Content-Type` que declaras y lee los **magic bytes** real
 
 #### Política de reintentos
 
-* **400, 401, 403, 413, 415** — **no** reintentar, la respuesta no va a cambiar.
-* **5xx, errores de red** — reintentar con backoff exponencial, **pidiendo una autorización nueva** si la anterior ya expiró.
+* **400, 401, 403, 413, 415:** **no** reintentar, la respuesta no va a cambiar.
+* **5xx, errores de red:** reintentar con backoff exponencial, **pidiendo una autorización nueva** si la anterior ya expiró.
 
 #### Rate limits
 
