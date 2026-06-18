@@ -11,14 +11,14 @@ Considera que este endpoint debe ser usado con un medio de autorización válido
 {% endhint %}
 
 {% hint style="warning" %}
-Existe un límite de 5000 registros por solicitud.
+Existe un límite de 100.000 registros por solicitud.
 {% endhint %}
 
 ## Tabla de decisión
 
 Nuestra API de exportación está diseñada para casos de uso específicos y no para acceso a datos en tiempo real.
 
-De forma general, si los campos de exportación son suficientes y no requeridos en vivo, la API de exportación es ideal; en caso contrario, requieres la mayor cantidad de datos posible que no están en la API de exportación y/o deben ser en tiempo real, prefiere usar [Webhooks](/broken/pages/GV2kMmI12V03vOJMI49S).
+De forma general, si los campos de exportación son suficientes y no requeridos en vivo, la API de exportación es ideal; en caso contrario, requieres la mayor cantidad de datos posible que no están en la API de exportación y/o deben ser en tiempo real, prefiere usar [Webhooks](https://app.gitbook.com/s/-Ma4POQR_-BPjQwRwhXE-1769347644/webhooks).
 
 El principal beneficio de nuestros Webhooks es que cuentan con tecnología Zero-ETL que permite adaptar los datos al destino, evitando procesos ETL intermedios que pueden incrementar el costo y mantenimiento.
 
