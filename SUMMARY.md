@@ -195,3 +195,4 @@
 * [Introducción](vpaas/introduccion.md)
 * [Rooms API](vpaas/rooms-api.md)
 * [Browser SDK](vpaas/browser-sdk.md)
+* [Telemetría](vpaas/telemetria.md)
